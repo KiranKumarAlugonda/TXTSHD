@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="5dp"
+    android:orientation="vertical"
+    android:background="@drawable/BasicRowSelector"
+    android:minHeight="@dimen/chart_list_item_min_height">
+    <TextView
+        android:id="@+id/text_catagory_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_marginLeft="10dp"
+        android:text="Category Name"
+        android:textSize="@dimen/chart_list_item_std"
+        android:layout_marginTop="10dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/text_catagory_name"
+        android:layout_below="@id/text_catagory_name"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:layout_marginRight="10dp">
+        <TextView
+            android:id="@+id/text_percent"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:textColor="@color/green"
+            android:text="percentage"
+            android:textSize="@dimen/chart_list_item_std"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp" />
+        <TextView
+            android:gravity="end"
+            android:id="@+id/text_amount"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:textColor="@color/green"
+            android:text="Amount"
+            android:textSize="@dimen/chart_list_item_std"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp" />
+    </LinearLayout>
+</RelativeLayout>

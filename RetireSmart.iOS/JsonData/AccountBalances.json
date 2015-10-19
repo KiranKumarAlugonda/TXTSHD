@@ -1,0 +1,19 @@
+﻿[
+{ "UserID": "001",
+		"AccountID" : 100,
+		"TotalSourceBalance": 15411.52,
+		"TotalVestedBalance": 15411.52,
+		"Vesting" : 100.00,
+		"ValuationDate" : "11-13-14",
+		"BalanceSources": [
+			{ "SourceName" : "Company Match",
+				"Amount": 7705.76
+				},
+			{
+				"SourceName": "Before Tax 401k",
+				"Amount": 7705.76
+			}
+			]
+	}
+]
+

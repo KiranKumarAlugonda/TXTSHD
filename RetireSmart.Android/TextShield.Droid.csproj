@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3BE00BBB-FE37-4C77-81BE-1443C77A657B}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TextShield.Droid</RootNamespace>
+    <AssemblyName>RetireSmart.Android</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <AndroidApplication>true</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <TargetFrameworkVersion>v4.4</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>None</AndroidLinkMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
+    <AndroidSupportedAbis>armeabi;armeabi-v7a;x86</AndroidSupportedAbis>
+    <BundleAssemblies>true</BundleAssemblies>
+    <AndroidLinkSkip>System.Core</AndroidLinkSkip>
+    <AndroidKeyStore>True</AndroidKeyStore>
+    <AndroidSigningKeyStore>/Users/alexchan/Desktop/Android Keystore/MM_RetireSmart_KeyStore.keystore</AndroidSigningKeyStore>
+    <AndroidSigningStorePass>12BBjhLBxzACrm95</AndroidSigningStorePass>
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Android" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Json" />
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.5.2\lib\portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v4">
+      <HintPath>..\packages\Xamarin.Android.Support.v4.21.0.3.0\lib\MonoAndroid10\Xamarin.Android.Support.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.AppCompat">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.AppCompat.21.0.3.0\lib\MonoAndroid403\Xamarin.Android.Support.v7.AppCompat.dll</HintPath>
+    </Reference>
+    <Reference Include="PagerSlidingTabStrip">
+      <HintPath>..\packages\PagerSlidingTabStrip.Net.1.2.40604.0921\lib\MonoAndroid2.2\PagerSlidingTabStrip.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Android.Export" />
+    <Reference Include="Xamarin.Insights">
+      <HintPath>..\packages\Xamarin.Insights.1.9.1.107\lib\MonoAndroid10\Xamarin.Insights.dll</HintPath>
+    </Reference>
+    <Reference Include="Refit">
+      <HintPath>..\packages\refit.2.2.1\lib\MonoAndroid\Refit.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Connectivity.Plugin">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.1.0.1\lib\MonoAndroid10\Connectivity.Plugin.dll</HintPath>
+    </Reference>
+    <Reference Include="Connectivity.Plugin.Abstractions">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.1.0.1\lib\MonoAndroid10\Connectivity.Plugin.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.MediaRouter">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.MediaRouter.21.0.3.0\lib\MonoAndroid403\Xamarin.Android.Support.v7.MediaRouter.dll</HintPath>
+    </Reference>
+    <Reference Include="GooglePlayServicesLib">
+      <HintPath>..\packages\Xamarin.GooglePlayServices.22.0.0.2\lib\MonoAndroid41\GooglePlayServicesLib.dll</HintPath>
+    </Reference>
+    <Reference Include="ModernHttpClient">
+      <HintPath>..\packages\modernhttpclient.2.2.0\lib\MonoAndroid\ModernHttpClient.dll</HintPath>
+    </Reference>
+    <Reference Include="OkHttp">
+      <HintPath>..\packages\modernhttpclient.2.2.0\lib\MonoAndroid\OkHttp.dll</HintPath>
+    </Reference>
+    <Reference Include="HockeyApp.Android">
+      <HintPath>..\Components\hockeyappandroid-3.0.2\lib\android\HockeyApp.Android.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Resources\Resource.Designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RetireSmartApplication.cs" />
+    <Compile Include="Util\SharedState.cs" />
+    <Compile Include="Fragments\BalanceFragment.cs" />
+    <Compile Include="Fragments\DashboardFragment.cs" />
+    <Compile Include="Views\ChartView.cs" />
+    <Compile Include="Views\CircleView.cs" />
+    <Compile Include="Activities\MainActivity.cs" />
+    <Compile Include="Activities\DashboardActivity.cs" />
+    <Compile Include="Adapters\RSPagerAdapter.cs" />
+    <Compile Include="Activities\AccountActivity.cs" />
+    <Compile Include="Adapters\AccountAdapter.cs" />
+    <Compile Include="Views\AccountViewHolder.cs" />
+    <Compile Include="Adapters\BalanceSourceAdapter.cs" />
+    <Compile Include="Views\BalanceBySourceViewHolder.cs" />
+    <Compile Include="Adapters\BalanceByInvestmentAdapter.cs" />
+    <Compile Include="Views\BalanceByInvestmentViewHolder.cs" />
+    <Compile Include="Util\PixelUtil.cs" />
+    <Compile Include="Fragments\ChangeAccountFragment.cs" />
+    <Compile Include="Fragments\ProfileDialogFragment.cs" />
+    <Compile Include="Adapters\ProfileAdapter.cs" />
+    <Compile Include="Activities\CategoryActivity.cs" />
+    <Compile Include="Adapters\ChartListAdapter.cs" />
+    <Compile Include="Activities\RSBaseActivity.cs" />
+    <Compile Include="Activities\SupportActivity.cs" />
+    <Compile Include="Adapters\ContactUsAdapter.cs" />
+    <Compile Include="Views\ContactUsViewHolder.cs" />
+    <Compile Include="Fragments\ContactUsFragment.cs" />
+    <Compile Include="Fragments\IUpdateableFragment.cs" />
+    <Compile Include="Adapters\SupportAdapter.cs" />
+    <Compile Include="Activities\RSBaseNoMenuActivity.cs" />
+    <Compile Include="Views\NoScrollViewPager.cs" />
+    <Compile Include="Activities\FundDetailActivity.cs" />
+    <Compile Include="Views\LineChartView.cs" />
+    <Compile Include="Activities\UserAgreementActivity.cs" />
+    <Compile Include="Activities\SplashActivity.cs" />
+    <Compile Include="Fragments\WebViewDialog.cs" />
+    <Compile Include="Fragments\SimpleDialogFragment.cs" />
+    <Compile Include="Activities\WebViewActivity.cs" />
+    <Compile Include="Util\AndroidNetworkUtil.cs" />
+    <Compile Include="RefitStubs.cs" />
+    <Compile Include="App.cs" />
+    <Compile Include="DroidContentRepository.cs" />
+    <Compile Include="AndroidAuthManager.cs" />
+    <Compile Include="Activities\ChangeLogInActivity.cs" />
+    <Compile Include="Activities\ChangePinActivity.cs" />
+    <Compile Include="Activities\ChangePasswordActivity.cs" />
+    <Compile Include="Activities\ChangeUserActivity.cs" />
+    <Compile Include="Activities\PreLoginWebViewActivity.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AndroidClassDiagram.cd" />
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Assets\AboutAssets.txt" />
+    <None Include="packages.config" />
+    <None Include="PluginsHelp\ConnectivityReadme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\back.png" />
+    <AndroidResource Include="Resources\drawable\login_button.png" />
+    <AndroidResource Include="Resources\layout\list_item.axml" />
+    <AndroidResource Include="Resources\values\colors.xml" />
+    <AndroidResource Include="Resources\layout\header_list.axml" />
+    <AndroidResource Include="Resources\drawable\ic_catagory.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\dashboard_icon_on.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\dashboard_icon_on.9.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\dashboard_icon_on.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\dashboard_icon_on.9.png" />
+    <AndroidResource Include="Resources\layout\DashboardActivity.axml" />
+    <AndroidResource Include="Resources\layout\Balance.axml" />
+    <AndroidResource Include="Resources\drawable-hdpi\balances_icon_on.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\balances_icon_on.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\balances_icon_on.9.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\balances_icon_on.9.png" />
+    <AndroidResource Include="Resources\values\Styles.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\splash_screen.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\splash_screen.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\splash_screen.9.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\splash_screen.9.png" />
+    <AndroidResource Include="Resources\layout\Main.axml" />
+    <AndroidResource Include="Resources\drawable\RoundedButton.xml" />
+    <AndroidResource Include="Resources\menu\rs_menu.xml" />
+    <AndroidResource Include="Resources\layout\AccountActivity.axml" />
+    <AndroidResource Include="Resources\layout\toolbar_rs.axml" />
+    <AndroidResource Include="Resources\drawable-hdpi\balances_icon_blue.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\balances_icon_grey.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\dashboard_icon_blue.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\dashboard_icon_grey.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\green_gradiant.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\logon_background.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\logon_button.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\massmutual_logo.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\money_bag.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\profile_head.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\retiresmart_logo.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\balances_icon_blue.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\balances_icon_grey.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\dashboard_icon_blue.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\dashboard_icon_grey.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\green_gradiant.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\logon_background.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\logon_button.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\massmutual_logo.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\money_bag.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\profile_head.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\retiresmart_logo.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\balances_icon_blue.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\balances_icon_grey.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\dashboard_icon_blue.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\dashboard_icon_grey.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\green_gradiant.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\logon_background.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\logon_button.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\massmutual_logo.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\money_bag.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\profile_head.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\retiresmart_logo.9.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\balances_icon_blue.9.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\balances_icon_grey.9.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\dashboard_icon_blue.9.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\dashboard_icon_grey.9.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\green_gradiant.9.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\logon_background.9.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\logon_button.9.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\massmutual_logo.9.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\money_bag.9.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\profile_head.9.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\retiresmart_logo.9.png" />
+    <AndroidResource Include="Resources\drawable\logon_button.9.png" />
+    <AndroidResource Include="Resources\drawable\green_gradiant.9.png" />
+    <AndroidResource Include="Resources\drawable\money_bag.9.png" />
+    <AndroidResource Include="Resources\layout\AccountRow.axml" />
+    <AndroidResource Include="Resources\menu\balance_menu.xml" />
+    <AndroidResource Include="Resources\layout\BalanceBySourceRow.axml" />
+    <AndroidResource Include="Resources\layout\BalanceByInvestRow.axml" />
+    <AndroidResource Include="Resources\drawable\GreenGradient.xml" />
+    <AndroidResource Include="Resources\layout\AccountDialog.axml" />
+    <AndroidResource Include="Resources\layout\ProfileDialog.axml" />
+    <AndroidResource Include="Resources\layout\ProfileRow.axml" />
+    <AndroidResource Include="Resources\drawable\Icon.png" />
+    <AndroidResource Include="Resources\menu\rs_singleacct_menu.xml" />
+    <AndroidResource Include="Resources\layout\ContactDialog.axml" />
+    <AndroidResource Include="Resources\layout\SupportActivity.axml" />
+    <AndroidResource Include="Resources\layout\SupportRow.axml" />
+    <AndroidResource Include="Resources\drawable\BasicRowSelector.xml" />
+    <AndroidResource Include="Resources\drawable-v21\GreenGradient.xml" />
+    <AndroidResource Include="Resources\layout\Dashboard.axml" />
+    <AndroidResource Include="Resources\layout\FundDetail.axml" />
+    <AndroidResource Include="Resources\layout\AgreementActivity.axml" />
+    <AndroidResource Include="Resources\drawable\splash_screen.9.png" />
+    <AndroidResource Include="Resources\layout\WebViewDialog.axml" />
+    <AndroidResource Include="Resources\drawable\splashimage.xml" />
+    <AndroidResource Include="Resources\drawable-v21\splashimage.xml" />
+    <AndroidResource Include="Resources\drawable\splash_logo.png" />
+    <AndroidResource Include="Resources\layout\SplashScreen.axml" />
+    <AndroidResource Include="Resources\values\Strings.xml" />
+    <AndroidResource Include="Resources\layout\SimpleDialogLayout.axml" />
+    <AndroidResource Include="Resources\layout\ListFooter.axml" />
+    <AndroidResource Include="Resources\layout\BalanceListFooter.axml" />
+    <AndroidResource Include="Resources\layout\WebViewActivity.axml" />
+    <AndroidResource Include="Resources\values\dimens.xml" />
+    <AndroidResource Include="Resources\layout\spinner_item.xml" />
+    <AndroidResource Include="Resources\layout\cat_list_header.axml" />
+    <AndroidResource Include="Resources\layout\ContactRow.axml" />
+    <AndroidResource Include="Resources\layout\ChangeLogIn.axml" />
+    <AndroidResource Include="Resources\layout\ChangePin.axml" />
+    <AndroidResource Include="Resources\layout\ChangePassword.axml" />
+    <AndroidResource Include="Resources\layout\ChangeUser.axml" />
+    <AndroidResource Include="Resources\layout\Category.axml" />
+    <AndroidResource Include="Resources\menu\change_pin_save_action.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\rsheader.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\rsheader.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\rsheader.9.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\rsheader.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\mmlogojpg.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\mmlogojpg.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\mmlogojpg.9.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\mmlogojpg.9.png" />
+    <AndroidResource Include="Resources\layout\PreLoginWebView.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\AndroidManifest.xml" />
+  </ItemGroup>
+  <Import Project="..\RetireSmart.Shared\RetireSmart.Shared.projitems" Label="Shared" Condition="Exists('..\RetireSmart.Shared\RetireSmart.Shared.projitems')" />
+  <Import Project="..\OAuth\OAuth.projitems" Label="Shared" Condition="Exists('..\OAuth\OAuth.projitems')" />
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <Import Project="..\packages\refit.2.2.1\build\refit.targets" Condition="Exists('..\packages\refit.2.2.1\build\refit.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+     Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <XamarinComponentReference Include="hockeyappandroid">
+      <Version>3.0.2</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="ConnectivityPlugin">
+      <Version>1.0.1</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="googleplayservices">
+      <Version>22.0.0.0</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+  </ItemGroup>
+  <ItemGroup />
+</Project>

@@ -1,0 +1,203 @@
+﻿[
+	{"UserID": "001",
+	"AccountID" : 100,
+	"FundID": 1,
+		"Title": "Fixed Interest",
+		"Category": "Fixed Interest",
+		"Amount": 5020.62,
+		"NAVPrice": 139.255626,
+		"Shares": 36.05326509393595 ,
+		"FundSources": [
+			{ "Source" : "Company Match",
+				"Amount": 4920.38
+				},
+			{
+				"Source": "Before Tax 401k",
+				"Amount": 100.24
+			}
+			]
+	},
+	{"UserID": "001",
+	"FundID": 2,
+	"AccountID" : 100,
+		"Title": "OFI Small Cap Core (SB23)",
+		"Category": "Bonds",
+		"Amount": 3990.38,
+		"NAVPrice": 266.924410,
+		"Shares": 14.94947577106193 ,
+		"FundSources": [
+			{ "Source" : "Company Match",
+				"Amount": 750.90
+				},
+			{
+				"Source": "Before Tax 401k",
+				"Amount": 3230.48
+			}
+			]
+	},
+	{"UserID": "001",
+	"FundID": 4,
+		"AccountID" : 100,
+		"Title": "OFI Small Cap Core (SB24)",
+		"Category": "Bonds",
+		"Amount": 3990.38,
+		"NAVPrice": 266.924410,
+		"Shares": 14.94947577106193 ,
+		"FundSources": [
+			{ "Source" : "Company Match",
+				"Amount": 750.90
+				},
+			{
+				"Source": "Before Tax 401k",
+				"Amount": 3230.48
+			}
+			]
+	},
+	{"UserID": "001",
+	"FundID": 5,
+		"AccountID" : 100,
+		"Title": "Premier High Yield (Babson)",
+		"Category": "Large Value",
+		"Amount": 6400.52,
+		"NAVPrice": 139.953505,
+		"Shares": 45.73318831850621,
+		"FundSources": [
+			{ "Source" : "Company Match",
+				"Amount": 6270.46
+				},
+			{
+				"Source": "Before Tax 401k",
+				"Amount": 130.06 
+			}
+			]
+	}
+	,
+	{"UserID": "001",
+	"FundID": 6,
+		"AccountID" : 100,
+		"Title": "Pr OpnhmrFds Strat Emrg Mrkts",
+		"Category": "Large Value",
+		"Amount": 1140.11,
+		"NAVPrice": 93.268560,
+		"Shares": 12.22394770542185,
+		"FundSources": [
+			{ "Source" : "Company Match",
+				"Amount": 190.83
+				},
+			{
+				"Source": "Before Tax 401k",
+				"Amount": 940.28
+			}
+			]
+	}
+	,
+	{"UserID": "001",
+	"FundID": 7,
+		"AccountID" : 100,
+		"Title": "Sel SmCoVl(Fed Clov/TRP/ERNST)",
+		"Amount": 830.07,
+		"Category": "Bonds",
+		"NAVPrice": 164.806379,
+		"Shares": 5.03663756850091,
+		"FundSources": [
+			{ "Source" : "Company Match",
+				"Amount": 150.48
+				},
+			{
+				"Source": "Before Tax 401k",
+				"Amount": 670.59
+			}
+			]
+	},
+	{"UserID": "001",
+	"FundID": 8,
+		"AccountID" : 100,
+		"Title": "Sel Overseas (MFS/Hrs/JPMorgn)",
+		"Category": "International Growth",
+		"Amount": 5340.56,
+		"NAVPrice": 128.701330,
+		"Shares": 41.49576387439042,
+		"FundSources": [
+			{ "SourceName" : "Company Match",
+				"Amount": 970.05
+				},
+			{
+				"SourceName": "Before Tax 401k",
+				"Amount": 4370.51
+			}
+			]
+	},
+	{"UserID": "001",
+	"FundID": 9,
+		"AccountID" : 100,
+		"Title": "Sel Fundmentl Val (Wellington)",
+		"Category": "Mid-cap Blend",
+		"Amount": 3050.67,
+		"NAVPrice": 175.210054,
+		"Shares": 17.41150082631674,
+		"FundSources": [
+			{ "SourceName" : "Company Match",
+				"Amount": 570.12
+				},
+			{
+				"SourceName": "Before Tax 401k",
+				"Amount": 2480.55
+			}
+			]
+	}
+	,
+	{"UserID": "001",
+	"FundID": 10,
+		"AccountID" : 100,
+		"Title": "Pr OpnhmrFds Strat Emrg Mrkts",
+		"Category": "International Growth",
+		"Amount": 1140.11,
+		"NAVPrice": 93.268560,
+		"Shares": 12.22394770542185,
+		"FundSources": [
+			{ "Source" : "Company Match",
+				"Amount": 190.83
+				},
+			{
+				"Source": "Before Tax 401k",
+				"Amount": 940.28
+			}
+			]
+	}
+	,
+	{"UserID": "001",
+	"FundID": 5,
+	"AccountID" : 100,
+		"Title": "Sel SmCoVl(Fed Clov/TRP/ERNST)",
+		"Amount": 830.07,
+		"NAVPrice": 164.806379,
+		"Shares": 5.03663756850091,
+		"FundSources": [
+			{ "Source" : "Company Match",
+				"Amount": 150.48
+				},
+			{
+				"Source": "Before Tax 401k",
+				"Amount": 670.59
+			}
+			]
+	},
+	{"UserID": "001",
+	"FundID": 6,
+	"AccountID" : 100,
+		"Title": "Sel Overseas (MFS/Hrs/JPMorgn)",
+		"Category": "International Growth",
+		"Amount": 5340.56,
+		"NAVPrice": 128.701330,
+		"Shares": 41.49576387439042,
+		"FundSources": [
+			{ "SourceName" : "Company Match",
+				"Amount": 970.05
+				},
+			{
+				"SourceName": "Before Tax 401k",
+				"Amount": 4370.51
+			}
+			]
+	}
+]

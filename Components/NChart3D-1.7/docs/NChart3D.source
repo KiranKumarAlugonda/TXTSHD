@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<monodoc>
+  <node label="Xamarin Components" name="components" parent="libraries" />
+  <node label="NChart3D" name="NChart3D" parent="components" />
+  <source provider="ecma" basefile="NChart3D" path="NChart3D" />
+</monodoc>

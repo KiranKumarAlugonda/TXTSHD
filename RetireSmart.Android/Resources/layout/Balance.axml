@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/Balance_Layout"
+    android:background="#fff"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:id="@+id/spinner_bal_filter"
+        android:gravity="center"
+        android:textAlignment="gravity"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp" />
+    <View
+        android:id="@+id/bal_divider_first"
+        android:layout_height="1dp"
+        android:background="#A7A9AC"
+        android:layout_width="match_parent"
+        android:layout_below="@id/spinner_bal_filter"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp" />
+    <TextView
+        android:text="View"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_filter_header"
+        android:layout_below="@id/bal_divider_first"
+        android:layout_marginLeft="15dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:textSize="@dimen/balance_list_item_std" />
+    <TextView
+        android:text="Balance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_bal_date"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/bal_divider_first"
+        android:layout_marginRight="15dp"
+        android:gravity="right"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:textSize="@dimen/balance_list_item_std" />
+    <View
+        android:id="@+id/bal_divider_second"
+        android:layout_height="1dp"
+        android:background="#A7A9AC"
+        android:layout_width="match_parent"
+        android:layout_below="@id/txt_filter_header"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp" />
+    <ListView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/list_balances"
+        android:layout_below="@id/bal_divider_second" />
+</RelativeLayout>

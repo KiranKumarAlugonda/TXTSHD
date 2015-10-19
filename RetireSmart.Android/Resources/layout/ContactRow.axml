@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/layout_contact_row"
+    android:background="@drawable/BasicRowSelector">
+    <TextView
+        android:text="Immediate Assistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_contact_type"
+        android:textStyle="bold"
+        android:textSize="@dimen/standard_text_size"
+        android:textColor="@color/black"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp" />
+    <TextView
+        android:text="1.800.743.5274"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_contact_number"
+        android:textSize="@dimen/standard_text_size"
+        android:textStyle="bold"
+        android:textColor="@color/mm_blue"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp" />
+    <TextView
+        android:text="M-F 8am - 9pm ET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_contact_hours"
+        android:layout_below="@id/txt_contact_type"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:textSize="13sp"
+        android:textColor="@color/grey" />
+    <TextView
+        android:text="After entering in your Social Security number and PIN, press &quot;1&quot; for account information then &quot;0&quot; to speak with a representative."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_contact_instruction"
+        android:layout_below="@id/txt_contact_hours"
+        android:textColor="@color/grey"
+        android:textSize="13sp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp" />
+</RelativeLayout>

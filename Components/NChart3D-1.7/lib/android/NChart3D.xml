@@ -1,0 +1,3384 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NChart3D</name>
+    </assembly>
+    <members>
+        <member name="T:NChart3D_Android.NChart">
+            <summary>
+            The NChart class provides a container for the chart.
+            <p /><b>The main NChart3D features are the following.</b><p />
+            2D charts:
+            <ul><li>Column</li><li>Bar</li><li>Area</li><li>Line</li><li>Step line</li><li>Pie</li><li>Doughnut</li><li>Bubble</li><li>Scatter</li><li>Candlestick</li><li>OHLC</li><li>Band</li><li>Sequence</li><li>Radar</li><li>Funnel</li><li>Heatmap</li></ul><p />
+            3D charts:
+            <ul><li>Column, cylinder column</li><li>Bar, cylinder bar</li><li>Area</li><li>Line</li><li>Step line</li><li>Ribbon</li><li>Pie</li><li>Doughnut</li><li>Bubble</li><li>Scatter</li><li>Candlestick</li><li>OHLC</li><li>Surface</li><li>Funnel</li></ul>
+            Streaming:
+            <ul><li>Realtime data updating</li><li>Support of multithreading</li></ul>
+            Data processing:
+            <ul><li>Automatic minimum, maximum and step calculation for value axes according to supplied dataset</li><li>Spline-based data smoothing</li></ul>
+            Animations:
+            <ul><li>Animated changing of view angles</li><li>Animated changing of zoom</li><li>Animated zooming to given region</li><li>Support of different animation curves</li><li>Automatic animation on the dataset change</li></ul>
+            High visual quality:
+            <ul><li>Adaptive anti-aliasing</li><li>Fitting chart to screen</li></ul>
+            Flexible axes:
+            <ul><li>Absolute, additive and percent value axis types</li><li>Multiple value axes</li><li>Custom numeric values on the axes</li><li>Time axis</li><li>Size axis</li><li>Polar coordinate system</li></ul>
+            Interactivity:
+            <ul><li>Zoom, pan and rotation of the chart</li><li>Interactive legend</li></ul>
+            Advanced customizations:
+            <ul><li>Advanced control over user interactions</li><li>Themes and color customization</li><li>Custom background image</li><li>Alignment of chart caption</li><li>Rotation of axes labels</li><li>Label in the center of pie</li><li>Flexible tooltips and chart annotations</li><li>Parallel and perspective projections in 3D-mode</li><li>Selection of points by color and offset</li><li>Markers for points</li><li>Multiple charts in a single view</li></ul></summary>
+        </member>
+        <member name="T:NChart3D_Android.NChart.IDelegate">
+            <summary>
+            The NChartDelegate protocol provides methods to reflect changes which have appeared in the chart.
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChart.IDelegate.DidEndAnimating(Java.Lang.Object,NChart3D_Android.NChartTypes.AnimationType)">
+            <summary>
+            Report that animation of chart object is done.
+            See NChartTypes.AnimationType
+            </summary>
+            <param name="object">- pointer to the chart object instance.</param>
+            <param name="animation">- type of animation that is done.</param>
+        </member>
+        <member name="M:NChart3D_Android.NChart.IDelegate.PointSelected(NChart3D_Android.NChart,NChart3D_Android.NChartPoint)">
+            <summary>
+            Report that user selected a chart point.
+            See NChartPoint
+            </summary>
+            <param name="chart">- pointer to the chart instance.</param>
+            <param name="point">- point that was selected. May be null, which will tell that the user tapped an empty space of the chart.</param>
+        </member>
+        <member name="M:NChart3D_Android.NChart.IDelegate.TimeIndexChanged(NChart3D_Android.NChart,System.Double)">
+            <summary>
+            Report that the time index on time axis was changed. A change may appear if the user moves the handler on the time
+            axis, plays back the time axis or if someone changed the current time index of time axis (see NChartTimeAxis for
+            details).
+            </summary>
+            <param name="chart">- pointer to the chart instance.</param>
+            <param name="timeIndex">- new time index.</param>
+        </member>
+        <member name="P:NChart3D_Android.NChart.AdaptiveAntialiasing">
+            <summary>
+            Flag that determines if anti-aliasing is adaptive (true) or not (false). Adaptivity means that it is switched off
+            automatically for the time-critical periods like user interactions or animation playing. This property takes effect
+            if <code>shouldAntialias</code> is true only. The default value is true.
+            See ShouldAntialias
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChart.AlwaysPreserveZoomAndPosition">
+            <summary>
+            Flag determining if chart content always preserves zoom and position (true) or not (false). This flag takes effect in 3D
+            mode only. If this flag is set to false, when you change the frame of the chart, 3D content will be zoomed and shifted
+            to fit the screen. If this flag is set to true, you should call ResetTransformations to fit the content in the
+            screen manually. The default value is false.
+            <p /><br />The common use-case for this flag is when you smoothly change the size of the chart. For such resize
+            session you should set this flag to true, and after the session you should probably call ResetTransformations.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChart.Background">
+            <summary>
+            Brush that fills the chart's background.
+            See NChartBrush
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChart.Caption">
+            <summary>
+            Caption of the chart.
+            See NChartCaption
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChart.CartesianSystem">
+            <summary>
+            Cartesian coordinates system used to store value axes and supplementary visual items.
+            See NChartCartesianSystem
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChart.Delegate">
+            <summary>
+            Chart delegate.
+            See Delegate
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChart.DrawIn3D">
+            <summary>
+            Flag that determines if a chart should be drawn in 3D (true) or in 2D (false). The default value is false.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChart.HorizontalRotationAngle">
+            <summary>
+            Horizontal rotation (around the Y-Axis) in radians (has effect in 3D mode only). The default value is 3.93 (225 degrees).
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChart.IncrementalMinMaxMode">
+            <summary>
+            Incremental minimum and maximum calculation mode. This mode makes sense in streaming mode only. If the incremental
+            mode is on, new minimum cannot be greater and new maximum cannot be less than the ones calculated on the previous
+            datasets. The default value is false.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChart.IsTransitionPlaying">
+            <summary>
+            Check if transition is playing.
+            </summary>
+            <returns>true if playing, false if not.</returns>
+        </member>
+        <member name="P:NChart3D_Android.NChart.Legend">
+            <summary>
+            Legend of the chart.
+            See NChartLegend
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChart.LicenseKey">
+            <summary>
+            License key of product.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChart.Margin">
+            <summary>
+            Margin of the chart that determines how far the content of chart starts from view's bounds. The default margin is
+            zero on all sides.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChart.MaxZoom">
+            <summary>
+            Maximal zoom of the chart. After this zoom is reached by user interactions, chart starts bouncing zoom.
+            The maximal zoom differs in 2D and 3D mode. In 2D mode the default value is recalculated each time the chart is
+            layed out (by changing of the frame or by updating data) according to the data on the axes. In 3D the default
+            value is 2.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChart.MinZoom">
+            <summary>
+            Minimal zoom of the chart. After this zoom is reached by user interactions, chart starts bouncing zoom.
+            The minimal zoom differs in 2D and 3D mode. In 3D mode the default value is 0.5. In 2D it is 1.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChart.Pivot">
+            <summary>
+            Pivot of the chart in the internal chart scene coordinates.
+            <p /><br /> Use this property if you want to save and than restore position of the chart. This property works for 2D
+            and 3D modes. Theoretically you can use this property to pan the chart programmatically, however it is better to use
+            NChartValueAxis.ZoomToRegion.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChart.PointSelectionEnabled">
+            <summary>
+            Flag determining if the chart points can be selected by tap (true) or not (false). The default value is true. If you do
+            not want to select points by tap, it is better to disable selection, because it will save memory and boost the data
+            updating.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChart.PolarSystem">
+            <summary>
+            Polar coordinates system used to store value axes and supplementary visual items.
+            See NChartPolarSystem
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChart.ShadingModel">
+            <summary>
+            Shading model that is used in 3D mode. The default value is NChartShadingModelPhong.
+            <p /><b>Note</b>: This property controls shading for the 3D charts like surfaces, columns, etc.
+            Shading model for point markers is controlled through their brushes.
+            <b>Note</b>: This property takes effect in 3D mode only.
+            See IsDrawIn3D
+            See NChartMarker
+            See NChartTypes.ShadingModel
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChart.ShouldAntialias">
+            <summary>
+            Flag that determines if the image should be anti-aliased (true) or not (false). Antialiasing makes the picture smoother,
+            but impacts performance. The default value is false.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChart.ShouldBouncePan">
+            <summary>
+            Flag that determines if pan should bounce (true) or not (false). The default value is true.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChart.ShouldBounceZoom">
+            <summary>
+            Flag that determines if zoom should bounce (true) or not (false). The default value is true.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChart.ShowFPS">
+            <summary>
+            Flag that determines if FPS rate should be displayed (true) or not (false). You may use this for debug purposes
+            or if you are just curious, but it's a very bad idea to show FPS in production code, because it results in continuous
+            rendering that loads CPU and consumes power. If FPS is off, the picture is re-rendered only if it's really needed.
+            The default value is false.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChart.SizeAxis">
+            <summary>
+            Size axis used to scale the sizes of markers.
+            See NChartSizeAxis
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChart.StreamingMode">
+            <summary>
+            Flag determining if streaming mode is enabled.
+            See StreamData
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChart.TimeAxis">
+            <summary>
+            Time axis used to navigate through the time ticks.
+            See NChartTimeAxis
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChart.UseParallelProjection">
+            <summary>
+            Flag that determines if a chart use parallel projection (true) or perspective projection (false) in 3D-mode. The default
+            value is false.
+            <p /><b>Note</b>: This flag takes effect in 3D-mode only.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChart.UserInteractionMode">
+            <summary>
+            Interaction mode used in the chart. The default is NChartTypes.UserInteraction.All.
+            <p /><b>Note</b>: You can use multiple interactions concatenated with bitwise OR to specify the mask of what is available.
+            See NChartTypes.UserInteraction
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChart.VersionInfo">
+            <summary>
+            Get version info.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChart.VerticalRotationAngle">
+            <summary>
+            Vertical rotation (around the X-Axis) in radians (has effect in 3D mode only). The default value is -0.87 (-50 degrees).
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChart.Zoom">
+            <summary>
+            Zoom of the chart. The default zoom is 1.0f. The zooming is proportional. If you want non-proportional zoom in 2D
+            mode, you should use NChartValueAxis.ZoomToRegion.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChart.ZoomMode">
+            <summary>
+            Zoom mode used in chart. The default is NChartTypes.ZoomMode.Proportional.
+            See NChartTypes.ZoomMode
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChart.ZoomToPointMode">
+            <summary>
+            Flag that determines if chart is zoomed to the cursor (true) or to the screen center (false). The default value is false.
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChart.AddSeries(NChart3D_Android.NChartSeries)">
+            <summary>
+            Add series to chart.
+            See NChartSeries
+            </summary>
+            <param name="series">- series to add.</param>
+        </member>
+        <member name="M:NChart3D_Android.NChart.AddSeriesSettings(NChart3D_Android.NChartSeries.Settings)">
+            <summary>
+            Add global settings for the series. If you previously set some settings, they will be overwritten by new ones.
+            See NChartSeries.Settings
+            </summary>
+            <param name="settings">- settings for the series.</param>
+        </member>
+        <member name="M:NChart3D_Android.NChart.AlignCenter(System.Single)">
+            <summary>
+            Change position so that the chart is aligned to the center of the screen. This method takes effect in 3D mode only.
+            </summary>
+            <param name="duration">- duration of the animation in seconds.</param>
+        </member>
+        <member name="M:NChart3D_Android.NChart.BeginTransaction">
+            <summary>
+            Begin data changing transaction. You should call this method before any changes of chart settings/data in separate
+            thread. After the changes are made, you should call EndTransaction. The typical use-case of
+            multithreading in NChart3D is the streaming - the realtime data updating.
+            <p /><b>Note</b>: there is no sense to call this method in main thread.
+            See IsStreamingMode
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChart.Deserialize(System.Byte[])">
+            <summary>
+            Deserialize all settings of chart from data. You can obtain appropriate data by Serialize call.
+            </summary>
+            <param name="data">- data containing serialization of all the settings of chart.</param>
+            <returns>true if serialization was ok, false if it failed.</returns>
+        </member>
+        <member name="M:NChart3D_Android.NChart.EndTransaction">
+            <summary>
+            End data changing transaction.
+            See BeginTransaction
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChart.FitToScreen(System.Single)">
+            <summary>
+            Change zoom and position so that the chart fits the screen (with current rotation, if in 3D).
+            </summary>
+            <param name="duration">- duration of the animation in seconds.</param>
+        </member>
+        <member name="M:NChart3D_Android.NChart.FlushChanges">
+            <summary>
+            Synchronize all the changes with visual appearance. You may call this method after all your data is updated (it means
+            after you called UpdateData and NChart.PlayTransition because NChart.PlayTransition
+            only says that transition should start playing and does not wait till it plays completely) to ensure that the visual
+            appearance will be updated as soon as possible.
+            You may call this method on the big dataset to reduce lag between your UpdateData call and actual updating.
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChart.GetSeries">
+            <summary>
+            Array of series.
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChart.InitNativeLibrary">
+            <summary>
+            Normally you don't need to call this method.
+            Native library initialized automatically when NChartView is loaded.
+            Use this if you need NChart API before UI loaded to prevent UnsatisfiedLinkError.
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChart.PlayTransition(System.Single,System.Boolean)">
+            <summary>
+            Play animated transition from old state to new one. The old state is cached automatically, so the only thing you need
+            to do for animation is to change the series (by calling AddSeries / RemoveSeries / RemoveAllSeries) or data in
+            the series (by updating data source and calling UpdateData) and than call this method.
+            <br />State is cached when UpdateData is called.
+            </summary>
+            <param name="duration">- duration of transition's animation in seconds.</param>
+            <param name="reverse">- flag determining if animation should be played in reverse.</param>
+        </member>
+        <member name="M:NChart3D_Android.NChart.RebuildSeries">
+            <summary>
+            Force series to rebuild by reloading data from data source. Call this method when you know that the chart layout
+            (including layout of axes, so min and max values) has not changed, but the data in series has. This method invokes
+            UpdateSeries automatically. Data is not processed by this call, so values on axes remain unchanged. Use this method
+            if you are absolutely sure minimums and maximums have not changed!
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChart.Relayout">
+            <summary>
+            Force chart to relayout. Call this method if you made some changes but do not want to update data. A call of
+            UpdateData invokes relayout automatically.
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChart.RemoveAllSeries">
+            <summary>
+            Remove all series from chart.
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChart.RemoveAllSeriesSettings">
+            <summary>
+            Remove all the global settings for the series.
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChart.RemoveSeries(NChart3D_Android.NChartSeries)">
+            <summary>
+            Remove series from chart.
+            See NChartSeries
+            </summary>
+            <param name="series">- series to remove.</param>
+        </member>
+        <member name="M:NChart3D_Android.NChart.RemoveSeriesSettings(Java.Lang.Class)">
+            <summary>
+            Remove all the global settings for the series by given class.
+            </summary>
+            <param name="settingsClass">- class of the series settings to remove.</param>
+        </member>
+        <member name="M:NChart3D_Android.NChart.ResetTransformations(System.Single)">
+            <summary>
+            Reset all transformations to default values.
+            </summary>
+            <param name="duration">- duration of animation from current transformations to the beginning.</param>
+        </member>
+        <member name="M:NChart3D_Android.NChart.ResetTransition">
+            <summary>
+            Reset transition by cleaning up the cache made from the previous UpdateData call. Call this method if you want to
+            see animation from the default start positions as if you just started the app.
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChart.RotateHorizontallyToAngle(System.Single,System.Single,System.Single)">
+            <summary>
+            Rotate chart horizontally (around the Y-Axis) with animation (has effect in 3D mode only).
+            </summary>
+            <param name="angle">- angle around the horizontal axis in radians.</param>
+            <param name="duration">- duration of the animation in seconds.</param>
+            <param name="delay">- delay of animation in seconds.</param>
+        </member>
+        <member name="M:NChart3D_Android.NChart.RotateHorizontallyToAngle(System.Single,System.Single,System.Single,NChart3D_Android.NChartInterpolator)">
+            <summary>
+            Rotate chart horizontally (around the Y-Axis) with animation (has effect in 3D mode only).
+            </summary>
+            <param name="angle">- angle around the horizontal axis in radians.</param>
+            <param name="duration">- duration of the animation in seconds.</param>
+            <param name="delay">- delay of animation in seconds.</param>
+            <param name="interpolator">- interpolator that controls the angle changing over the time.</param>
+        </member>
+        <member name="M:NChart3D_Android.NChart.RotateVerticallyToAngle(System.Single,System.Single,System.Single)">
+            <summary>
+            Rotate chart vertically (around the X-Axis) with animation (has effect in 3D mode only).
+            </summary>
+            <param name="angle">- angle around the vertical axis in radians.</param>
+            <param name="duration">- duration of the animation in seconds.</param>
+            <param name="delay">- delay of animation in seconds.</param>
+        </member>
+        <member name="M:NChart3D_Android.NChart.RotateVerticallyToAngle(System.Single,System.Single,System.Single,NChart3D_Android.NChartInterpolator)">
+            <summary>
+            Rotate chart vertically (around the X-Axis) with animation (has effect in 3D mode only).
+            </summary>
+            <param name="angle">- angle around the vertical axis in radians.</param>
+            <param name="duration">- duration of the animation in seconds.</param>
+            <param name="delay">- delay of animation in seconds.</param>
+            <param name="interpolator">- interpolator that controls the angle changing over the time.</param>
+        </member>
+        <member name="M:NChart3D_Android.NChart.Serialize">
+            <summary>
+            Serialize all settings of chart to data. You can then restore the state of settings by calling Deserialize.
+            </summary>
+            <returns>data containing serialization of all the settings of the chart.</returns>
+        </member>
+        <member name="M:NChart3D_Android.NChart.SeriesSettings(Java.Lang.Class)">
+            <summary>
+            Get settings of given settings class. If there were no settings set, default settings container for the given
+            type is returned.
+            See NChartSeries.Settings
+            </summary>
+            <param name="settingsClass">- class of the series settings to search for.</param>
+            <returns>settings of the given class.</returns>
+        </member>
+        <member name="M:NChart3D_Android.NChart.StopTransition">
+            <summary>
+            Stop transition. This will stop all the transition animations, even if they are not played till the end or if they
+            where delayed and did not even start animating.
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChart.StreamData">
+            <summary>
+            Stream the data. This causes the updating of chart to display new states of points. The data are going to be
+            processed, so minimum and maximum on the axes may change. Use this method in the following use-case: if your set
+            of points was not changed, but the values in the states of points do, you can update the chart through this method
+            much faster than through regular UpdateData.
+            <br /><br /><b>Note</b>: The difference with RebuildSeries is that this method <b><u>does not</u></b> reload data from data source,
+            but <b><u>does</u></b> the optimized data processing (it's faster than regular data processing). Series will use the points they
+            already have (the points are mutable, so you can change their data anywhere you want).
+            <p /><br /><b>Note</b>: The difference with UpdateSeries is that this method is even faster and <b><u>does</u></b> the optimized data
+            processing. So use it to reflect some realtime "streaming" changes of data.
+            <p /><br /><b>Note</b>: This method requires IsStreamingMode to be on, pass true to SetStreamingMode for this.
+            <p /><br /><b>Note</b>: The first appearance of series should be initialized by the UpdateData call. Use this method to
+            change the already displayed series only.
+            <p /><br /><b>Note</b>: If you want to change the data in separate thread, you should wrap all the data changing routines in the
+            BeginTransaction and EndTransaction calls.
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChart.UpdateData">
+            <summary>
+            Force chart to be updated. Call this method when you want to reload data from the data source and rebuild the chart.
+            Data are processed by this call and minimums / maximums on axes are calculated.
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChart.UpdateSeries">
+            <summary>
+            Force series to be updated without reloading data from data source. Call this method when you want to reflect
+            some changes you made in the visual appearance of a series (brush, etc.). A call of RebuildSeries invokes
+            this method automatically.
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChart.ZoomTo(System.Single,System.Single,System.Single)">
+            <summary>
+            Set zoom for the chart with animation. The zooming is proportional. If you want non-proportional zoom in 2D mode,
+            you should use NChartValueAxis.ZoomToRegion.
+            </summary>
+            <param name="zoom">- new zoom of the chart.</param>
+            <param name="duration">- duration of animation in seconds.</param>
+            <param name="delay">- delay of animation in seconds.</param>
+        </member>
+        <member name="T:NChart3D_Android.NChartAreaSeries">
+            <summary>
+            The NChartAreaSeries class provides methods to display area series.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartAreaSeries.Settings">
+            <summary>
+            The NChartAreaSeries.Settings class provides global settings for NChartAreaSeries.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartAreaSeries.Marker">
+            <summary>
+            Marker that is shown on the points. This is null by default (no marker is displayed).
+            See NChartMarker
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartAxesPlane">
+            <summary>
+            The NChartAxesPlane class provides methods to display the axes plane for the cartesian system.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartAxesPlane.Color">
+            <summary>
+            Color of axes plane.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartAxesPlane.Width">
+            <summary>
+            Width of the axes plane in 3D scene units. Actually, one 3D scene unit is equal to half a screen size by the initial
+            zoom (therefore the space of 3D scene is actually nonlinear respectively to the screen). Of course you can try to
+            calculate out the value you need, but you would find it out easier experimentally. The default value is 0.05.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartAxis">
+            <summary>
+            The NChartAxis class provides common methods for axes on the chart.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartAxisGrid">
+            <summary>
+            The NChartAxisGrid class provides methods to display the grid for the chart's axes.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartAxisGrid.Color">
+            <summary>
+            Color of the grid lines.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartAxisGrid.Thickness">
+            <summary>
+            Thickness of the grid lines in pixels. The default value is 1.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartAxisTicks">
+            <summary>
+            The NChartAxisTicks class provides methods to manage ticks on the axes.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartAxisTicks.Color">
+            <summary>
+            Color of the ticks.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartAxisTicks.Length">
+            <summary>
+            Length of ticks in pixels. The default value is 10.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartAxisTicks.Thickness">
+            <summary>
+            Thickness of ticks in pixels. The default value is 1.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartAxisTicks.Type">
+            <summary>
+            Type of ticks.
+            See NChartTypes.AxisTickType
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartBandSeries">
+            <summary>
+            The NChartBandSeries class provides methods to display band series. This series type is for 2D only.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartBandSeries.Settings">
+            <summary>
+            The NChartBandSeries.Settings class provides global settings for NChartBandSeries.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartBandSeries.HighBorderColor">
+            <summary>
+            Color for the high border.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartBandSeries.LowBorderColor">
+            <summary>
+            Color for the low border.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartBarSeries">
+            <summary>
+            The NChartBarSeries class provides methods to display bar series.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartBarSeries.Settings">
+            <summary>
+            The NChartBarSeries.Settings class provides global settings for NChartBarSeries.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartBezierInterpolator">
+            <summary>
+            The NChartBezierInterpolator class provides bezier interpolator. If it is used, the animated values will changed in
+            time as follows: v(t) = (1 - t)^2 * v_from + 2 * t * (1 - t) * v_c + t^2 * v_from, where v_from, v_to are
+            respectively the start and end values, v_c is control point and t is the time.
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChartBezierInterpolator.#ctor(System.Single)">
+            <summary>
+            Create the bezier iterpolator with given control point.
+            </summary>
+            <param name="controlPoint">- control point. Very often it makes sense when the control point is equal to the end value ofanimated property.</param>
+        </member>
+        <member name="P:NChart3D_Android.NChartBezierInterpolator.ControlPoint">
+            <summary>
+            Control point of bezier interpolator.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartBrush">
+            <summary>
+            The NChartBrush class provides common methods of the brush that can be used to fill some areas.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartBrush.Opacity">
+            <summary>
+            Opacity of the brush in interval 0..1, 0 -- full transparency, 1 -- full opacity. The default value is 1.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartBrush.ShadingModel">
+            <summary>
+            Shading model that should be applied to an object if it's painted with this brush. You should understand
+            that different shading models are not always supported. For example, if you paint some background with the brush,
+            only plain shading (read -- no shading) is possible. But if you paint some 3d-object, different models can be
+            chosen (it is possible to draw this object as if it was lightened by some light source).
+            See NChartTypes.ShadingModel
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChartBrush.Copy">
+            <summary>
+            Being implemented in every child this method will return proper deep copy of object.
+            </summary>
+            <returns>deep copy of brush object</returns>
+        </member>
+        <member name="M:NChart3D_Android.NChartBrush.ScaleColorHSV(System.Single,System.Single,System.Single)">
+            <summary>
+            Scale components of brush's colors (if any) according to HSV color model. HSV-representation of each component of
+            each color is multiplied by corresponding scale factor.
+            </summary>
+            <param name="hScale">- scale for hue.</param>
+            <param name="sScale">- scale for saturation.</param>
+            <param name="vScale">- scale for value.</param>
+        </member>
+        <member name="M:NChart3D_Android.NChartBrush.ScaleColorRGB(System.Single,System.Single,System.Single)">
+            <summary>
+            Scale components of brush's colors (if any) by given values. Each component of each color is multiplied by a
+            corresponding scale factor.
+            </summary>
+            <param name="rScale">- scale for the red component.</param>
+            <param name="gScale">- scale for the green component.</param>
+            <param name="bScale">- scale for the blue component.</param>
+        </member>
+        <member name="T:NChart3D_Android.NChartBrushScale">
+            <summary>
+            The NChartBrushScale class provides scale that transforms values into brushes like a step mapping function.
+            <br />
+            The scale contains array of reference values and array of brushes. It returns brush for given value
+            according to these arrays:
+            <br /><code><pre>
+            brushs[n]
+            values[n - 1]
+            ...
+            brushs[4]
+            values[3]
+            brushs[3]
+            values[2]
+            brushs[2]
+            values[1]
+            brushs[1]
+            values[0]
+            brushs[0]
+            </pre></code>
+            This is equivalent to the following pseudo code:
+            <code><pre>
+            if value &lt;= values[0] return brushes[0];
+            if value &gt; values[i] and value &lt;= values[i + 1] return brush[i + 1];
+            if value &gt; values[last] return brush[last]
+            </pre></code><br />
+            So the array of brushes should contain n elements and array of values should contain n - 1. Values should be sorted
+            (NChartBrushScale does not sort them automatically). If they are not, it can lead to strange results. If brush index goes
+            out of range, <code>null</code> is returned.
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChartBrushScale.#ctor(NChart3D_Android.NChartBrush[],Java.Lang.Number[])">
+            <summary>
+            Create new instance of NChartBrushScale with arrays of brushes and values.
+            </summary>
+            <param name="brushes">- array of brushes represented with Com.nulana.NChart.NChartBrush</param>
+            <param name="values">- array of values represented with Number</param>
+        </member>
+        <member name="P:NChart3D_Android.NChartBrushScale.Gradient">
+            <summary>
+            Flag determining if scale can return gradient colors. The default value is <code>true</code>.
+            <br /> The gradient scale assumes that the array of brushes contains instances of NChartSolidColorBrush and
+            linearly interpolates colors that correspond to the neighbor values.
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChartBrushScale.BrushForValue(Java.Lang.Number)">
+            <summary>
+            Get value for brush.
+            </summary>
+            <param name="value">- value to get brush for.</param>
+            <returns>brush for given value.</returns>
+        </member>
+        <member name="M:NChart3D_Android.NChartBrushScale.GetBrushes">
+            <summary>
+            Array of brushes.
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChartBrushScale.GetValues">
+            <summary>
+            Array of values.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartBubbleSeries">
+            <summary>
+            The NChartBubbleSeries class provides methods to display bubble series.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartBubbleSeries.Settings">
+            <summary>
+            The NChartBubbleSeries.Settings class provides global settings for NChartBubbleSeries.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartBubbleSeries.Marker">
+            <summary>
+            Default marker of the series that is displayed as a bubble. It is null by default.
+            See NChartMarker
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartCandlestickSeries">
+            <summary>
+            The NChartCandlestickSeries class provides methods to display candlestick series.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartCandlestickSeries.Settings">
+            <summary>
+            The NChartCandlestickSeries.Settings class provides global settings for NChartCandlestickSeries.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartCandlestickSeries.Settings.CylindersResolution">
+            <summary>
+            The resolution of cylinders. Resolution is the amount of vertices that build the circle.
+            <br />For example if you want to get a square candlestick, you should set resolution to 4. If you want to get a cylindrical
+            candlestick, you may set a larger value. But the larger is the resolution, the more memory is used and the slower the
+            rendering will be, so you should find out the minimal acceptable value. A good value for cylinder is 16 or 20.
+            The default value is 20.
+            <br /><b>Note</b>: This value cannot be less than 3 and greater than 32.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartCandlestickSeries.NegativeBorderColor">
+            <summary>
+            Color for the border of negative candles.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartCandlestickSeries.PositiveBorderColor">
+            <summary>
+            Color for the border of positive candles.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartCaption">
+            <summary>
+            The NChartCaption class provides methods to display caption of the chart.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartCaption.BlockAlignment">
+            <summary>
+            Alignment of the caption. The default value is NChartTypes.CaptionBlockAlignment.TopCenter.
+            See NChartTypes.CaptionBlockAlignment
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartCartesianSystem">
+            <summary>
+            The NChartCartesianSystem class provides methods for managing the chart's cartesian coordinate system.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartCartesianSystem.BorderColor">
+            <summary>
+            Color of the border around the cartesian coordinate system.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartCartesianSystem.BorderThickness">
+            <summary>
+            Thickness of the border around the cartesian coordinate system.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartCartesianSystem.BorderVisible">
+            <summary>
+            Flag that determines if the border around the cartesian coordinate system is visible (true) or not (false).
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartCartesianSystem.SXAlongY">
+            <summary>
+            Grid that goes from secondary the X-axis along the Y-axis.
+            See NChartAxisGrid
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartCartesianSystem.SXAlongZ">
+            <summary>
+            Grid that goes from secondary the X-axis along the Z-axis.
+            See NChartAxisGrid
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartCartesianSystem.SXAxis">
+            <summary>
+            Secondary X-axis of the cartesian coordinate system.
+            See NChartValueAxis
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartCartesianSystem.SYAlongX">
+            <summary>
+            Grid that goes from secondary the Y-axis along the X-axis.
+            See NChartAxisGrid
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartCartesianSystem.SYAlongZ">
+            <summary>
+            Grid that goes from secondary the Y-axis along the Z-axis.
+            See NChartAxisGrid
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartCartesianSystem.SYAxis">
+            <summary>
+            Secondary Y-axis of the cartesian coordinate system.
+            See NChartValueAxis
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartCartesianSystem.SZAlongX">
+            <summary>
+            Grid that goes from secondary the Z-axis along the X-axis.
+            See NChartAxisGrid
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartCartesianSystem.SZAlongY">
+            <summary>
+            Grid that goes from secondary the Z-axis along the Y-axis.
+            See NChartAxisGrid
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartCartesianSystem.SZAxis">
+            <summary>
+            Secondary Z-axis of the cartesian coordinate system.
+            See NChartValueAxis
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartCartesianSystem.ValueAxesType">
+            <summary>
+            Type of axes. You may use additional and percent axes only if you provide ticks for category axes. For example, if
+            you are about to display additional columns, you should provide ticks for the X and Z axes. If you are about to
+            display additional bars, you should provide ticks for Y and Z axes respectively (because bars are stretched along
+            the X-axis).
+            If you didn't provide ticks for category axes, changing the type to additional or percent takes no effect for the
+            series displayed even though states of their points are aligned to the grid (see NChartPointState for details).
+            See NChartTypes.ValueAxesType
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartCartesianSystem.XAlongY">
+            <summary>
+            Grid that goes from the X-axis along the Y-axis.
+            See NChartAxisGrid
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartCartesianSystem.XAlongZ">
+            <summary>
+            Grid that goes from the X-axis along the Z-axis.
+            See NChartAxisGrid
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartCartesianSystem.XAxis">
+            <summary>
+            X-axis of the cartesian coordinate system.
+            See NChartValueAxis
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartCartesianSystem.XYPlane">
+            <summary>
+            XY-axes plane of the cartesian coordinate system.
+            See NChartAxesPlane
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartCartesianSystem.XZPlane">
+            <summary>
+            XZ-axes plane of the cartesian coordinate system.
+            See NChartAxesPlane
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartCartesianSystem.YAlongX">
+            <summary>
+            Grid that goes from the Y-axis along the X-axis.
+            See NChartAxisGrid
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartCartesianSystem.YAlongZ">
+            <summary>
+            Grid that goes from the Y-axis along the Z-axis.
+            See NChartAxisGrid
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartCartesianSystem.YAxis">
+            <summary>
+            Y-axis of the cartesian coordinate system.
+            See NChartValueAxis
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartCartesianSystem.YZPlane">
+            <summary>
+            YZ-axes plane of the cartesian coordinate system.
+            See NChartAxesPlane
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartCartesianSystem.ZAlongX">
+            <summary>
+            Grid that goes from the Z-axis along the X-axis.
+            See NChartAxisGrid
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartCartesianSystem.ZAlongY">
+            <summary>
+            Grid that goes from the Z-axis along the Y-axis.
+            See NChartAxisGrid
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartCartesianSystem.ZAxis">
+            <summary>
+            Z-axis of the cartesian coordinate system.
+            See NChartValueAxis
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartColumnSeries">
+            <summary>
+            The NChartColumnSeries class provides methods to display column series.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartColumnSeries.Settings">
+            <summary>
+            NChartColumnSeriesSettings class provides global settings for NChartColumnSeries.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartColumnSeries.Settings.ColumnGroupFillRatio">
+            <summary>
+            Column group fill ratio for series that determines the amount of place for one column group.
+            For example, if this fill ratio is 1.0, columns in the group are sticked together with no gaps between them.
+            If the fill ratio is 0.5, columns in the group have gaps and the total width of the gaps is equal to the total width all columns in the group.
+            <p /><br />The default value is 1.0.
+            <br />The difference from <code>fillRatio</code> is that <code>fillRatio</code> deals with the gap
+            between column groups and <code>columnGroupFillRatio</code> is responsible for the gap between columns inside the group.
+            See ShouldGroupColumns
+            See GetFillRatio
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartColumnSeries.Settings.CylindersResolution">
+            <summary>
+            Resolution is the amount of vertices that build the circle. For example if you want to
+            get a square column, you should set resolution to 4. If you want to get a cylindrical column, you may set a larger
+            value. But the larger is the resolution, the more memory is used and the slower the rendering will be, so you should
+            find out the minimal acceptable value. A good value for cylinder is 16 or 20.
+            <br />The default value is 4.
+            <br />This value cannot be less than 3 and greater than 32.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartColumnSeries.Settings.ShouldSmoothCylinders">
+            <summary>
+            Flag that determines if cylinders should appear smooth (true) of faced (false). Generally if you specify low resolution
+            (see SetCylindersResolution for details) when the individual faces are still visible, it is a good idea to have
+            cylinders faced and vice versa.
+            <br />The default value is false.
+            <br />If cylinders are faced, it consumes more memory than if they don't by the same resolution.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartCoordSystem">
+            <summary>
+            The NChartCoordSystem class provides basic methods for managing the chart's coordinate system.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartCoordSystem.Margin">
+            <summary>
+            Margin of the coordinate system.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartDataSmoother">
+            <summary>
+            The NChartDataSmoother class provides basic data smoother used to create smooth charts by only a few points.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartDataSmoother2D">
+            <summary>
+            The NChartDataSmoother2D class provides data smoother used to create smooth lines on the charts by only a few points.
+            Typically this smoother is used for line and area series.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartDataSmoother2D.Resolution">
+            <summary>
+            Resolution of the spline. Normally it is detected automatically, however you always can override it.
+            Resolution is the number of subdivisions by the step dimension.
+            See ShouldAutodetectResolution
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartDataSmoother2D.ShouldAutodetectResolution">
+            <summary>
+            Flag determining if resolution should be autodetected (true) or not (false). The default value is true. If you assign
+            <code>resolution</code> property, this value is automatically set to false.
+            See SetResolution
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartDataSmoother2D.ShouldAutodetectStep">
+            <summary>
+            Flag determining if step should be autodetected (true) or not (false). The default value is true. If you assign
+            <code>step</code> property, this value is automatically set to false.
+            See SetStep
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartDataSmoother2D.Step">
+            <summary>
+            Maximal step that should be between two points. Normally it is detected automatically, however you always can
+            override it.
+            See SetShouldAutodetectStep
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartDataSmoother2D.StepDimension">
+            <summary>
+            Key of the value that should be interpreted as step dimension. Typically it is NChartValueX (which is the default
+            value), however for bar series it should be NChartValueY.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartDataSmoother2D.ValueDimension">
+            <summary>
+            Key of the value that should be interpreted as height dimension. Typically it is NChartValueY (which is the default
+            value), however for bar series it should be NChartValueX.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartFont">
+            <summary>
+            NChartFont is an immutable container for three font characteristics: name, style and size.
+            Except size it acts like Android <code>Typeface</code> class.
+            See <a target="_blank" href="http://developer.android.com/reference/android/graphics/Typeface.html">http://developer.android.com/reference/android/graphics/Typeface.html</a></summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartFont.FontDefault">
+            <summary>
+            System default font.
+            See <a target="_blank" href="http://developer.android.com/reference/android/graphics/Typeface.html#DEFAULT">http://developer.android.com/reference/android/graphics/Typeface.html#DEFAULT</a></summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartFont.FontDefaultBold">
+            <summary>
+            System <b>default bold</b> font.
+            See <a target="_blank" href="http://developer.android.com/reference/android/graphics/Typeface.html#DEFAULT_BOLD">http://developer.android.com/reference/android/graphics/Typeface.html#DEFAULT_BOLD</a></summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartFont.FontMonospace">
+            <summary>
+            System <font face="monospace">monospace</font> font.
+            See <a target="_blank" href="http://developer.android.com/reference/android/graphics/Typeface.html#MONOSPACE">http://developer.android.com/reference/android/graphics/Typeface.html#MONOSPACE</a></summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartFont.FontSansSerif">
+            <summary>
+            System <font face="sans-serif">sans serif</font> font.
+            See <a target="_blank" href="http://developer.android.com/reference/android/graphics/Typeface.html#SANS_SERIF">http://developer.android.com/reference/android/graphics/Typeface.html#SANS_SERIF</a></summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartFont.FontSerif">
+            <summary>
+            System <font face="serif">serif</font> font.
+            See <a target="_blank" href="http://developer.android.com/reference/android/graphics/Typeface.html#SERIF">http://developer.android.com/reference/android/graphics/Typeface.html#SERIF</a></summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartFont.StyleBold">
+            <summary>
+                <b>Bold style.</b>
+            See <a target="_blank" href="http://developer.android.com/reference/android/graphics/Typeface.html#BOLD">http://developer.android.com/reference/android/graphics/Typeface.html#BOLD</a></summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartFont.StyleBoldItalic">
+            <summary>
+                <b>
+                    <i>Bold italic style.</i>
+                </b>
+            See <a target="_blank" href="http://developer.android.com/reference/android/graphics/Typeface.html#BOLD_ITALIC">http://developer.android.com/reference/android/graphics/Typeface.html#BOLD_ITALIC</a></summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartFont.StyleItalic">
+            <summary>
+                <i>Italic style.</i>
+            See <a target="_blank" href="http://developer.android.com/reference/android/graphics/Typeface.html#ITALIC">http://developer.android.com/reference/android/graphics/Typeface.html#ITALIC</a></summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartFont.StyleNormal">
+            <summary>
+            Default style.
+            See <a target="_blank" href="http://developer.android.com/reference/android/graphics/Typeface.html#NORMAL">http://developer.android.com/reference/android/graphics/Typeface.html#NORMAL</a></summary>
+        </member>
+        <member name="M:NChart3D_Android.NChartFont.#ctor(System.String,System.Int32,System.Single)">
+            <summary>
+            Creates a font with the specified characteristics.
+            </summary>
+            <param name="name">one of the constants predefined above or any other existing font name</param>
+            <param name="style">one of the style constants predefined above</param>
+            <param name="size">font size in <b>density independent points</b></param>
+        </member>
+        <member name="M:NChart3D_Android.NChartFont.#ctor(System.Single)">
+            <summary>
+            Creates system default font with normal style.
+            </summary>
+            <param name="size">font size in <b>density independent points</b></param>
+        </member>
+        <member name="P:NChart3D_Android.NChartFont.Name">
+            <summary>
+            May return font name passed to constructor NChartFont or FontDefault if NChartFont was used.
+            <br />
+            Read-only field.
+            </summary>
+            <returns>font name</returns>
+        </member>
+        <member name="P:NChart3D_Android.NChartFont.Size">
+            <summary>
+            Font size used in constructor
+            <br />
+            Read-only field.
+            </summary>
+            <returns>font size in <b>density independent points</b></returns>
+        </member>
+        <member name="P:NChart3D_Android.NChartFont.Style">
+            <summary>
+            May return style passed to constructor NChartFont or StyleNormal if NChartFont was used.
+            <br />
+            Read-only field.
+            </summary>
+            <returns>font style</returns>
+        </member>
+        <member name="T:NChart3D_Android.NChartFunnelSeries">
+            <summary>
+            The NChartFunnelSeries class provides methods to display funnel series.
+            <p>
+            This chart type has some specialties:
+            <br /> - All axes are ignored, so it is reasonable to hide the axes by displaying funnel chart.
+            <br /> - Only the first point from each series, all other points are ignored.
+            <br /> - Only Y-value from the point is used, all the other values are ignored.
+            </p></summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartFunnelSeries.Settings">
+            <summary>
+            The NChartFunnelSeries.Settings class provides global settings for NChartFunnelSeries.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartFunnelSeries.Settings.GapSum">
+            <summary>
+            The sum of gaps between the points in the funnel chart in interval [0, 1]. The default value is 0.
+            <p /><br /> Actual gap between the points is calculated as <code>gapSum / (countOfPoints - 1)</code> and 1
+            corresponds to the height of the chart's plot area.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartFunnelSeries.Settings.Resolution">
+            <summary>
+            The resolution of funnel. Resolution is the amount of vertices that build the circle. For example if you want to
+            get a square funnel, you should set resolution to 4. If you want to get a cylindrical funnel, you may set a larger
+            value. But the larger is the resolution, the more memory is used and the slower the rendering will be, so you should
+            find out the minimal acceptable value. A good value for funnel is 80 or 160.
+            <br />
+            The default value is 120.
+            <br /><b>This value cannot be less than 3 and greater than 360.</b></summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartFunnelSeries.Settings.ShouldSmooth">
+            <summary>
+            Flag that determines if funnel should appear smooth (true) of faced (false). Generally if you specify low resolution
+            when the individual faces are still visible, it is a good idea to have funnel faced and vice versa.
+            <br />
+            The default value is false.
+            <br /><b>If funnel are faced, it consumes more memory than if they don't by the same resolution.</b>
+            See GetResolution
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartFunnelSeries.BottomRadius">
+            <summary>
+            Bottom radius of the series in interval [0, 1]. The default value is 0.5.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartFunnelSeries.TopRadius">
+            <summary>
+            Top radius of the series in interval [0,1]. The default value is 0.5.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartGradientBrush">
+            <summary>
+            The NChartGradientBrush class provides common methods for the brush that fills an area with some gradient.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartGradientBrush.Stop">
+            <summary>
+            The NChartGradientBrush.Stop class provides a control point of the gradient defining some color and it's position on the
+            area being filled with a gradient. The gradient is constructed from multiple gradient-stops.
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChartGradientBrush.Stop.#ctor(System.Int32,System.Double)">
+            <summary>
+            Create gradient stop with color and offset.
+            </summary>
+            <param name="color">- the color of gradient stop.</param>
+            <param name="offset">- the offset of gradient stop.</param>
+        </member>
+        <member name="P:NChart3D_Android.NChartGradientBrush.Stop.Color">
+            <summary>
+            Color of the gradient-stop.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartGradientBrush.Stop.Offset">
+            <summary>
+            Offset of gradient-stop in the whole gradient. Offset is in interval 0..1. 0 means the start of the area filled
+            with a gradient, 1 means the end of it. For example if you want to create a gradient of two colors, it's common to
+            use 0.0 as the offset for the first color and 1.0 for the second.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartHeatmapSeries">
+            <summary>
+            The NChartHeatmapSeries class provides methods to display heatmap series.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartHeatmapSeries.Settings">
+            <summary>
+            The NChartHeatmapSeries.Settings class provides global settings for Com.nulana.NChart.NChartHeatmapSeries.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartInterpolator">
+            <summary>
+            The NChartInterpolator class provides base class for different interpolators that can be used to control animations.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartLabel">
+            <summary>
+            The NChartLabel class provides methods to display text on the chart.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartLabel.Font">
+            <summary>
+            Font of the label's text.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartLabel.MaxWidth">
+            <summary>
+            Maximal width of the label's text in pixels. If the text is bigger than the given size, lines will be broken
+            according to the wrapping mode. If 0, this option is ignored. The default value is 0.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartLabel.Text">
+            <summary>
+            Text to display in the label.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartLabel.TextAlignment">
+            <summary>
+            Alignment of the label's text.
+            See Android.graphics.Paint.Align
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartLabel.TextColor">
+            <summary>
+            Color of the label's text.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartLabel.TextWrapping">
+            <summary>
+            Wrapping mode of the label's text.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartLegend">
+            <summary>
+            The NChartLegend class provides methods to display the legend of the chart.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartLegend.BlockAlignment">
+            <summary>
+            Alignment of the legend.
+            <br />Please note, that if alignment is NChartTypes.LegendBlockAlignment.Left, NChartTypes.LegendBlockAlignment.Right,
+            NChartTypes.LegendBlockAlignment.Bottom or NChartTypes.LegendBlockAlignment.Top, the border radius is
+            ignored (assumed to be 0).
+            See NChartTypes.LegendBlockAlignment
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartLegend.ColumnCount">
+            <summary>
+            Number of columns in legend. If 0 or less than 0, entries are aligned in lines with no columns.
+            The default value is 0.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartLegend.ContentAlignment">
+            <summary>
+            Alignment of legend's content in legend's area. The default value is NChartTypes.LegendContentAlignment.Center.
+            See NChartTypes.LegendContentAlignment
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartLegend.Font">
+            <summary>
+            Font of the legend's text.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartLegend.Footer">
+            <summary>
+            Label that is placed on the bottom of the legend. It's null by default.
+            See NChartLabel
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartLegend.Header">
+            <summary>
+            Label that is placed on the top of the legend. It's null by default.
+            See NChartLabel
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartLegend.LineBreakMode">
+            <summary>
+            Line break mode of the legend's text.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartLegend.MaxSize">
+            <summary>
+            Maximal size of legend in pixels. The default value is 200. If the legend's block alignment is so that the legend
+            grows vertically, it is interpreted as maximal height, if the legend grows horizontally -- as maximal width.
+            <br />To be more precise, the mapping works as follows
+            <ul><li> by NChartTypes.LegendBlockAlignment.BottomLeft it is height;</li><li> by NChartTypes.LegendBlockAlignment.BottomCenter it is height;</li><li> by NChartTypes.LegendBlockAlignment.BottomRight it is height;</li><li> by NChartTypes.LegendBlockAlignment.CenterLeft it is width;</li><li> by NChartTypes.LegendBlockAlignment.CenterCenter it is ignored;</li><li> by NChartTypes.LegendBlockAlignment.CenterRight it is width;</li><li> by NChartTypes.LegendBlockAlignment.TopLeft it is height;</li><li> by NChartTypes.LegendBlockAlignment.TopCenter it is height;</li><li> by NChartTypes.LegendBlockAlignment.TopRight it is height;</li><li> by NChartTypes.LegendBlockAlignment.Left it is width;</li><li> by NChartTypes.LegendBlockAlignment.Right it is width;</li><li> by NChartTypes.LegendBlockAlignment.Bottom it is height;</li><li> by NChartTypes.LegendBlockAlignment.Top it is height.</li></ul></summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartLegend.MinimalEntriesPadding">
+            <summary>
+            Minimal padding between entries in pixels. The default value is 10.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartLegend.Orientation">
+            <summary>
+            Orientation of the legend.
+            See NChartTypes.LegendOrientation
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartLegend.Origin">
+            <summary>
+            Origin of the legend. It's a starting point that has effect only with orientation set to one of "free"-kinds.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartLegend.ScrollBarColor">
+            <summary>
+            Color of the legend's scrollbar.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartLegend.ScrollerPadding">
+            <summary>
+            Padding inside the scroller.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartLegend.ShouldAutodetectColumnCount">
+            <summary>
+            Flag determining if <code>columnCount</code> should be detected automatically to ensure good-looking legend (true) or not (false).
+            If this property is true, the value set to <code>columnCount</code> takes no effect. The default value is false.
+            See GetColumnCount
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartLegend.TextColor">
+            <summary>
+            Color of the legend's text.
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChartLegend.HandlerNormalColor">
+            <summary>
+            Get color of legend's handler normal state.
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChartLegend.HandlerPushedColor">
+            <summary>
+            Get color of legend's handler pushed state.
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChartLegend.SetHandlerColors(System.Int32,System.Int32)">
+            <summary>
+            Set color for legend's handler.
+            </summary>
+            <param name="normal">- color for normal state.</param>
+            <param name="pushed">- color for pushed state.</param>
+        </member>
+        <member name="T:NChart3D_Android.NChartLineSeries">
+            <summary>
+            The NChartLineSeries class provides methods to display line series.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartLineSeries.Settings">
+            <summary>
+            The NChartLineSeries.Settings class provides global settings for NChartLineSeries.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartLineSeries.LineThickness">
+            <summary>
+            Thickness of the line in pixels. The default value is 2.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartLineSeries.Marker">
+            <summary>
+            Marker that is shown on the points. This is null by default (no marker is displayed).
+            See NChartMarker
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartLineSeries.NoDataColor">
+            <summary>
+            Color of the line in the points with no data.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartLinearGradientBrush">
+            <summary>
+            The NChartLinearGradientBrush class provides a brush that fills the area with a linear gradient.
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChartLinearGradientBrush.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Create linear gradient brush with given colors. This is a convenient equivalent to creating stops, arraying them and
+            then setting the array to the new instance of the linear gradient brush.
+            </summary>
+            <param name="color1">- first color of gradient.</param>
+            <param name="color2">- second color of gradient.</param>
+        </member>
+        <member name="T:NChart3D_Android.NChartLinearInterpolator">
+            <summary>
+            The NChartLinearInterpolator class provides linear interpolator. If it is used, the animated values will changed in
+            time as follows: v(t) = (1 - t) * v_from + t * v_to, where v_from, v_to are respectively the start and end values,
+            t is the time.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartMarker">
+            <summary>
+            The NChartMarker class provides methods to display markers in the points of the chart.
+            <br />
+            Each series, that can display markers, has the property default marker. If you set it to series, this will be a
+            default for all the points. However you can set the marker for the point and those values, that you set to this
+            marker, will override the corresponding values from the default marker. For example, if you set the marker for series
+            and change its size, shape and resolution, and after that set another marker to some point and change its size, all
+            points will have the markers with shape and resolution from the default marker. The size of all points except the one
+            you modified will also be the same (obtained from default marker too). And the modified point will differ in size.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartMarker.AngleX">
+            <summary>
+            Rotation of the marker around the X-axis in radians. This property is used for "volumetric" markers only,
+            this means for those that are not plain.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartMarker.AngleY">
+            <summary>
+            Rotation of the marker around the Y-axis in radians. This property is used for "volumetric" markers only,
+            this means for those that are not plain.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartMarker.AngleZ">
+            <summary>
+            Rotation of the marker around the Z-axis in radians. This property is used for "volumetric" markers only,
+            this means for those that are not plain.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartMarker.BorderBrush">
+            <summary>
+            Brush of the marker's border. Please note, that only markers with predefined shapes have borders. If you use model,
+            border's properties are ignored.
+            See NChartBrush
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartMarker.BorderThickness">
+            <summary>
+            Thickness of the marker's border in pixels. Please note, that only markers with predefined shapes have borders.
+            If you use a model, the border's properties are ignored.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartMarker.Brush">
+            <summary>
+            Brush that fills the marker.
+            See NChartBrush
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartMarker.Model">
+            <summary>
+            Model of the marker. This property is null by default. By setting this property, shape is automatically set to
+            NChartTypes.MarkerShape. If the shape is not NChartTypes.MarkerShape, this property has no
+            effect, even if it is not null. If the shape is NChartTypes.MarkerShape and model is null, it is equivalent
+            to the shape set to NChartTypes.MarkerShape.None, so no marker is displayed.
+            See NChartModel
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartMarker.Resolution">
+            <summary>
+            Resolution of the marker. Resolution is the amount of vertices that build the circle (sphere). It is used if marker's
+            shape is NChartTypes.MarkerShape.Circle or NChartTypes.MarkerShape.Sphere.
+            <br />
+            This value cannot be less than 3 and greater than 32.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartMarker.Shape">
+            <summary>
+            Shape of the marker. There are predefined shapes and NChartTypes.MarkerShape that requires the model to
+            be set.
+            See NChartTypes.MarkerShape
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartMarker.Size">
+            <summary>
+            Size of the marker. The size can be in any unit you want. It is rescaled to pixels with the help of
+            NChartSizeAxis.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartModel">
+            <summary>
+            The NChartModel provides the container for the 3D model that can be loaded from file and then be displayed as a marker
+            (see NChartMarker for details).
+            PLY (<a href="http://en.wikipedia.org/wiki/PLY_%28file_format%29">http://en.wikipedia.org/wiki/PLY_(file_format)</a>) with triangles and geometry of 3DS
+            (<a href="http://en.wikipedia.org/wiki/.3ds">http://en.wikipedia.org/wiki/.3ds</a>) are supported.
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChartModel.#ctor(System.Byte[])">
+            <summary>
+            Create model with data.
+            </summary>
+            <param name="data">- data containing the model.</param>
+        </member>
+        <member name="M:NChart3D_Android.NChartModel.#ctor(System.String)">
+            <summary>
+            Create model with contents of file.
+            </summary>
+            <param name="filePath">- path to file containing the model.</param>
+        </member>
+        <member name="P:NChart3D_Android.NChartModel.TrianglesCount">
+            <summary>
+            Number of triangles in the model.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartModel.VertexCount">
+            <summary>
+            Number of vertices in the model.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartOHLCSeries">
+            <summary>
+            The NChartOHLCSeries class provides methods to display OHLC series.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartOHLCSeries.Settings">
+            <summary>
+            The NChartOHLC.Series class provides global settings for NChartOHLCSeries.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartOHLCSeries.NegativeColor">
+            <summary>
+            Color for negative candles.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartOHLCSeries.PositiveColor">
+            <summary>
+            Color for positive candles.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartObject">
+            <summary>
+            The NChartObject class provides common methods for all the objects on the chart.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartObject.Visible">
+            <summary>
+            Flag that determines if the object is visible or not. The default value is "true".
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartPieSeries">
+            <summary>
+            The NChartPieSeries class provides methods to display pie series.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartPieSeries.Settings">
+            <summary>
+            The NChartPieSeries.Settings class provides global settings for NChartPieSeries.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartPieSeries.Settings.CenterCaption">
+            <summary>
+            Caption that appears in the center of pie.
+            See NChartTooltip
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartPieSeries.Settings.HoleRatio">
+            <summary>
+            Hole radius ratio that determines size of the hole for pie series relatively to the whole pie radius. The default
+            value 0.1.
+            <p><b>Note</b>: This value cannot be less than 0 and greater than 1.0.
+            </p></summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartPlaced">
+            <summary>
+            The NChartPlaced class provides basic methods for objects displaying some textual information on the screen.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartPlaced.Background">
+            <summary>
+            Brush filling the background of the text container.
+            See NChartBrush
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartPlaced.BorderColor">
+            <summary>
+            Color of the border that is drawn around the text container.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartPlaced.BorderRadius">
+            <summary>
+            Corner rounding radius (in pixels) of the border that is drawn around the text container.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartPlaced.BorderThickness">
+            <summary>
+            Thickness of the border (in pixels) that is drawn around the text container.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartPlaced.Margin">
+            <summary>
+            Margin of the text container in pixels (spacing from the bounds of the enclosing area).
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartPlaced.Opacity">
+            <summary>
+            Opacity of the text container. Value should be in 0..1. The default value is 1.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartPlaced.Padding">
+            <summary>
+            Padding of the text container in pixels (spacing to sub-areas).
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartPoint">
+            <summary>
+            The NChartPoint class provides methods to manage chart's points.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartPoint.Tag">
+            <summary>
+            Tag of the point. You may use it as you want.
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChartPoint.#ctor(NChart3D_Android.NChartPointState[],NChart3D_Android.NChartSeries)">
+            <summary>
+            Create point with an array of states.
+            See NChartSeries
+            </summary>
+            <param name="states">- the array of point states. See NChartPointState for details.</param>
+            <param name="series">- the series the point belongs to.</param>
+        </member>
+        <member name="M:NChart3D_Android.NChartPoint.#ctor(NChart3D_Android.NChartPointState,NChart3D_Android.NChartSeries)">
+            <summary>
+            Create point with a single state.
+            See NChartSeries
+            </summary>
+            <param name="state">- the state if point. See NChartPointState for details.</param>
+            <param name="series">- the series the point belongs to.</param>
+        </member>
+        <member name="P:NChart3D_Android.NChartPoint.CurrentState">
+            <summary>
+            Direct access to current state. This is a bit faster and more convenient than a query element of the states' array by
+            GetCurrentStateIndex. If a point was created with a single state, this property is the only way to access it.
+            See NChartPointState
+            </summary>
+            <returns>current state.</returns>
+        </member>
+        <member name="P:NChart3D_Android.NChartPoint.CurrentStateIndex">
+            <summary>
+            If a point was created with a single state, this property always returns 0.
+            </summary>
+            <returns>index of current state.</returns>
+        </member>
+        <member name="P:NChart3D_Android.NChartPoint.HighlightColor">
+            <summary>
+            Highlight color. Some points can be highlighted by color, for example in column, pie or bubble
+            (where the points are individual objects). In series like line and area the color highlight can be applied to the
+            markers, so for these series this property has effect only if the marker is set.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartPoint.HighlightShift">
+            <summary>
+            Highlight shift. Some points can be highlighted by shift, for example in pie. The shift is set in scene units.
+            For example, the radius of pie is 1 scene unit, so you can use this value as a reference.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartPoint.Label">
+            <summary>
+            It is null by default. The label does not change its content automatically.
+            By altering its text, you can display any information you want, but you should do it yourself.
+            Label is similar to <code>tooltip</code>, but it is placed in the top of the point by default.
+            You can have <code>tooltip</code> and <code>label</code> simultaneously displaying different information.
+            See NChartTooltip
+            See SetTooltip
+            </summary>
+            <returns>label that is shown near the point.</returns>
+        </member>
+        <member name="P:NChart3D_Android.NChartPoint.Series">
+            <summary>
+            See NChartSeries
+            </summary>
+            <returns>Series the point belongs to.</returns>
+        </member>
+        <member name="P:NChart3D_Android.NChartPoint.Tooltip">
+            <summary>
+            The tooltip is just a label, it does not change its content automatically.
+            By altering its text, you can display any information you want, but you should do it yourself.
+            <br />Tooltip is similar to <code>label</code>, but it is placed in the center of the point by default.
+            You can have <code>tooltip</code> and <code>label</code> simultaneously displaying different information.
+            See NChartTooltip
+            See SetLabel
+            </summary>
+            <returns>tooltip that is shown on the point. It is null by default.</returns>
+        </member>
+        <member name="M:NChart3D_Android.NChartPoint.GetStates">
+            <summary>
+            If a point was created with a single state, the array of states
+            is not allocated and this property returns null.
+            See NChartPointState
+            </summary>
+            <returns>array of states.</returns>
+        </member>
+        <member name="M:NChart3D_Android.NChartPoint.Highlight(System.Int32,System.Single,System.Single)">
+            <summary>
+            Highlight point using the highlight settings done by <code>highlightColor</code> and <code>highlightShift</code> properties.
+            See NChartTypes.HighlightType
+            See SetHighlightColor
+            See SetHighlightShift
+            </summary>
+            <param name="mask">- mask of highlighting. See NChartTypes.HighlightType enum for details. You may use multiple constantsconcatenated with bitwise OR.</param>
+            <param name="duration">- duration of highlighting animation in seconds.</param>
+            <param name="delay">- delay to start of highlighting animation in seconds.</param>
+        </member>
+        <member name="T:NChart3D_Android.NChartPointState">
+            <summary>
+            The NChartPointState class provides methods to store state of a point. The state of a point is a complex of parameters
+            such as position, brush used etc. for a particular period for a particular point. Each chart point should have at
+            least one state representing the data from the data source for this point, but it can have multiple states. This
+            allows the animation of a chart through time, while each NChartPointState represents the state of the point in a
+            particular time tick. The transition from one state to another is animated automatically by linear interpolation of
+            parameters stored in the states.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartPointState.Circle">
+            <summary>
+            Circle of a point state.
+            See PointStateWithCircleValue
+            See PointStateWithCircleValueHeight
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartPointState.Close">
+            <summary>
+            Close value of a point state.
+            See PointStateAlignedToXWithXLowOpenCloseHigh
+            See PointStateAlignedToXZWithXZLowOpenCloseHigh
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartPointState.DoubleX">
+            <summary>
+            Double X value of a point state.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartPointState.DoubleY">
+            <summary>
+            Double Y value of a point state.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartPointState.DoubleZ">
+            <summary>
+            Double Z value of a point state.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartPointState.Height">
+            <summary>
+            Height of a point state.
+            See PointStateWithCircleValue
+            See PointStateWithCircleValueHeight
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartPointState.High">
+            <summary>
+            High value of a point state.
+            See PointStateAlignedToXWithXLowOpenCloseHigh
+            See PointStateAlignedToXZWithXZLowOpenCloseHigh
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartPointState.IntX">
+            <summary>
+            Integer X value of a point state.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartPointState.IntY">
+            <summary>
+            Integer Y value of a point state.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartPointState.IntZ">
+            <summary>
+            Integer Z value of a point state.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartPointState.Low">
+            <summary>
+            Low value of a point state.
+            See PointStateAlignedToXWithXLowOpenCloseHigh
+            See PointStateAlignedToXZWithXZLowOpenCloseHigh
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartPointState.Open">
+            <summary>
+            Open value of a point state.
+            See PointStateAlignedToXWithXLowOpenCloseHigh
+            See PointStateAlignedToXZWithXZLowOpenCloseHigh
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartPointState.Value">
+            <summary>
+            Value of a point state.
+            See PointStateWithCircleValue
+            See PointStateWithCircleValueHeight
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChartPointState.PointStateAlignedToXWithXLowHigh(System.Int32,System.Double,System.Double)">
+            <summary>
+            Create a point state that is aligned to the X grid and has low and high values. This is the a typical
+            state for a band series drawn in 2D.
+            </summary>
+            <param name="x">- integer value on the X axis that represents the category.</param>
+            <param name="low">- double value on the Y axis that represents the "low" value.</param>
+            <param name="high">- double value on the Y axis that represents the "high" value.</param>
+        </member>
+        <member name="M:NChart3D_Android.NChartPointState.PointStateAlignedToXWithXLowOpenCloseHigh(System.Int32,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Create a point state that is aligned to the X grid and has low, open, close and high values. This is a typical
+            state for candlestick series drawn in 2D.
+            </summary>
+            <param name="x">- integer value on the X axis that represents the category.</param>
+            <param name="low">- double value on the Y axis that represents the "low" value.</param>
+            <param name="open">- double value on the Y axis that represents the "open" value.</param>
+            <param name="close">- double value on the Y axis that represents the "close" value.</param>
+            <param name="high">- double value on the  Y axis that represents the "high" value.</param>
+        </member>
+        <member name="M:NChart3D_Android.NChartPointState.PointStateAlignedToXWithXY(System.Int32,System.Double)">
+            <summary>
+            Create a point state representing the point that is aligned to the X grid. This is a typical state for column, area,
+            line and ribbon series if drawn in 2D.
+            </summary>
+            <param name="x">- integer value on the X axis that represents the first category.</param>
+            <param name="y">- double value on the Y axis that represents the height value.</param>
+        </member>
+        <member name="M:NChart3D_Android.NChartPointState.PointStateAlignedToXZWithXYZ(System.Int32,System.Double,System.Int32)">
+            <summary>
+            Create a point state representing the point that is aligned to the XZ grid. This is a typical state for column,
+            area, line and ribbon series if drawn in 3D. This can also be used for a surface.
+            </summary>
+            <param name="x">- integer value on the X axis that represents the first category.</param>
+            <param name="y">- double value on the Y axis that represents the height value.</param>
+            <param name="z">- integer value on the Z axis that represents the second category.</param>
+        </member>
+        <member name="M:NChart3D_Android.NChartPointState.PointStateAlignedToXZWithXZLowOpenCloseHigh(System.Int32,System.Int32,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Create a point state that is aligned to the XZ grid and has low, open, close and high values. This is a typical
+            state for candlestick series drawn in 3D.
+            </summary>
+            <param name="x">- integer value on the X axis that represents the first category.</param>
+            <param name="z">- integer value on the Z axis that represents the second category.</param>
+            <param name="low">- double value on the Y axis that represents the "low" value.</param>
+            <param name="open">- double value on the Y axis that represents the "open" value.</param>
+            <param name="close">- double value on the Y axis that represents the "close" value.</param>
+            <param name="high">- double value on the Y axis that represents the "high" value.</param>
+        </member>
+        <member name="M:NChart3D_Android.NChartPointState.PointStateAlignedToYWithXY(System.Double,System.Int32)">
+            <summary>
+            Create a point state representing the point that is aligned to the Y grid. This is a typical state for bar series
+            if drawn in 2D.
+            </summary>
+            <param name="x">- double value on X axis that represents the height value.</param>
+            <param name="y">- integer value on Y axis that represents the first category.</param>
+        </member>
+        <member name="M:NChart3D_Android.NChartPointState.PointStateAlignedToYWithYOpenClose(System.Int32,System.Double,System.Double)">
+            <summary>
+            Create a point state that is aligned to the Y grid and has open and close values. This is the a typical
+            state for a sequence series drawn in 2D.
+            </summary>
+            <param name="y">- integer value on the Y axis that represents the category.</param>
+            <param name="open">- double value on the X axis that represents the "open" value.</param>
+            <param name="close">- double value on the X axis that represents the "close" value.</param>
+        </member>
+        <member name="M:NChart3D_Android.NChartPointState.PointStateAlignedToYZWithXYZ(System.Double,System.Int32,System.Int32)">
+            <summary>
+            Create a point state representing the point that is aligned to the YZ grid. This is a typical state for bar series
+            if drawn in 3D.
+            </summary>
+            <param name="x">- double value on X axis that represents the height value.</param>
+            <param name="y">- integer value on Y axis that represents the first category.</param>
+            <param name="z">- integer value on Z axis that represents the second category.</param>
+        </member>
+        <member name="M:NChart3D_Android.NChartPointState.PointStateWithCircleValue(System.Int32,System.Double)">
+            <summary>
+            Create a point state representing the point that is aligned to the concentric circles. This is a typical state for
+            pie series if drawn in 2D.
+            </summary>
+            <param name="circle">- number of circle among concentric circles that represents the category.</param>
+            <param name="value">- value of the state that affects the angle of the sector. The angle will represent the percent of thevalue among all values in the circle this state belongs to.</param>
+        </member>
+        <member name="M:NChart3D_Android.NChartPointState.PointStateWithCircleValueHeight(System.Int32,System.Double,System.Double)">
+            <summary>
+            Create a point state representing the point that is aligned to the concentric circles and has the height. This is a
+            typical state for pie series if drawn in 3D.
+            </summary>
+            <param name="circle">- number of circle among concentric circles that represents the category.</param>
+            <param name="value">- value of the state that affects the angle of the sector. The angle will represent the percent of thevalue among all values in the circle this state belongs to.</param>
+            <param name="height">- height of sector. The height should be in interval 0..1. It is not connected to any axis, so thevalue is not mapped. You may use it to visually group sectors or to stress some of them.</param>
+        </member>
+        <member name="M:NChart3D_Android.NChartPointState.PointStateWithXYValue(System.Double,System.Double,System.Double)">
+            <summary>
+            Create free (not aligned) 2D-space point state with value. This is a typical state for heatmap series.
+            </summary>
+            <param name="x">- double value on the X axis that represents the abscissa of a position.</param>
+            <param name="y">- double value on the Y axis that represents the ordinate of a position.</param>
+            <param name="value">- value of the state that represents the amount of entity displayed by series.</param>
+        </member>
+        <member name="M:NChart3D_Android.NChartPointState.PointStateWithXYZ(System.Double,System.Double,System.Double)">
+            <summary>
+            Create free (not aligned) 3D-space point. This is a typical state for bubble or surface series. But you may use
+            this for other series types too.
+            </summary>
+            <param name="x">- double value on the X axis that represents the abscissa of a position.</param>
+            <param name="y">- double value on the Y axis that represents the ordinate of a position.</param>
+            <param name="z">- double value on the Z axis that represents the applicate of a position.</param>
+        </member>
+        <member name="T:NChart3D_Android.NChartPolarSystem">
+            <summary>
+            The NChartPolarSystem class provides methods for managing the chart's polar coordinate system.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartPolarSystem.AzimuthAxis">
+            <summary>
+            Azimuth-Axis of the polar coordinate system.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartPolarSystem.BorderColor">
+            <summary>
+            Color of the border around the polar coordinate system.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartPolarSystem.BorderThickness">
+            <summary>
+            Thickness of the border around the polar coordinate system.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartPolarSystem.BorderVisible">
+            <summary>
+            Flag that determines if the border around the polar coordinate system is visible (true) or not (false).
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartPolarSystem.Grid">
+            <summary>
+            Grid of the polar coordinate system.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartPolarSystem.RadiusAxis">
+            <summary>
+            Radius-Axis of the polar coordinate system.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartRadarSeries">
+            <summary>
+            The NChartRadarSeries class provides methods to display radar series.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartRadarSeries.Settings">
+            <summary>
+            The NChartRadarSeries.Settings class provides global settings for NChartRadarSeries.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartRadarSeries.Settings.ShouldSmoothAxesGrid">
+            <summary>
+            Flag determining if axes grid should be smoothed, so it should appear as a circle, not as polygon (true) or not (false).
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartRibbonSeries">
+            <summary>
+            The NChartRibbonSeries class provides methods to display ribbon series. This series type is for 3D only.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartRibbonSeries.Settings">
+            <summary>
+            The NChartRibbonSeries.Settings class provides global settings for NChartRibbonSeries.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartRibbonSeries.Marker">
+            <summary>
+            Marker that is shown on the points. This is null by default (no marker is displayed).
+            See NChartMarker
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartRibbonSeries.NoDataColor">
+            <summary>
+            Color of the ribbon in the points with no data.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartSequenceSeries">
+            <summary>
+            The NChartSequenceSeries class provides methods to display sequence series. This series type is for 2D only.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartSequenceSeries.Settings">
+            <summary>
+            The NChartSequenceSeries.Settings class provides global settings for NChartSequenceSeries.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartSeries">
+            <summary>
+            The NChartSeries class provides common methods for the series of the chart.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartSeries.Tag">
+            <summary>
+            Tag of the series. You may use it as you want.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartSeries.IDataSource">
+            <summary>
+            The NChartSeriesDataSource protocol provides methods to obtain data for the series.
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChartSeries.IDataSource.BitmapForSeries(NChart3D_Android.NChartSeries)">
+            <summary>
+            Get image for the series that is displayed in the legend. If null is returned or method is not implemented, the default
+            image is used.
+            See NChartSeries
+            </summary>
+            <param name="series">- series to get image for.</param>
+            <returns>the image for the series.</returns>
+        </member>
+        <member name="M:NChart3D_Android.NChartSeries.IDataSource.NameForSeries(NChart3D_Android.NChartSeries)">
+            <summary>
+            Get name for the series.
+            See NChartSeries
+            </summary>
+            <param name="series">- series to obtain the name for.</param>
+            <returns>the name for the series.</returns>
+        </member>
+        <member name="M:NChart3D_Android.NChartSeries.IDataSource.PointsForSeries(NChart3D_Android.NChartSeries)">
+            <summary>
+            Get array of points for the series.
+            See NChartSeries
+            </summary>
+            <param name="series">- series to obtain the points for.</param>
+            <returns>an array of NChartPoint instances where the data is stored.</returns>
+        </member>
+        <member name="T:NChart3D_Android.NChartSeries.Settings">
+            <summary>
+            The NChartSeries.Settings class provides basic container for settings that are to be applied for all the series of
+            particular type that are added to the chart. For different types of series there are different classes of containers
+            that are inherited from NChartSeries.Settings.
+            <br />You can add the settings to the chart via NChart.AddSeriesSettings method.
+            <br />The settings are applied to the series while NChart.UpdateData.
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChartSeries.Settings.#ctor">
+            <summary>
+            Create instance of settings.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartSeries.DataSmoother">
+            <summary>
+            Data smoother used. The default value is null (no data smoother used).
+            See NChartDataSmoother
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartSeries.DataSource">
+            <summary>
+            Data source for the series.
+            See DataSource
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartSeries.HostsOnSX">
+            <summary>
+            Flag that determines if the series is hosted on the secondary X-axis. If true, it will be drawn according to the
+            secondary X-axis, if false according to the normal X-axis. The secondary axis appears opposite the normal axis and is
+            managed separately: it can have its own min and max; its own color settings and so on.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartSeries.HostsOnSY">
+            <summary>
+            Flag that determines if the series is hosted on the secondary Y-axis. If true, it will be drawn according to the
+            secondary Y-axis, if false according to the normal Y-axis. The secondary axis appears opposite the normal axis and is
+            managed separately: it can have its own min and max; its own color settings and so on.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartSeries.HostsOnSZ">
+            <summary>
+            Flag that determines if the series is hosted on the secondary Z-axis. If true, it will be drawn according to the
+            secondary Z-axis, if false according to the normal Z-axis. The secondary axis appears opposite the normal axis and is
+            managed separately: can have its own min and max; its own color settings and so on.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartSeries.Image">
+            <summary>
+            Image that is displayed in the legend. This property returns the image only if it was provided by the data source.
+            If the default image is used, null is returned.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartSeries.LegendMarkerSize">
+            <summary>
+            Size of default series' marker in legend in pixels. The default value is 20.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartSeries.Name">
+            <summary>
+            Name of the series.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartSeries.Scale">
+            <summary>
+            Brush scale of the series used to color the map.
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChartSeries.GetPoints">
+            <summary>
+            Array of points.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartSizeAxis">
+            <summary>
+            The NChartSizeAxis class provides methods to scale the sizes of NChartMarker objects. The idea is to map the value
+            of marker's size that is assumed to be in (GetMinValue, GetMaxValue) to the (GetMinSize, GetMaxSize). For example if a
+            particular marker has size 0.3555, <code>minValue = 0</code>, <code>maxValue = 1</code>, <code>minSize = 10</code> (pixels) and <code>maxSize = 100</code> (pixels),
+            the actual size of the marker on the screen will be 42 pixels.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartSizeAxis.IDataSource">
+            <summary>
+            The <code>NChartSizeAxis.DataSource</code> protocol provides methods to control data on the size axis.
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChartSizeAxis.IDataSource.MaxSize(NChart3D_Android.NChartSizeAxis)">
+            <summary>
+            Get maximal size of markers on the screen in pixels.
+            See NChartSizeAxis
+            </summary>
+            <param name="sizeAxis">- the size axis to obtain the maximal size for.</param>
+            <returns>the maximal size of the markers on the screen in pixels.</returns>
+        </member>
+        <member name="M:NChart3D_Android.NChartSizeAxis.IDataSource.MaxValue(NChart3D_Android.NChartSizeAxis)">
+            <summary>
+            Get maximal value of markers' sizes. If no implementation is provided, the maximal size is calculated according to
+            the data.
+            See NChartSizeAxis
+            </summary>
+            <param name="sizeAxis">- the size axis to obtain the maximal value for.</param>
+            <returns>the maximal value of the markers' sizes. It may be null that is equivalent to the absence of implementation.</returns>
+        </member>
+        <member name="M:NChart3D_Android.NChartSizeAxis.IDataSource.MinSize(NChart3D_Android.NChartSizeAxis)">
+            <summary>
+            Get minimal size of markers on the screen in pixels.
+            See NChartSizeAxis
+            </summary>
+            <param name="sizeAxis">- the size axis to obtain the minimal size for.</param>
+            <returns>the minimal size of the markers on the screen in pixels.</returns>
+        </member>
+        <member name="M:NChart3D_Android.NChartSizeAxis.IDataSource.MinValue(NChart3D_Android.NChartSizeAxis)">
+            <summary>
+            Get minimal value of markers' sizes. If no implementation is provided, the minimal size is calculated according to
+            the data.
+            See NChartSizeAxis
+            </summary>
+            <param name="sizeAxis">- the size axis to obtain the minimal value for.</param>
+            <returns>the minimal value of markers' sizes. It may be null that is equivalent to the absence of implementation.</returns>
+        </member>
+        <member name="P:NChart3D_Android.NChartSizeAxis.DataSource">
+            <summary>
+            Data source of the axis
+            See DataSource
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartSizeAxis.MaxSize">
+            <summary>
+            Maximal size of the markers on the screen in pixels.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartSizeAxis.MaxValue">
+            <summary>
+            Maximal value of the markers' sizes.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartSizeAxis.MinSize">
+            <summary>
+            Minimal size of the markers on the screen in pixels.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartSizeAxis.MinValue">
+            <summary>
+            Minimal value of the markers' sizes.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartSolidColorBrush">
+            <summary>
+            The NChartSolidColorBrush class provides the brush that fills the area with a solid color
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChartSolidColorBrush.#ctor(System.Int32)">
+            <summary>
+            Create brush with color.
+            </summary>
+            <param name="color">- color for the brush.</param>
+        </member>
+        <member name="P:NChart3D_Android.NChartSolidColorBrush.Color">
+            <summary>
+            Color of the brush.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartSolidSeries">
+            <summary>
+            The NChartSolidSeries class provides common methods to display series that are filled with some brush and have a border.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartSolidSeries.Settings">
+            <summary>
+            The <code>NChartSolidSeries.Settings</code> class provides common settings for NChartSolidSeries.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartSolidSeries.Settings.FillRatio">
+            <summary>
+            Fill ratio for series that determines the amount of place for one series. For example, if the fill ratio is 1.0 and
+            the column series is displayed, one column (or one group of columns, if there are many series on one chart
+            at the same time) fills the whole area of one tick on the X and Z axes (for bar series -- on the Y and Z
+            respectively, for area -- it's Z-width and so on). If the fill ratio is 0.5, the column fills half the area of one
+            tick and so on. The default value is 0.7.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartSolidSeries.BorderBrush">
+            <summary>
+            Brush of the border that surrounds the series.
+            See NChartBrush
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartSolidSeries.BorderThickness">
+            <summary>
+            Thickness (in pixels) of the border that surrounds the series.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartSolidSeries.Brush">
+            <summary>
+            Brush that fills the series.
+            See NChartBrush
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartStepSeries">
+            <summary>
+            The NChartStepSeries class provides methods to display step series.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartStepSeries.Settings">
+            <summary>
+            The <code>NChartStepSeries.Settings</code> class provides global settings for NChartStepSeries.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartSurfaceSeries">
+            <summary>
+            The NChartSurfaceSeries class provides methods to display surface series.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartSurfaceSeries.Settings">
+            <summary>
+            The NChartSurfaceSeries.Settings class provides global settings for NChartSurfaceSeries.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartTextureBrush">
+            <summary>
+            The NChartTextureBrush class provides the brush that fills the area with a texture (aka image).
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChartTextureBrush.#ctor(Android.Graphics.Bitmap,System.Int32,NChart3D_Android.NChartTypes.TexturePosition)">
+            <summary>
+            Create brush with image, background color and position of texture.
+            </summary>
+            <param name="image">- image for the brush.</param>
+            <param name="color">- background color for the brush.</param>
+            <param name="position">- position for the texture.</param>
+        </member>
+        <member name="P:NChart3D_Android.NChartTextureBrush.BackgroundColor">
+            <summary>
+            Color that fills the area around the texture (if any). If null, the area is filled with black color.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTextureBrush.Position">
+            <summary>
+            Position of the texture.
+            See NChartTypes.TexturePosition
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChartTextureBrush.SetImage(Android.Graphics.Bitmap)">
+            <summary>
+            For details see GetImage
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartTimeAxis">
+            <summary>
+            The NChartTimeAxis class provides methods to display the time axis of the chart.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartTimeAxis.IDataSource">
+            <summary>
+            The NChartTimeAxisDataSource protocol provides methods to control data displayed on the time axis.
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChartTimeAxis.IDataSource.Timestamps(NChart3D_Android.NChartTimeAxis)">
+            <summary>
+            Get array timestamps available. They are strings representing ticks (for example, years, or some names).
+            See NChartTimeAxis
+            </summary>
+            <param name="timeAxis">- time axis to get timestamps for.</param>
+            <returns>an array of timestamps.</returns>
+        </member>
+        <member name="P:NChart3D_Android.NChartTimeAxis.AnimationTime">
+            <summary>
+            Time that takes to play the whole time axis in seconds.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTimeAxis.AutohideTooltip">
+            <summary>
+            Flag indicating whether the tooltip should be hidden automatically when the user interactions end (true) or not (false).
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTimeAxis.CurrentIndex">
+            <summary>
+            Current timestamp index (index of the timestamp tick where the handler stays).
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTimeAxis.DataSource">
+            <summary>
+            Time axis data source.
+            See DataSource
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTimeAxis.Margin">
+            <summary>
+            Margin of the time axis.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTimeAxis.MinTickSpacing">
+            <summary>
+            Minimal spacing between neighbor ticks in pixels (the tick is the center place of the timestamp title, a kind of
+            milestone on the axis). According to this value some timestamps can be hidden, if there are too many of them.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTimeAxis.TickColor">
+            <summary>
+            Color used to display timestamp ticks.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTimeAxis.TickOffset">
+            <summary>
+            Offset of timestamp ticks (spacing between slider and ticks) in pixels. If positive, ticks are outside of slider,
+            if negative, ticks may overlap the slider; so the outer border of the slider (including the slider's handler) is
+            assumed as zero offset.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTimeAxis.TickShape">
+            <summary>
+            Shape of timestamp ticks.
+            See NChartTypes.TimeAxisTickShape
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTimeAxis.TickSize">
+            <summary>
+            Size of ticks in pixels.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTimeAxis.TickTitlesColor">
+            <summary>
+            Color used to display timestamp titles.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTimeAxis.TickTitlesFont">
+            <summary>
+            Font used to display timestamp titles.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTimeAxis.TickTitlesLayout">
+            <summary>
+            Layout of timestamp titles.
+            See NChartTypes.TimeAxisLabelsLayout
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTimeAxis.TickTitlesOffset">
+            <summary>
+            Offset of timestamp titles (spacing between the slider and titles) in pixels.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTimeAxis.TickTitlesPosition">
+            <summary>
+            Position of timestamp titles.
+            See NChartTypes.TimeAxisLabelsPosition
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTimeAxis.Tooltip">
+            <summary>
+            Tooltip that appears over the handler. This is null by default.
+            See NChartTimeAxisTooltip
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChartTimeAxis.GoToFirstTick">
+            <summary>
+            Go to the beginning of the timeline (without any user interactions).
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChartTimeAxis.GoToLastTick">
+            <summary>
+            Go to the ending of the timeline (without any user interactions).
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChartTimeAxis.GoToNextTick">
+            <summary>
+            Go to the next timestamp (without any user interactions).
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChartTimeAxis.GoToPreviousTick">
+            <summary>
+            Go to the previous timestamp (without any user interactions).
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChartTimeAxis.Play">
+            <summary>
+            Start playing the timeline (without any user interactions).
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChartTimeAxis.SetBeginButtonStateImages(Android.Graphics.Bitmap,Android.Graphics.Bitmap)">
+            <summary>
+            Set images for button "go to the beginning".
+            </summary>
+            <param name="normal">- image for the button's normal state.</param>
+            <param name="pushed">- image for the button's pushed state.</param>
+        </member>
+        <member name="M:NChart3D_Android.NChartTimeAxis.SetEndButtonStateImages(Android.Graphics.Bitmap,Android.Graphics.Bitmap)">
+            <summary>
+            Set images for button "go to the ending".
+            </summary>
+            <param name="normal">- image for the button's normal state.</param>
+            <param name="pushed">- image for the button's pushed state.</param>
+        </member>
+        <member name="M:NChart3D_Android.NChartTimeAxis.SetHandlerImage(Android.Content.Context,System.Int32)">
+            <summary>
+            Set image resource for the handler of the slider.
+            </summary>
+            <param name="context">- application context</param>
+            <param name="resID">- resource id for the slider's handler.</param>
+        </member>
+        <member name="M:NChart3D_Android.NChartTimeAxis.SetHandlerImage(Android.Graphics.Bitmap)">
+            <summary>
+            Set image for the handler of the slider.
+            </summary>
+            <param name="handler">- image for the slider's handler.</param>
+        </member>
+        <member name="M:NChart3D_Android.NChartTimeAxis.SetImages(Android.Graphics.Bitmap,Android.Graphics.Bitmap,Android.Graphics.Bitmap,Android.Graphics.Bitmap,Android.Graphics.Bitmap,Android.Graphics.Bitmap,Android.Graphics.Bitmap,Android.Graphics.Bitmap,Android.Graphics.Bitmap,Android.Graphics.Bitmap)">
+            <summary>
+            Set all images used for time axis at once.
+            This method automatically adjusts <code>tickSize</code> and <code>tickOffset</code> according to images provided.
+            See GetTickSize
+            See GetTickOffset
+            </summary>
+            <param name="beginNormal">- image for the begin button's normal state.</param>
+            <param name="beginPushed">- image for the begin button's pushed state.</param>
+            <param name="endNormal">- image for the end button's normal state.</param>
+            <param name="endPushed">- image for the end button's pushed state.</param>
+            <param name="playNormal">- image for the play button's normal state.</param>
+            <param name="playPushed">- image for the play button's pushed state.</param>
+            <param name="pauseNormal">- image for the pause button's normal state.</param>
+            <param name="pausePushed">- image for the pause button's pushed state.</param>
+            <param name="slider">- image for the slider.</param>
+            <param name="handler">- image for the slider's handler.</param>
+        </member>
+        <member name="M:NChart3D_Android.NChartTimeAxis.SetPauseButtonStateImages(Android.Content.Context,System.Int32,System.Int32)">
+            <summary>
+            Set image resources for button "pause".
+            </summary>
+            <param name="context">- application context</param>
+            <param name="normalResID">- resource id for the button's normal state image.</param>
+            <param name="pushedResID">- resource id for the button's pushed state image.</param>
+        </member>
+        <member name="M:NChart3D_Android.NChartTimeAxis.SetPlayButtonStateImages(Android.Content.Context,System.Int32,System.Int32)">
+            <summary>
+            Set image resources for button "play".
+            </summary>
+            <param name="context">- application context</param>
+            <param name="normalResID">- resource id for the button's normal state image.</param>
+            <param name="pushedResID">- resource id for the button's pushed state image.</param>
+        </member>
+        <member name="M:NChart3D_Android.NChartTimeAxis.SetSliderImage(Android.Content.Context,System.Int32,System.Single,System.Single)">
+            <summary>
+            Specify the image resource for the slider and the cap insets to stretch it. The cap insets specifies the stretchable caps of the image.
+            </summary>
+            <param name="context">- application context</param>
+            <param name="resID">- resource id for the slider image.</param>
+            <param name="leftInset">- left cap inset for the image.</param>
+            <param name="rightInset">- right cap inset for the image.</param>
+        </member>
+        <member name="M:NChart3D_Android.NChartTimeAxis.SetSliderImage(Android.Graphics.Bitmap,System.Single,System.Single)">
+            <summary>
+            Specify the image for the slider and the cap insets to stretch it. The cap insets specifies the stretchable caps of the image.
+            </summary>
+            <param name="slider">- image for the slider.</param>
+            <param name="leftInset">- left cap inset for the image.</param>
+            <param name="rightInset">- right cap inset for the image.</param>
+        </member>
+        <member name="M:NChart3D_Android.NChartTimeAxis.Stop">
+            <summary>
+            Stop playing the timeline (without any user interactions).
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartTimeAxisTooltip">
+            <summary>
+            The NChartTimeAxisTooltip class provides methods to display the tooltip over the handler of the time axis.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartTooltip">
+            <summary>
+            The NChartTooltip class provides methods to display the tooltip for the chart's points.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTooltip.AlwaysInPlotArea">
+            <summary>
+            Flag determining if the tooltip should always be inside of the chart's plot area. If true, the tooltip may be shifted
+            to fit in the plot area when it's pivot is near the border of the chart's plot area. If false, it is never shifted
+            and can overlap the axis when it's pivot is near the border of the chart's plot area. The default value is true.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTooltip.VerticalAlignment">
+            <summary>
+            Vertical alignment of the tooltip. It is used if tooltip has no arrow presented, otherwise it is ignored.
+            See NChartTypes.TooltipVerticalAlignment
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChartTooltip.SetVisibleAnimated(System.Boolean,System.Single)">
+            <summary>
+            Change visibility of tooltip animated.
+            </summary>
+            <param name="visible">- flag of visibility.</param>
+            <param name="duration">- duration of animation in seconds.</param>
+        </member>
+        <member name="T:NChart3D_Android.NChartTypes">
+            <summary>
+            Collection of types
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartTypes.AnimationType">
+            <summary>
+            The AnimationType enum provides constants to indicate different animations of the chart objects.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.AnimationType.Highlight">
+            <summary>
+            Animation of point highlighting.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.AnimationType.Transition">
+            <summary>
+            Animation of transition from the one data set to the other.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartTypes.AxisTickType">
+            <summary>
+            The AxisTickType enum provides constants to determine the ticks' layout on the axes.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.AxisTickType.Both">
+            <summary>
+            Ticks are both on the inner and outer sides of the axis.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.AxisTickType.Inner">
+            <summary>
+            Ticks are on the inner side of the axis.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.AxisTickType.Outer">
+            <summary>
+            Ticks are on the outer side of the axis.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartTypes.CaptionBlockAlignment">
+            <summary>
+            The NChartCaptionBlockAlignment enum provides constants to control position of the caption's block.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.CaptionBlockAlignment.BottomCenter">
+            <summary>
+            Align caption at the center on the bottom of the screen.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.CaptionBlockAlignment.BottomLeft">
+            <summary>
+            Align caption in the bottom left corner.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.CaptionBlockAlignment.BottomRight">
+            <summary>
+            Align caption in the bottom right corner.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.CaptionBlockAlignment.TopCenter">
+            <summary>
+            Align caption at the center on the top of the screen.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.CaptionBlockAlignment.TopLeft">
+            <summary>
+            Align caption in the top left corner.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.CaptionBlockAlignment.TopRight">
+            <summary>
+            Align caption in the top right corner.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartTypes.HighlightType">
+            <summary>
+            The HighlightType enum provides constants to highlight points. You may use them to build a bitmask of highlight.
+            This means you may specify Color | Shift to get highlight by color and highlight
+            by shift at the same time.
+            </summary>
+        </member>
+        <member name="F:NChart3D_Android.NChartTypes.HighlightType.Color">
+            <summary>
+            Highlight by color.
+            </summary>
+        </member>
+        <member name="F:NChart3D_Android.NChartTypes.HighlightType.Drop">
+            <summary>
+            Drop previous highlights. Add this to your highlight type combination if you do not want the highlights to
+            accumulate. This means, if there are some highlights queued by delay or not fully animated, they will be
+            cancelled.
+            </summary>
+        </member>
+        <member name="F:NChart3D_Android.NChartTypes.HighlightType.None">
+            <summary>
+            No highlight.
+            </summary>
+        </member>
+        <member name="F:NChart3D_Android.NChartTypes.HighlightType.Shift">
+            <summary>
+            Highlight by shift.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartTypes.LegendBlockAlignment">
+            <summary>
+            The LegendBlockAlignment enum provides constants for different predefined positions of the legend on the screen.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.LegendBlockAlignment.Bottom">
+            <summary>
+            Legend fills the whole bottom area of the screen.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.LegendBlockAlignment.BottomCenter">
+            <summary>
+            Legend is in the center on the bottom of the screen.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.LegendBlockAlignment.BottomLeft">
+            <summary>
+            Legend is in the bottom left corner of the screen.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.LegendBlockAlignment.BottomRight">
+            <summary>
+            Legend is in the bottom right corner of the screen.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.LegendBlockAlignment.CenterCenter">
+            <summary>
+            Legend is in the center of the screen.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.LegendBlockAlignment.CenterLeft">
+            <summary>
+            Legend is on the left in the middle of the screen.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.LegendBlockAlignment.CenterRight">
+            <summary>
+            Legend is on the right in the middle of the screen.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.LegendBlockAlignment.Left">
+            <summary>
+            Legend fills the whole left area of the screen.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.LegendBlockAlignment.Right">
+            <summary>
+            Legend fills the whole right area of the screen.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.LegendBlockAlignment.Top">
+            <summary>
+            Legend fills the whole top area of the screen.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.LegendBlockAlignment.TopCenter">
+            <summary>
+            Legend is in the center on the top of the screen.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.LegendBlockAlignment.TopLeft">
+            <summary>
+            Legend is in the top left corner of the screen.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.LegendBlockAlignment.TopRight">
+            <summary>
+            Legend is in the top right corner of the screen.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartTypes.LegendContentAlignment">
+            <summary>
+            The LegendContentAlignment enum provides constants to align the legend's content in the legend area.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.LegendContentAlignment.Center">
+            <summary>
+            Align the content of the legend to the center.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.LegendContentAlignment.Justified">
+            <summary>
+            Align the content of the legend justified.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.LegendContentAlignment.Left">
+            <summary>
+            Align the content of the legend left.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartTypes.LegendOrientation">
+            <summary>
+            The LegendOrientation enum provides constants for different legend docking modes.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.LegendOrientation.Fixed">
+            <summary>
+            Legend is fixed, you cannot alter the legend's origin, because it will be ignored.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.LegendOrientation.FreeFloat">
+            <summary>
+            Legend is free by the X- and Y-Axis, so you can alter the origin.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.LegendOrientation.FreeHorizontal">
+            <summary>
+            Legend is fixed by the Y-Axis, but free by the X-Axis, so you can alter the x-value of the origin and the y-value
+            will be ignored.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.LegendOrientation.FreeVertical">
+            <summary>
+            Legend is fixed by the X-Axis, but free by the Y-Axis, so you can alter the y-value of the origin and the x-value
+            will be ignored.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartTypes.LineBreakMode">
+            <summary>
+            The LineBreakMode enum provides constants to indicate behavior when a line is too long for its container.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.LineBreakMode.CharWrap">
+            <summary>
+            Wrapping occurs before the first character that does not fit.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.LineBreakMode.None">
+            <summary>
+            Line is not drawn past the edge of the text container.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.LineBreakMode.TruncateHead">
+            <summary>
+            The line is displayed so that it fits in the container and the missing text at the beginning of the line is replaced by an ellipsis glyph.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.LineBreakMode.TruncateMiddle">
+            <summary>
+            The line is displayed so that it fits in the container and the missing text in the middle is replaced by an ellipsis glyph.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.LineBreakMode.TruncateTail">
+            <summary>
+            The line is displayed so that it fits in the container and the missing text at the end of the line is replaced by an ellipsis glyph.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.LineBreakMode.WordWrap">
+            <summary>
+            Wrapping occurs before the first word that does not fit.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartTypes.Margin">
+            <summary>
+            The Margin class stores the spacing of chart's elements.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.Margin.Bottom">
+            <summary>
+            Spacing from the bottom side in pixels.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.Margin.Left">
+            <summary>
+            Spacing from the left side in pixels.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.Margin.Right">
+            <summary>
+            Spacing from the right side in pixels.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.Margin.Top">
+            <summary>
+            Spacing from the top side in pixels.
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChartTypes.Margin.#ctor(System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Create Margin with given parameters.
+            </summary>
+            <param name="left">- spacing from the left side in pixels.</param>
+            <param name="right">- spacing from the right side in pixels.</param>
+            <param name="bottom">- spacing from the bottom side in pixels.</param>
+            <param name="top">- spacing from the top side in pixels.</param>
+        </member>
+        <member name="T:NChart3D_Android.NChartTypes.MarkerShape">
+            <summary>
+            The MarkerShape enum provides constants for markers' shapes.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.MarkerShape.Circle">
+            <summary>
+            Display a plain circle.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.MarkerShape.Model">
+            <summary>
+            Display a custom 3D model.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.MarkerShape.None">
+            <summary>
+            Do not display the marker.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.MarkerShape.Sphere">
+            <summary>
+            Display a volumetric sphere.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartTypes.ShadingModel">
+            <summary>
+            The ShadingModel provides constants for shading models used to shade 3D-objects.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.ShadingModel.Phong">
+            <summary>
+            Phong's shading model, filling with the corresponding color / gradient / texture / etc while shaded.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.ShadingModel.Plain">
+            <summary>
+            Plain shading model, just filling with the corresponding color / gradient / texture / etc.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartTypes.TexturePosition">
+            <summary>
+            The TexturePosition enum provides constants that control position of texture.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.TexturePosition.Center">
+            <summary>
+            Position texture at the center of the area.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.TexturePosition.Scale">
+            <summary>
+            Scale texture to fill the whole area.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.TexturePosition.ScaleKeepMaxAspect">
+            <summary>
+            Scale texture keeping aspect so, that it covers the whole area.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.TexturePosition.ScaleKeepMinAspect">
+            <summary>
+            Scale texture keeping aspect so, that it fits in the area.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.TexturePosition.TopLeftCorner">
+            <summary>
+            Position texture in the top left corner of the area.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartTypes.TimeAxisLabelsLayout">
+            <summary>
+            The TimeAxisLabelsLayout enum provides constants to control the label's layout on the time axis.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.TimeAxisLabelsLayout.ShowAllLabels">
+            <summary>
+            Show all labels.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.TimeAxisLabelsLayout.ShowFirstLastLabelsOnly">
+            <summary>
+            Show the first and the last labels only.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartTypes.TimeAxisLabelsPosition">
+            <summary>
+            The TimeAxisLabelsPosition enum provides constants to the control label's positions on the time axis.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.TimeAxisLabelsPosition.Above">
+            <summary>
+            Place labels above the time axis.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.TimeAxisLabelsPosition.Beneath">
+            <summary>
+            Place labels beneath the time axis.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartTypes.TimeAxisTickShape">
+            <summary>
+            The TimeAxisTickShape enum provides constants to control the shape of ticks on the time axis.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.TimeAxisTickShape.Line">
+            <summary>
+            Ticks in the shape of a line.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.TimeAxisTickShape.Triangle">
+            <summary>
+            Ticks in the shape of a triangle.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartTypes.TooltipVerticalAlignment">
+            <summary>
+            The TooltipVerticalAlignment enum provides constants for vertical alignment of the tooltip.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.TooltipVerticalAlignment.Bottom">
+            <summary>
+            Align tooltip on the bottom of it's pivot (the point it is connected with.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.TooltipVerticalAlignment.Center">
+            <summary>
+            Align tooltip with it's pivot (the point it is connected with in the center.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.TooltipVerticalAlignment.Top">
+            <summary>
+            Align tooltip on the top of it's pivot (the point it is connected with.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartTypes.UserInteraction">
+            <summary>
+            The UserInteraction class provides constants to control available user interaction. You can use them to build
+            the mask of interactions availability by concatenating the needed ones with bitwise OR.
+            </summary>
+        </member>
+        <member name="F:NChart3D_Android.NChartTypes.UserInteraction.All">
+            <summary>
+            All interactions are available.
+            </summary>
+        </member>
+        <member name="F:NChart3D_Android.NChartTypes.UserInteraction.HorizontalMove">
+            <summary>
+            Horizontal moving is available.
+            </summary>
+        </member>
+        <member name="F:NChart3D_Android.NChartTypes.UserInteraction.HorizontalRotate">
+            <summary>
+            Horizontal rotation is available.
+            </summary>
+        </member>
+        <member name="F:NChart3D_Android.NChartTypes.UserInteraction.HorizontalZoom">
+            <summary>
+            Horizontal zoom is available.
+            </summary>
+        </member>
+        <member name="F:NChart3D_Android.NChartTypes.UserInteraction.None">
+            <summary>
+            No interactions are available.
+            </summary>
+        </member>
+        <member name="F:NChart3D_Android.NChartTypes.UserInteraction.ProportionalZoom">
+            <summary>
+            Proportional zoom is available.
+            </summary>
+        </member>
+        <member name="F:NChart3D_Android.NChartTypes.UserInteraction.Tap">
+            <summary>
+            Tap is available.
+            </summary>
+        </member>
+        <member name="F:NChart3D_Android.NChartTypes.UserInteraction.VerticalMove">
+            <summary>
+            Vertical moving is available.
+            </summary>
+        </member>
+        <member name="F:NChart3D_Android.NChartTypes.UserInteraction.VerticalRotate">
+            <summary>
+            Vertical rotation is available.
+            </summary>
+        </member>
+        <member name="F:NChart3D_Android.NChartTypes.UserInteraction.VerticalZoom">
+            <summary>
+            Vertical zoom is available.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartTypes.Value">
+            <summary>
+            The Value enum provides constants to indicate values from the point states.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.Value.Close">
+            <summary>
+            Close value.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.Value.High">
+            <summary>
+            High value.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.Value.Low">
+            <summary>
+            Low value.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.Value.Open">
+            <summary>
+            Open value.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.Value.X">
+            <summary>
+            X value.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.Value.Y">
+            <summary>
+            Y value.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.Value.Z">
+            <summary>
+            Z value.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartTypes.ValueAxesType">
+            <summary>
+            The ValueAxesType enum provides constants of value axes types.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.ValueAxesType.Absolute">
+            <summary>
+            Absolute type.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.ValueAxesType.Additive">
+            <summary>
+            Additional type.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.ValueAxesType.Percent">
+            <summary>
+            Percent type.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartTypes.ValueAxisKind">
+            <summary>
+            The ValueAxisKind enum provides constants to indicate the value axes.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.ValueAxisKind.Azimuth">
+            <summary>
+            Azimuth-Axis.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.ValueAxisKind.Radius">
+            <summary>
+            Radius-Axis.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.ValueAxisKind.Sx">
+            <summary>
+            Secondary X-axis.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.ValueAxisKind.Sy">
+            <summary>
+            Secondary Y-axis.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.ValueAxisKind.Sz">
+            <summary>
+            Secondary Z-axis.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.ValueAxisKind.X">
+            <summary>
+            X-axis.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.ValueAxisKind.Y">
+            <summary>
+            Y-axis.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.ValueAxisKind.Z">
+            <summary>
+            Z-axis.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartTypes.ZoomMode">
+            <summary>
+            The ZoomMode enum provides constants for different zoom modes.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.ZoomMode.Directional">
+            <summary>
+            Zoom is enabled and is directional, so the user can zoom separately in the horizontal and vertical direction. By
+            diagonal direction zoom is proportional. Direction is determined as a vector that connects the user's fingers
+            during the pinch gesture.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.ZoomMode.None">
+            <summary>
+            Zoom is disabled.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartTypes.ZoomMode.Proportional">
+            <summary>
+            Zoom is enabled and is always proportional.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartValueAxis">
+            <summary>
+            The NChartValueAxis class provides methods to display the value axis of the chart.
+            </summary>
+        </member>
+        <member name="T:NChart3D_Android.NChartValueAxis.IDataSource">
+            <summary>
+            The NChartValueAxisDataSource protocol provides methods to control data displayed on value axis.
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChartValueAxis.IDataSource.DoubleToString(System.Double,NChart3D_Android.NChartValueAxis)">
+            <summary>
+            Convert double value to string.
+            See NChartValueAxis
+            </summary>
+            <param name="axis">- axis to convert value for.</param>
+            <param name="value">- value to convert.</param>
+            <returns>string representation of the value.</returns>
+        </member>
+        <member name="M:NChart3D_Android.NChartValueAxis.IDataSource.Length(NChart3D_Android.NChartValueAxis)">
+            <summary>
+            Get length of axis in 3D scene units. If there is no implementation, 1 is used. See length of NChartValueAxis for
+            details.
+            See NChartValueAxis
+            </summary>
+            <param name="axis">- axis to get the length for.</param>
+            <returns>the length of the axis. It may be null that is equivalent to the absence of implementation.</returns>
+        </member>
+        <member name="M:NChart3D_Android.NChartValueAxis.IDataSource.Max(NChart3D_Android.NChartValueAxis)">
+            <summary>
+            Get the maximal value for the axis. If there is no implementation, the axis is assumed to be discrete and you should
+            provide an array of ticks. If neither min and max nor an array of ticks are provided, the axis is assumed to be
+            continuous and both min and max are calculated automatically based on the values for the series.
+            See NChartValueAxis
+            </summary>
+            <param name="axis">- axis to get the maximal value for.</param>
+            <returns>the maximal value for the axis. It may be null that is equivalent to the absence of implementation.</returns>
+        </member>
+        <member name="M:NChart3D_Android.NChartValueAxis.IDataSource.Min(NChart3D_Android.NChartValueAxis)">
+            <summary>
+            Get the minimal value for the axis. If there is no implementation, the axis is assumed to be discrete and you should
+            provide an array of ticks. If neither min and max nor an array of ticks are provided, the axis is assumed to be
+            continuous and both min and max are calculated automatically based on the values for the series.
+            See NChartValueAxis
+            </summary>
+            <param name="axis">- axis to get minimal value for.</param>
+            <returns>the minimal value for the axis. It may be null that is equivalent to the absence of implementation.</returns>
+        </member>
+        <member name="M:NChart3D_Android.NChartValueAxis.IDataSource.Name(NChart3D_Android.NChartValueAxis)">
+            <summary>
+            Get the name that is displayed in the axis' caption.
+            See NChartValueAxis
+            </summary>
+            <param name="axis">- axis to get the name for.</param>
+            <returns>the name of the axis.</returns>
+        </member>
+        <member name="M:NChart3D_Android.NChartValueAxis.IDataSource.Step(NChart3D_Android.NChartValueAxis)">
+            <summary>
+            Get step value for axis. If there is no implementation, the step, min and max values are beautified.
+            See NChartValueAxis
+            </summary>
+            <param name="axis">- axis to get the step value for.</param>
+            <returns>the step value for the axis. It may be null that is equivalent to the absence of implementation.</returns>
+        </member>
+        <member name="M:NChart3D_Android.NChartValueAxis.IDataSource.Ticks(NChart3D_Android.NChartValueAxis)">
+            <summary>
+            Get array of ticks for the discrete axis. You should provide it if min and max are not implemented. If they are
+            implemented, the array of ticks is ignored. If neither min and max nor the array of ticks are provided, axis is
+            assumed to be continuous and both min and max are calculated automatically based on the values for the series.
+            See NChartValueAxis
+            </summary>
+            <param name="axis">- axis to get an array of ticks for.</param>
+            <returns>an array of strings that represent the ticks. It may be null that is equivalent to the absence of implementation.</returns>
+        </member>
+        <member name="P:NChart3D_Android.NChartValueAxis.AlwaysShowZero">
+            <summary>
+            Flag that determines whether zero is always on the axis. This flag makes sense if GetMinValue and GetMaxValue are both
+            less or greater than zero and are beautified according to the data source. In this case, if this flag is false, it
+            may happen, that no zero will be on the axis (for example, if GetMinValue = 11.5 and GetMaxValue = 19, the axis will
+            probably start with 10 and end with 20, having 4 steps). With this flag set to true, zero will always be on the axis,
+            so even with GetMinValue = 11.5 and GetMaxValue = 19 the axis will start with 0 and end with 20 having probably 5 steps
+            or so. The default value is false.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartValueAxis.Caption">
+            <summary>
+            Caption of the axis.
+            See NChartLabel
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartValueAxis.CaptionIn3D">
+            <summary>
+            Flag that determines whether the axis caption is in "perspective" screen (true) or is projected in the 2D screen (false).
+            This flag only affects 3D-charts. The default value is true.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartValueAxis.Color">
+            <summary>
+            Color of the axis line.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartValueAxis.DataSource">
+            <summary>
+            Data source of the axis.
+            See DataSource
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartValueAxis.Font">
+            <summary>
+            Font for the ticks' labels.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartValueAxis.HasOffset">
+            <summary>
+            Flag that determines if there should be an offset on the axis. The offset is the spacing from the beginning of the
+            axis to the first tick and from the last tick to the end of the axis. If this flag is true, the spacing is half a step.
+            If false, spacing is zero.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartValueAxis.Kind">
+            <summary>
+            Kind of axis.
+            See NChartTypes.ValueAxisKind
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartValueAxis.LabelsIn3D">
+            <summary>
+            Flag that determines whether the axis labels are in "perspective" screen (true) or are projected in the 2D screen (false).
+            This flag only affects 3D-charts. The default value is true.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartValueAxis.LabelsVisible">
+            <summary>
+            Flag that determines if the labels of ticks are visible (true) or not (false). The default value is true.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartValueAxis.Length">
+            <summary>
+            Length of axis in 3D scene units. This value is obtained from the data source or, if not provided, is assigned to 1.
+            It has an effect for axes being displayed in 3D only. In 2D this value is ignored because axes fill the whole area
+            available on the screen. One 3D scene unit is equal to half a screen size by initial zoom (so space of the 3D scene
+            is actually nonlinear respective to the screen). Therefore, by default all axes have equal length and form a kind of
+            cube in 3D that is centered on the screen and is as big as half of the biggest screen's dimension. However, if you
+            want, for example, to make the Z-axis shorter than the others, you can provide a length of 0.5 for it. It will
+            therefore be twice as short as the others.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartValueAxis.LineVisible">
+            <summary>
+            Flag that determines if the line of the axis is visible (true) or not (false). The default value is true.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartValueAxis.MajorTicks">
+            <summary>
+            Major ticks of the axis. Major ticks are spread from the GetMinValue to the GetMaxValue through GetStep or, if no
+            GetMinValue and GetMaxValue are provided but a ticks array is provided, the whole axis length is divided by the number
+            of ticks and for each tick there is a major tick displayed.
+            See NChartAxisTicks
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartValueAxis.MaxValue">
+            <summary>
+            Maximal value on the axis. It is obtained from the data source and, if needed, processed to look more beautiful.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartValueAxis.MinTickSpacing">
+            <summary>
+            Minimal spacing between neighbor ticks in pixels (the tick is the center place of the timestamp title, a kind of
+            milestone on the axis). According to this value some timestamps can be hidden, if there are too many of them.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartValueAxis.MinValue">
+            <summary>
+            Minimal value on the axis. It is obtained from the data source and, if needed, processed to look more beautiful.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartValueAxis.MinorTicks">
+            <summary>
+            Minor ticks of the axis. Minor ticks are displayed in the middle between two neighbor major ticks. See majorTicks
+            for details.
+            See NChartAxisTicks
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartValueAxis.ShouldBeautifyMinAndMax">
+            <summary>
+            Flag that determines whether min and max values on the axis should be beautified in case they are calculated (true)
+            or not (false). The default value is true.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartValueAxis.Step">
+            <summary>
+            Step from one tick to another. It is either obtained from the data source or, if not provided, calculated according
+            to the GetMinValue and GetMaxValue to look beautiful.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartValueAxis.TextColor">
+            <summary>
+            Color of the text for the ticks' labels.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartValueAxis.Thickness">
+            <summary>
+            Thickness of the axis' line in pixels.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartValueAxis.TickCount">
+            <summary>
+            Number of ticks on the axis. It is the number of ticks in an array or the number of values between
+            GetMinValue and GetMaxValue through GetStep.
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChartValueAxis.GetTicks">
+            <summary>
+            Array of strings that are displayed as ticks on the axis. It is obtained from the data source or null if not provided.
+            </summary>
+        </member>
+        <member name="M:NChart3D_Android.NChartValueAxis.ZoomToRegion(System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Zoom to given region by specifying the least and the greatest values that should be visible on the axis. If the
+            axis has array of ticks, indices in this array can be used. Use this method after you updated data of the chart
+            with NChart.UpdateData call.
+            </summary>
+            <param name="startValue">- least value that should be visible.</param>
+            <param name="endValue">- greatest value that should be visible.</param>
+            <param name="duration">- duration of the animation in seconds.</param>
+            <param name="delay">- delay of animation in seconds.</param>
+        </member>
+        <member name="T:NChart3D_Android.NChartView">
+            <summary>
+            The NChartView class provides a view to display the chart. This view can be added anywhere to view the hierarchy of
+            the app like Android's <code>GLSurfaceView</code>.
+            </summary>
+        </member>
+        <member name="P:NChart3D_Android.NChartView.Chart">
+            <summary>
+            Get chart instance. Created when the method is invoked for the first time.
+            See NChart
+            </summary>
+        </member>
+    </members>
+</doc>

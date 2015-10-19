@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+	<item name="white" type="color">#FFFFFF</item>
+	<item name="black" type="color">#231f20</item>
+	<item name="green" type="color">#4CBC8A</item>
+	<item name="grey" type="color">#A7A9AC</item>
+	<item name="blue" type="color">#0000FF</item>
+	<item name="mass_blue" type="color">#0076A8</item>
+	<item name="rs_teal" type="color">#369ca9</item>
+	<item name="mm_blue" type="color">#1c75bc</item>
+	<item name="green_4" type="color">#4CBC8A</item>
+	<item name="green_3" type="color">#71C9A1</item>
+	<item name="green_2" type="color">#95D8B9</item>
+	<item name="green_1" type="color">#B8E3D1</item>
+	<item name="rs_custom_black" type="color">#231f20</item>
+</resources>

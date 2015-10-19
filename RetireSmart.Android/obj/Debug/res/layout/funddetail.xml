@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:divider="@color/grey"
+    android:dividerHeight="1dp"
+    android:background="@color/white">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_fund"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        app:theme="@style/ActionBarThemeOverlay"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+    <TextView
+        android:id="@+id/txt_fund_balance_hdr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:text="@string/bal_balance"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/toolbar_fund"
+        android:textSize="@dimen/dashboard_body_text" />
+    <TextView
+        android:id="@+id/txt_fund_balance_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/green"
+        android:gravity="center"
+        android:textSize="48sp"
+        android:text="$0000.00"
+        android:layout_marginBottom="5dp"
+        android:layout_below="@id/txt_fund_balance_hdr" />
+    <View
+        android:id="@+id/cat_divider"
+        android:layout_height="1dp"
+        android:background="#A7A9AC"
+        android:layout_width="match_parent"
+        android:layout_below="@id/txt_fund_balance_amount"
+        android:layout_marginBottom="5dp" />
+    <TextView
+        android:text="@string/fund_detail_annual_chart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_annual_chart_hdr"
+        android:layout_below="@id/cat_divider"
+        android:layout_marginLeft="10dp"
+        android:textSize="13sp"
+        android:textColor="@color/black"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="5dp" />
+    <TextView
+        android:text="@string/fund_detail_not_available"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_fund_performance_not_available"
+        android:layout_below="@id/txt_annual_chart_hdr"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:visibility="gone" />
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progress_loading_fund_detail"
+        android:layout_below="@id/txt_annual_chart_hdr"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="22dp"
+        android:indeterminate="true"
+        android:visibility="gone" />
+    <TextShield.Droid.LineChartView
+        android:background="#fff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/line_chart_view"
+        android:layout_below="@id/txt_annual_chart_hdr"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:padding="10dp" />
+    <View
+        android:id="@+id/chart_bottom"
+        android:layout_height="1dp"
+        android:background="#A7A9AC"
+        android:layout_width="match_parent"
+        android:layout_below="@id/line_chart_view"
+        android:layout_marginBottom="0dp" />
+    <TextView
+        android:id="@+id/txt_prospectus_link"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="@string/fund_prospectus_link"
+        android:layout_below="@id/chart_bottom"
+        android:textColor="#1c75bc"
+        android:typeface="normal"
+        android:textStyle="normal"
+        android:textSize="14sp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="5dp"
+        android:visibility="gone" />
+    <View
+        android:id="@+id/pros_link_divider"
+        android:layout_below="@id/txt_prospectus_link"
+        android:layout_height="1dp"
+        android:background="#A7A9AC"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="5dp"
+        android:visibility="gone" />
+</RelativeLayout>

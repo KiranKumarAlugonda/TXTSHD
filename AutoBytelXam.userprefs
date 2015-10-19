@@ -1,0 +1,15 @@
+﻿<Properties StartupItem="RetireSmart.Android/TextShield.Droid.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.MonoForAndroid_API_15" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="RetireSmart.Shared/RSColors.cs">
+    <Files>
+      <File FileName="RetireSmart.iOS/View Controllers/RSLoginViewController.cs" Line="1" Column="1" />
+      <File FileName="../../../../Library/Frameworks/Xamarin.iOS.framework/Versions/9.0.1.29/lib/mono/2.1/Xamarin.iOS.Common.targets" Line="43" Column="51" />
+      <File FileName="../../../../Library/Frameworks/Xamarin.Android.framework/Versions/5.1.7-12/lib/xbuild/Xamarin/Android/Xamarin.Android.Common.targets" Line="8" Column="3" />
+      <File FileName="RetireSmart.Shared/RSColors.cs" Line="14" Column="6" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

@@ -1,0 +1,13 @@
+﻿<Properties StartupItem="RetireSmart.iOS/RetireSmart.iOS.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone6s.9.0" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../Library/Frameworks/Xamarin.iOS.framework/Versions/9.0.1.29/lib/mono/2.1/Xamarin.iOS.Common.targets">
+    <Files>
+      <File FileName="RetireSmart.iOS/View Controllers/RSLoginViewController.cs" Line="1" Column="1" />
+      <File FileName="../../../../Library/Frameworks/Xamarin.iOS.framework/Versions/9.0.1.29/lib/mono/2.1/Xamarin.iOS.Common.targets" Line="42" Column="29" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

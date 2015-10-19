@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>ec57f788-b798-4cf1-a5c4-fb051d32af61</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>TextShield.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)RetireSmart.Shared\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Authentication\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Chart\" />
+    <Folder Include="$(MSBuildThisFileDirectory)DAL\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Models\" />
+    <Folder Include="$(MSBuildThisFileDirectory)RequestObjects\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModels\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Consts\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Exceptions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Util\MathUtil.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RSColors.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Chart\ChartItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Chart\IChartable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Chart\ChartBuilder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Chart\IChartInput.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Chart\GenericChartInput.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Contribution.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Source.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RSFontSizes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\AnnualReturn.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Chart\IChartLine.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Chart\ChartLine.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DAL\AppCache.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Profile.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Investments.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\AccountFund.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\AccountInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\DashboardInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DAL\DataAccessConfig.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Util\ProfileUtil.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ProfileItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\SettingsItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RequestObjects\FundDetailRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Util\DialogUtil.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\FundPerformance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RequestObjects\AccountRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Authentication\RSTokenEndpointConfig.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\SourceFund.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\BalanceInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\BalanceByInvestmentRecord.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BalanceByInvestmentViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Util\BalanceUtil.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ContactUsInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Consts\UrlConsts.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Consts\ExtraStringConsts.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Consts\PrefStringConsts.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RequestObjects\RequestObjectFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Util\HTMLStringUtil.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Util\INetworkUtil.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ServerError.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DAL\IRSContentApi.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DAL\RSContentRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Authentication\IOwinTokenApi.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Authentication\AuthenticationManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Authentication\IOAuthTicket.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Authentication\OwinToken.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Exceptions\TokenNotAvailableException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Exceptions\NoAccountsAvailableException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Exceptions\CurrentAccountNotSetException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DAL\DataCacheEnum.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DAL\IRSContentRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DAL\IDataCache.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Authentication\IAuthenticationManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Authentication\AbstractAuthenticationManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\LoginUpdateInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ChangeLoginItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RequestObjects\ChangePinRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RequestObjects\ChangeUsernameRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RequestObjects\PasswordIndRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RequestObjects\ChangePasswordRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ErrorList.cs" />
+  </ItemGroup>
+</Project>

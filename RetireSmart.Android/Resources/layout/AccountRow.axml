@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:minHeight="90dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/BasicRowSelector">
+    <ImageView
+        android:id="@+id/account_row_moneybag"
+        android:src="@drawable/money_bag"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp" />
+    <TextView
+        android:text="ABC Company 401(k) Plan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_acct_name"
+        android:layout_toRightOf="@id/account_row_moneybag"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:textStyle="bold"
+        android:textSize="@dimen/acct_list_item_std"
+        android:textColor="@color/rs_teal"
+        android:ellipsize="marquee"
+        android:singleLine="true"
+        android:layout_marginRight="20dp" />
+    <TextView
+        android:text="Balance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_acct_bal_lbl"
+        android:layout_alignLeft="@id/txt_acct_name"
+        android:layout_below="@id/txt_acct_name"
+        android:textSize="@dimen/acct_list_item_std"
+        android:layout_marginBottom="30dp"
+        android:textColor="@color/black" />
+    <TextView
+        android:text="$100,000.00"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_acct_bal_amt"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/txt_acct_name"
+        android:layout_marginRight="20dp"
+        android:textSize="@dimen/acct_list_item_std"
+        android:gravity="right"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/black" />
+</RelativeLayout>

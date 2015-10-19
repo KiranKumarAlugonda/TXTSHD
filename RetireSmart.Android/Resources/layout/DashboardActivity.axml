@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_dash"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        app:theme="@style/ActionBarThemeOverlay"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+    <pagerslidingtabstrip.PagerSlidingTabStrip
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@id/toolbar_dash"
+        android:textColor="@color/mm_blue"
+        app:shouldExpand="true"
+        app:indicatorColor="@color/mm_blue"
+        app:indicatorHeight="5sp"
+        app:underlineColor="@color/mm_blue"
+        android:background="@color/white"
+        android:textSize="14sp" />
+    <TextShield.Droid.NoScrollViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tabs"
+        tools:context=".MainActivity" />
+</RelativeLayout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{7A084E54-6D8E-4A13-A175-28B4F2FA0448}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>com.massmutual.mobile.xamarin.shared.OAuth</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)OAuthContentRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Exceptions\OAuthInvalidRequestException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Exceptions\OAuthContentRequestException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Exceptions\OAuthTicketExpiredException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Exceptions\OAuthTicketRequestException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tickets\DatapowerOAuthTicket.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IOAuthParams.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IOAuthTicket.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Consts\HttpConsts.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IOAuthTokenEndpointConfig.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IOAuthContentEndpointConfig.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OAuthTicketRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Exceptions\OAuthNoContentException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Exceptions\OAuthTicketInvalidCredentialsException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Exceptions\OAuthInvalidTokenRequestException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Params\PasswordParams.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Params\RefreshParams.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tickets\OwinOAuthTicket.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Exceptions\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Tickets\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Interfaces\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Consts\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Params\" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+	<dimen name="text_12sp">12sp</dimen>
+	<dimen name="text_14sp">14sp</dimen>
+	<dimen name="text_48sp">48sp</dimen>
+	<dimen name="standard_text_size">14sp</dimen>
+	<dimen name="dashboard_body_text">14sp</dimen>
+	<dimen name="acct_list_item_std">14sp</dimen>
+	<dimen name="total_balance_heading">18sp</dimen>
+	<dimen name="chart_list_item_min_height">80dp</dimen>
+	<dimen name="chart_list_item_hdr">14sp</dimen>
+	<dimen name="chart_list_item_std">14sp</dimen>
+	<dimen name="balance_list_item_hdr">14sp</dimen>
+	<dimen name="balance_list_item_std">14sp</dimen>
+	<dimen name="profile_list_item_hdr">14sp</dimen>
+	<dimen name="profile_list_item_std">14sp</dimen>
+
+</resources>
+

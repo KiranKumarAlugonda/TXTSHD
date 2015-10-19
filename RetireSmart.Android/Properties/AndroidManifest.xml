@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.massmutual.android.TextShield" android:versionName="1.1.1" android:versionCode="4">
+	<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="21" />
+	<application android:icon="@drawable/Icon" android:label="TextShield" android:theme="@style/RSTheme">
+	</application>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.CALL_PHONE" />
+</manifest>

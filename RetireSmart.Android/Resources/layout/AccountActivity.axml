@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffffff">
+    <TextView
+        android:id="@+id/txt_select_acct"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:padding="10dp"
+        android:text="@string/acct_select_header"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:textColor="@color/black" />
+    <Button
+        android:text="@string/acct_btn_logout"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:id="@+id/btn_acct_logout"
+        android:background="@color/white"
+        android:textColor="#1c75bc"
+        android:typeface="normal"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp" />
+    <View
+        android:id="@+id/account_select_divider"
+        android:layout_height="1dp"
+        android:background="#A7A9AC"
+        android:layout_width="match_parent"
+        android:layout_below="@id/txt_select_acct" />
+    <ListView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/account_select_list"
+        android:visibility="gone"
+        android:layout_below="@id/account_select_divider" />
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@id/txt_select_acct"
+        android:id="@+id/account_loading_progress"
+        android:visibility="visible"
+        android:indeterminate="true"
+        android:indeterminateBehavior="repeat"
+        android:layout_marginTop="10dp" />
+    <TextView
+        android:text="@string/acct_select_loading"
+        android:layout_below="@id/account_loading_progress"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/txt_account_loading"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:textColor="@color/black" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_db_message"
+        android:layout_below="@id/account_select_list"
+        android:textColor="@color/grey"
+        android:textSize="12sp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp" />
+</RelativeLayout>

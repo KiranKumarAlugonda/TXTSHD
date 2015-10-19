@@ -1,0 +1,17 @@
+﻿<Properties StartupItem="RetireSmart.iOS/TextShield.iOS.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone6s.9.0" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="RetireSmart.iOS/View Controllers/RSLoginViewController.cs">
+    <Files>
+      <File FileName="RetireSmart.iOS/View Controllers/RSLoginViewController.cs" Line="57" Column="3" />
+      <File FileName="RetireSmart.Shared/RSColors.cs" Line="1" Column="1" />
+      <File FileName="../../../../Library/Frameworks/Xamarin.Android.framework/Versions/5.1.7-12/lib/xbuild/Xamarin/Android/Xamarin.Android.Common.targets" Line="1" Column="1" />
+      <File FileName="RetireSmart.iOS/View Controllers/RSDashboardViewController.cs" Line="1" Column="1" />
+      <File FileName="RetireSmart.iOS/View Controllers/RSChangePinViewController.designer.cs" Line="1" Column="1" />
+      <File FileName="RetireSmart.iOS/View Controllers/RSAccountViewController.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

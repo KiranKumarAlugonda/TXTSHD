@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:divider="@color/grey"
+    android:dividerHeight="1dp"
+    android:background="@color/white">
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/view1"
+        android:background="@drawable/green_gradiant"
+        android:layout_above="@+id/total_divider" />
+    <TextView
+        android:id="@+id/txt_total_balance_hdr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:text="@string/dash_total_bal"
+        android:layout_marginTop="5dp"
+        android:textSize="@dimen/dashboard_body_text" />
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progress_loading_dash"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="22dp"
+        android:indeterminate="true"
+        android:visibility="gone" />
+    <TextView
+        android:id="@+id/txt_total_balance_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/green"
+        android:gravity="center"
+        android:textSize="48sp"
+        android:layout_marginBottom="5dp"
+        android:layout_below="@id/txt_total_balance_hdr" />
+    <View
+        android:id="@id/total_divider"
+        android:layout_height="1dp"
+        android:background="#A7A9AC"
+        android:layout_width="match_parent"
+        android:layout_below="@id/txt_total_balance_amount" />
+    <TextView
+        android:id="@+id/txt_ror_lbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:layout_marginRight="0dp"
+        android:layout_below="@id/total_divider"
+        android:layout_alignParentLeft="true"
+        android:text="Rate of Return"
+        android:textSize="@dimen/dashboard_body_text" />
+    <TextView
+        android:id="@+id/last_contribution"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:textColor="@color/black"
+        android:text="@string/dash_last_contrib"
+        android:layout_marginRight="0dp"
+        android:layout_below="@id/txt_ror_lbl"
+        android:layout_alignParentLeft="true"
+        android:textSize="@dimen/dashboard_body_text" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_ror_amt"
+        android:layout_below="@id/total_divider"
+        android:layout_marginRight="3dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/green_4"
+        android:layout_toLeftOf="@+id/txt_ror_amt_more"
+        android:textSize="@dimen/dashboard_body_text" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@id/txt_ror_amt_more"
+        android:layout_below="@id/total_divider"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/mm_blue"
+        android:text="\?"
+        android:textSize="@dimen/dashboard_body_text" />
+    <TextView
+        android:textColor="@color/black"
+        android:text="@string/dash_portfolio_sum"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:id="@+id/portfolio_sum_header"
+        android:layout_alignParentLeft="true"
+        android:gravity="left|center"
+        android:layout_below="@id/last_contribution"
+        android:layout_marginLeft="10dp"
+        android:textSize="@dimen/dashboard_body_text" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_last_contrib_amt"
+        android:gravity="right"
+        android:textColor="@color/green_4"
+        android:layout_below="@id/txt_ror_amt"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="3dp"
+        android:layout_toLeftOf="@+id/txt_last_contrib_amt_more"
+        android:textSize="@dimen/dashboard_body_text" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@id/txt_last_contrib_amt_more"
+        android:text="\?"
+        android:gravity="right"
+        android:textColor="@color/mm_blue"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/txt_ror_amt"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:visibility="invisible"
+        android:textSize="@dimen/dashboard_body_text" />
+    <Button
+        android:id="@+id/switch_chart"
+        android:text="@string/dash_button"
+        android:textColor="@color/mm_blue"
+        android:textSize="@dimen/dashboard_body_text"
+        android:layout_width="160dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/last_contribution"
+        android:background="@drawable/RoundedButton"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:enabled="true"
+        android:visibility="visible" />
+    <TextShield.Droid.ChartView
+        android:layout_gravity="center"
+        android:id="@+id/pie_chart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/switch_chart"
+        android:padding="0dp"
+        android:visibility="gone" />
+    <LinearLayout
+        android:id="@+id/list_view"
+        android:layout_height="fill_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible"
+        android:layout_below="@id/switch_chart">
+        <include
+            layout="@layout/header_list" />
+        <ListView
+            android:gravity="center"
+            android:id="@+id/list"
+            android:divider="@color/grey"
+            android:dividerHeight="1dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none" />
+    </LinearLayout>
+</RelativeLayout>

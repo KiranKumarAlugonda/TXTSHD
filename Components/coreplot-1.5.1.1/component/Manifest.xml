@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<component format="1" id="coreplot">
+  <name>Core Plot</name>
+  <publisher>Drew McCormack</publisher>
+  <publisher-url>http://code.google.com/p/core-plot/</publisher-url>
+  <version>1.5.1.1</version>
+  <summary>Create stunning, interactive, high-performance graphs for iOS.</summary>
+  <screenshots>
+    <img src="screenshots/screenshot1.png" title="screenshot1" />
+  </screenshots>
+  <samples>
+    <sample id="CorePlotiOSSample-Classic">
+      <name>iOS Classic Sample</name>
+      <summary>iOS Classic Sample</summary>
+    </sample>
+    <sample id="CorePlotiOSSample">
+      <name>iOS Unified Sample</name>
+      <summary>iOS Unified Sample</summary>
+    </sample>
+  </samples>
+</component>

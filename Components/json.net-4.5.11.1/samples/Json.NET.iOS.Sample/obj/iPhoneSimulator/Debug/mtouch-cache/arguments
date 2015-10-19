@@ -1,0 +1,29 @@
+# Version: 8.4.0.16 (80e9ff7)
+# [first argument, ignore] # /Users/fieldnetdev/RetireSmartGit/MM_BOSTON_RETIRE_XAMARIN_GIT/RetireSmartXam/Components/json.net-4.5.11.1/samples/Json.NET.iOS.Sample/bin/iPhoneSimulator/Debug/mtouch.exe
+/Library/Frameworks/Xamarin.iOS.framework/Versions/8.4.0.16/bin/mtouch \
+	-sdkroot \
+	/Applications/Xcode.app/Contents/Developer \
+	--cache \
+	/Users/fieldnetdev/RetireSmartGit/MM_BOSTON_RETIRE_XAMARIN_GIT/RetireSmartXam/Components/json.net-4.5.11.1/samples/Json.NET.iOS.Sample/obj/iPhoneSimulator/Debug/mtouch-cache \
+	--nomanifest \
+	--nosign \
+	-sim \
+	/Users/fieldnetdev/RetireSmartGit/MM_BOSTON_RETIRE_XAMARIN_GIT/RetireSmartXam/Components/json.net-4.5.11.1/samples/Json.NET.iOS.Sample/bin/iPhoneSimulator/Debug/JsonNETiOSSample.app \
+	-r \
+	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/2.1/System.dll \
+	-r \
+	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/2.1/System.Xml.dll \
+	-r \
+	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/2.1/System.Core.dll \
+	-r \
+	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/2.1/monotouch.dll \
+	-r \
+	/Users/fieldnetdev/RetireSmartGit/MM_BOSTON_RETIRE_XAMARIN_GIT/RetireSmartXam/Components/json.net-4.5.11.1/lib/ios/Newtonsoft.Json.dll \
+	-debug \
+	-nolink \
+	-sdk \
+	8.1 \
+	-targetver \
+	5.0 \
+	--abi=i386 \
+	/Users/fieldnetdev/RetireSmartGit/MM_BOSTON_RETIRE_XAMARIN_GIT/RetireSmartXam/Components/json.net-4.5.11.1/samples/Json.NET.iOS.Sample/bin/iPhoneSimulator/Debug/Sample.exe \

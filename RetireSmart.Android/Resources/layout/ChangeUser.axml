@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/white">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_change_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        app:theme="@style/ActionBarThemeOverlay"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+    <View
+        android:layout_height="0.5dp"
+        android:background="#D8D8D8"
+        android:layout_width="match_parent" />
+    <TextView
+        android:text="@string/enter_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_changeLogin_about"
+        android:gravity="left"
+        android:textSize="15dp"
+        android:textColor="#757575"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp" />
+    <EditText
+        android:hint="@string/new_userid"
+        android:background="@android:color/transparent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTxt_new_userid"
+        android:gravity="left"
+        android:textColorHint="@color/grey"
+        android:textSize="15dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp" />
+    <View
+        android:layout_height="0.5dp"
+        android:background="#D8D8D8"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp" />
+    <EditText
+        android:hint="@string/retype_new_userid"
+        android:textColorHint="@color/grey"
+        android:background="@android:color/transparent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTxt_retype_new_userid"
+        android:gravity="left"
+        android:textSize="15dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp" />
+    <View
+        android:layout_height="0.5dp"
+        android:background="#D8D8D8"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp" />
+    <TextView
+        android:text="@string/about_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_changeLogin_about"
+        android:gravity="left"
+        android:textSize="15dp"
+        android:textColor="#757575"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp" />
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_userid_abouttext1"
+        android:gravity="left"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp" />
+</LinearLayout>

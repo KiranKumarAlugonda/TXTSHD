@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#fff">
+    <TextView
+        android:text="Before Tax 401(k)"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_source_lbl"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="@dimen/balance_list_item_hdr"
+        android:textStyle="bold"
+        android:textColor="@color/black" />
+    <TextView
+        android:text="@string/bal_vested_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_vested_percent_lbl"
+        android:textSize="@dimen/acct_list_item_std"
+        android:layout_below="@id/txt_source_lbl"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="5dp" />
+    <TextView
+        android:text="100%"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_vested_percent_amt"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:textSize="@dimen/balance_list_item_std"
+        android:layout_alignTop="@id/txt_vested_percent_lbl"
+        android:textColor="@color/black" />
+    <TextView
+        android:text="@string/bal_vested_balance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_vested_bal_lbl"
+        android:layout_below="@id/txt_vested_percent_lbl"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/balance_list_item_std"
+        android:layout_marginTop="5dp" />
+    <TextView
+        android:text="$100,000.00"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_vested_bal_amt"
+        android:layout_below="@id/txt_vested_percent_lbl"
+        android:textSize="@dimen/balance_list_item_std"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:textColor="@color/green_4"
+        android:gravity="right"
+        android:layout_marginTop="5dp" />
+    <TextView
+        android:text="@string/bal_balance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_bal_lbl"
+        android:layout_below="@id/txt_vested_bal_lbl"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="@dimen/balance_list_item_std"
+        android:textColor="@color/black"
+        android:layout_marginTop="5dp" />
+    <TextView
+        android:text="$100,000.00"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_bal_amt"
+        android:textSize="@dimen/balance_list_item_std"
+        android:textColor="@color/green_4"
+        android:layout_below="@id/txt_vested_bal_lbl"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="right"
+        android:layout_marginTop="5dp" />
+</RelativeLayout>

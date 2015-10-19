@@ -1,0 +1,884 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="com.massmutual.mobile.xamarin.shared.OAuth.HttpConsts" Collapsed="true">
+    <Position X="17.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\OAuth\Consts\HttpConsts.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="com.massmutual.mobile.xamarin.shared.OAuth.OAuthContentRequestException" Collapsed="true">
+    <Position X="26" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\OAuth\Exceptions\OAuthContentRequestException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="com.massmutual.mobile.xamarin.shared.OAuth.OAuthInvalidRequestException" Collapsed="true">
+    <Position X="10.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\OAuth\Exceptions\OAuthInvalidRequestException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="com.massmutual.mobile.xamarin.shared.OAuth.OAuthInvalidTokenRequestException" Collapsed="true">
+    <Position X="12" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\OAuth\Exceptions\OAuthInvalidTokenRequestException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="com.massmutual.mobile.xamarin.shared.OAuth.OAuthNoContentException" Collapsed="true">
+    <Position X="13.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\OAuth\Exceptions\OAuthNoContentException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="com.massmutual.mobile.xamarin.shared.OAuth.OAuthTicketExpiredException" Collapsed="true">
+    <Position X="15.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\OAuth\Exceptions\OAuthTicketExpiredException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="com.massmutual.mobile.xamarin.shared.OAuth.OAuthTicketInvalidCredentialsException" Collapsed="true">
+    <Position X="17.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\OAuth\Exceptions\OAuthTicketInvalidCredentialsException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="com.massmutual.mobile.xamarin.shared.OAuth.OAuthTicketRequestException" Collapsed="true">
+    <Position X="20.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\OAuth\Exceptions\OAuthTicketRequestException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="com.massmutual.mobile.xamarin.shared.OAuth.IOAuthTicket" Collapsed="true">
+    <Position X="6.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAACAAAAAQAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\OAuth\Interfaces\IOAuthTicket.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="com.massmutual.mobile.xamarin.shared.OAuth.OAuthContentRequest&lt;T&gt;" Collapsed="true">
+    <Position X="24.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAgAAAAAAAAAAAIAAgAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\OAuth\OAuthContentRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="com.massmutual.mobile.xamarin.shared.OAuth.OAuthTicketRequest" Collapsed="true">
+    <Position X="19" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\OAuth\OAuthTicketRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="com.massmutual.mobile.xamarin.shared.OAuth.PasswordParams" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="22.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAQAACAAAABAAAAAAAAACAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\OAuth\Params\PasswordParams.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="com.massmutual.mobile.xamarin.shared.OAuth.RefreshParams" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAQAACAAAABAAAAAAAAACAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\OAuth\Params\RefreshParams.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="com.massmutual.mobile.xamarin.shared.OAuth.DatapowerOAuthTicket" Collapsed="true">
+    <Position X="5.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAACAAAAAQAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\OAuth\Tickets\DatapowerOAuthTicket.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="com.massmutual.mobile.xamarin.shared.OAuth.OwinOAuthTicket" Collapsed="true">
+    <Position X="7.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAEAAAAAAAAAAABAAAAgAAAAAAAAAAAAIgCAAAAAQAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\OAuth\Tickets\OwinOAuthTicket.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.AbstractAuthenticationManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAgAAAAIAAAAAAAAAAAAAAAAQAQAAAQAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Authentication\AbstractAuthenticationManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TextShield.Shared.AuthenticationManager" Collapsed="true">
+    <Position X="13.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACgAAgAIAAIAAAAEAAAAAAAAAAAQAQAAAQAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Authentication\AuthenticationManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.IOAuthTicket" Collapsed="true">
+    <Position X="0.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAACAAAAAQAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Authentication\IOAuthTicket.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.OwinToken" Collapsed="true">
+    <Position X="0.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAEAAAAAAAAAAABAAAAgAAAAAAAAAAAAIgCAAAAAQAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Authentication\OwinToken.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.RSTokenEndpointConfig" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgEAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Authentication\RSTokenEndpointConfig.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TextShield.Shared.ChartBuilder" Collapsed="true">
+    <Position X="19" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Chart\ChartBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.ChartItem" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAASAAAgAAAgAAAABAAAACAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Chart\ChartItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TextShield.Shared.ChartLine" Collapsed="true">
+    <Position X="22.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Chart\ChartLine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.GenericChartInput" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAASAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Chart\GenericChartInput.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TextShield.Shared.StringVarConsts" Collapsed="true">
+    <Position X="26" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAEAgAAEAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Consts\ExtraStringConsts.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.PrefStringConsts" Collapsed="true">
+    <Position X="24.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Consts\PrefStringConsts.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.UrlConsts" Collapsed="true">
+    <Position X="19" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAgACAAAAAAAAACACAAgAAEAAAAgAAABAAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Consts\UrlConsts.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.AppCache" Collapsed="true">
+    <Position X="10.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAQAAAAAQAACAAAAAABAAABAAAAAQAAACAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\DAL\AppCache.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.DataAccessConfig" Collapsed="true">
+    <Position X="22.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAIQAAAAAAAAAAAAAAAAAAADAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\DAL\DataAccessConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.RSContentRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAABAIAAAAAAAAAAAQIAAEAAAAAAABA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\DAL\RSContentRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TextShield.Shared.CurrentAccountNotSetException" Collapsed="true">
+    <Position X="17.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Exceptions\CurrentAccountNotSetException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.NoAccountsAvailableException" Collapsed="true">
+    <Position X="22.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Exceptions\NoAccountsAvailableException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.TokenNotAvailableException" Collapsed="true">
+    <Position X="12" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Exceptions\TokenNotAvailableException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.AccountFund" Collapsed="true">
+    <Position X="13.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAIAAEACIBAAABAAAAAAAAAAAgAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Models\AccountFund.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.AccountInfo" Collapsed="true">
+    <Position X="15.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAQAAAAAAAAAgAAAAAEAAAwAAAEAQAAAAoAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Models\AccountInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.AnnualReturn" Collapsed="true">
+    <Position X="24.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Models\AnnualReturn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.BalanceByInvestmentRecord" Collapsed="true">
+    <Position X="19" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAggAAAAABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Models\BalanceByInvestmentRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.BalanceInfo" Collapsed="true">
+    <Position X="22.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Models\BalanceInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.ContactUsInfo" Collapsed="true">
+    <Position X="12" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAABAAAAAAAAAAAAAgAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Models\ContactUsInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.Contribution" Collapsed="true">
+    <Position X="15.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIgAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Models\Contribution.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.DashboardInfo" Collapsed="true">
+    <Position X="20.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAQAAAAAAAAAAAAAAAAAEIIAAAAAABAAAAAAogA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Models\DashboardInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.DashboardFundInfo" Collapsed="true">
+    <Position X="19" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Models\DashboardInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.FundPerformance" Collapsed="true">
+    <Position X="12" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAQAAAAI=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Models\FundPerformance.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.Investments" Collapsed="true">
+    <Position X="19" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAIAAAIAAQgAAAAAAAACAIAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Models\Investments.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.Profile" Collapsed="true">
+    <Position X="10.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAACgAABAAAAAAAAIAABAACAAAAAIAAAACAAgAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Models\Profile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.BeneInfo" Collapsed="true">
+    <Position X="10.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Models\Profile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.Beneficiary" Collapsed="true">
+    <Position X="26" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAIAAAAAEYAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Models\Profile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.Address" Collapsed="true">
+    <Position X="22.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAEIAAAACAAAQAAAAAAkAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Models\Profile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.ProfileItem" Collapsed="true">
+    <Position X="12" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAgAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Models\ProfileItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.ServerError" Collapsed="true">
+    <Position X="15.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Models\ServerError.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.SettingsItem" Collapsed="true">
+    <Position X="17.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAACAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Models\SettingsItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.TableData" Collapsed="true">
+    <Position X="10.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Models\SettingsItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.Source" Collapsed="true">
+    <Position X="22.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAACAAAAAAAAAJAAAAAEAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Models\Source.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.SourceFund" Collapsed="true">
+    <Position X="24.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABEAAAAAAAAAAAAAAAAQAIAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Models\SourceFund.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.AccountRequest" Collapsed="true">
+    <Position X="17.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAQAAAAAAAAAAAAAAAAAAAgAAAEAAAAAAIAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\RequestObjects\AccountRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.FundDetailRequest" Collapsed="true">
+    <Position X="10.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABIQAAAAgAAAAAACAAAAAAAgAAAEAAAAAAIAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\RequestObjects\FundDetailRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.RequestObjectFactory" Collapsed="true">
+    <Position X="20.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\RequestObjects\RequestObjectFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.RSColors" Collapsed="true">
+    <Position X="24.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAYAAQBAAAIBIhBAAAAASIgAAAAAWAPGBAAYAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\RSColors.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.RSFontSizes" Collapsed="true">
+    <Position X="13.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\RSFontSizes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.BalanceUtil" Collapsed="true">
+    <Position X="24.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Util\BalanceUtil.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.DialogUtil" Collapsed="true">
+    <Position X="24.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Util\DialogUtil.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.HTMLStringUtil" Collapsed="true">
+    <Position X="15.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Util\HTMLStringUtil.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.MathUtil" Collapsed="true">
+    <Position X="20.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Util\MathUtil.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.ProfileUtil" Collapsed="true">
+    <Position X="17.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Util\ProfileUtil.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.BalanceByInvestmentViewModel" Collapsed="true">
+    <Position X="20.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\ViewModels\BalanceByInvestmentViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.Shared.AutoGeneratedIRSContentApi" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAIAAAAAAAABAAQIAAAAAAAAAABQ=</HashCode>
+      <FileName>RefitStubs.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TextShield.Shared.AutoGeneratedIOwinTokenApi" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="15.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>RefitStubs.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TextShield.iOS.App" Collapsed="true">
+    <Position X="26" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>App.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.iOS.UIColorExtensions" Collapsed="true">
+    <Position X="17.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Extension Methods\UIColorExtension.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.iOS.ChartTableViewCell" Collapsed="true">
+    <Position X="24.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAAIAEAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>FundTable\ChartTableViewCell.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.iOS.CircleGraphView" Collapsed="true">
+    <Position X="26" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CEAAgAIICACAA4GBAIAAAAgEIAAAADAAAAAAAIQACQA=</HashCode>
+      <FileName>FundTable\CircleGraphView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.iOS.DotView" Collapsed="true">
+    <Position X="26" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FundTable\DotView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.iOS.Application" Collapsed="true">
+    <Position X="12" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Main.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.iOS.AccountTableViewCell" Collapsed="true">
+    <Position X="19" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAEAAAAAAAAEAAECAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>TableSources\AccountTableViewCell.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.iOS.AccountTableViewSource" Collapsed="true">
+    <Position X="20.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAEAACAAEAAAAABAAAEAAAABAAAAEAAAAAAAA=</HashCode>
+      <FileName>TableSources\AccountTableViewSource.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.iOS.ByInvestmentTableViewCell" Collapsed="true">
+    <Position X="12" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAABAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TableSources\ByInvestmentTableViewCell.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.iOS.ByInvestmentTableViewSource" Collapsed="true">
+    <Position X="13.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAUAAAAAAAAAAABAAAEAAAABAABAEAAAAAAAA=</HashCode>
+      <FileName>TableSources\ByInvestmentTableViewSource.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.iOS.BySourceTableViewCell" Collapsed="true">
+    <Position X="15.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAABAAAkEEAAAEAgAAgBAAAAAAA=</HashCode>
+      <FileName>TableSources\BySourceTableViewCell.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.iOS.BySourceTableViewSource" Collapsed="true">
+    <Position X="17.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAEAAAAAAAAAAABAAAEAAAQBAAAAEAAAAAAAA=</HashCode>
+      <FileName>TableSources\BySourceTableViewSource.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.iOS.ContactUsCell" Collapsed="true">
+    <Position X="10.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQACAAAAAEAAAAAEAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>TableSources\ContactUsCell.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.iOS.ContactUsTableViewSource" Collapsed="true">
+    <Position X="13.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAEQAAAAAAAAAABAAAAAAAABAAAAEAAAAAAAA=</HashCode>
+      <FileName>TableSources\ContactUsTableViewSource.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.iOS.ProfileTableViewCell" Collapsed="true">
+    <Position X="13.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAIAAAAAAAEAAAAAAAoAAAACAAAAAA=</HashCode>
+      <FileName>TableSources\ProfileTableViewCell.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.iOS.ProfileTableViewSource" Collapsed="true">
+    <Position X="15.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAEAAAAAAAAAAAAAAAAAAAIBAAAAEAAAAAAAA=</HashCode>
+      <FileName>TableSources\ProfileTableViewSource.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.iOS.SettingsTableViewSource" Collapsed="true">
+    <Position X="19" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAEAAAAAECAAAQAAAAAAAAADAAAIEAAAAAAAA=</HashCode>
+      <FileName>TableSources\SettingsTableViewSource.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.iOS.SettingTableViewCell" Collapsed="true">
+    <Position X="20.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TableSources\SettingTableViewCell.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.iOS.TouchIDResponse" Collapsed="true">
+    <Position X="13.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAACAAGCAEiFRkAAAEQIgCCYCEsQAABGAlBBAAAA=</HashCode>
+      <FileName>TouchIDResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.iOS.TouchIDUtil" Collapsed="true">
+    <Position X="15.5" Y="9.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="TextShield.iOS.TouchIDUtil.TouchIDSettings" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>TouchIDUtil.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAALAQQAAAAAAAIAAAAAAQAAIAAAgAAEACBAAAA=</HashCode>
+      <FileName>TouchIDUtil.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.iOS.AboutViewController" Collapsed="true">
+    <Position X="10.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAgAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>View Controllers\AboutViewController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.iOS.RSAccountBaseViewController" Collapsed="true">
+    <Position X="1.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAgQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View Controllers\RSAccountBaseController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.iOS.RSAccountViewController" Collapsed="true">
+    <Position X="22.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAoAYAAAABAAAAAAAQAAAAAAAAAACAAAAACAAA=</HashCode>
+      <FileName>View Controllers\RSAccountViewController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.iOS.RSBalancesViewController" Collapsed="true">
+    <Position X="0.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAgAAAMAgBIAAAAAAIBQAAAAIAhgAAIAAAAICAAA=</HashCode>
+      <FileName>View Controllers\RSBalancesViewController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.iOS.RSBaseViewController" Collapsed="true">
+    <Position X="3" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAIAAAAAAAAAAAgQAAAAAAAAAACAAAAACAAA=</HashCode>
+      <FileName>View Controllers\RSBaseViewController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.iOS.RSContactUsViewController" Collapsed="true">
+    <Position X="26" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAgAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>View Controllers\RSContactUsViewController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.iOS.RSDashboardViewController" Collapsed="true">
+    <Position X="3" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAIAIAIAAAAEAAQEAAAAAAAQAAAAEAAAAwAACAAA=</HashCode>
+      <FileName>View Controllers\RSDashboardViewController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.iOS.RSDisclaimersViewController" Collapsed="true">
+    <Position X="12" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAIAAAAAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>View Controllers\RSDisclaimersViewController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.iOS.RSFundDetailViewController" Collapsed="true">
+    <Position X="15.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACgAGAgAIABCAAwABMAgASAQAAAIEBAALAAAAACAAA=</HashCode>
+      <FileName>View Controllers\RSFundDetailViewController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.iOS.RSLegalViewController" Collapsed="true">
+    <Position X="0.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>View Controllers\RSLegalViewController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.iOS.RSLoginHelpViewController" Collapsed="true">
+    <Position X="17.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAIAAAABAAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>View Controllers\RSLoginHelpViewController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.iOS.TSLoginViewController" Collapsed="true">
+    <Position X="19" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AADhEAAIAIABASACAAAAgAcAAAAAAAIAEAAIYEACAAA=</HashCode>
+      <FileName>View Controllers\TSLoginViewController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.iOS.RSNonQualViewController" Collapsed="true">
+    <Position X="20.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>View Controllers\RSNonQualViewController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.iOS.RSPortfolioViewController" Collapsed="true">
+    <Position X="22.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAIAAAAAAEAAAAAQAAAAAAAAAAyAAAAACAAA=</HashCode>
+      <FileName>View Controllers\RSPortfolioViewController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.iOS.RSPrivacyPolicyViewController" Collapsed="true">
+    <Position X="3" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>View Controllers\RSPrivacyPolicyViewController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.iOS.RSProfileViewController" Collapsed="true">
+    <Position X="24.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAIAAAAAAAgAAAAQAAAAAAAAAACAAAAACAAA=</HashCode>
+      <FileName>View Controllers\RSProfileViewController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.iOS.RSSettingsViewController" Collapsed="true">
+    <Position X="5.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>View Controllers\RSSettingsViewController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.iOS.RSTabViewController" Collapsed="true">
+    <Position X="26" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>View Controllers\RSTabViewController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.iOS.RSTermsConditionsViewController" Collapsed="true">
+    <Position X="5.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>View Controllers\RSTermsConditionsViewController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.iOS.RSTouchDisclaimerViewController" Collapsed="true">
+    <Position X="12" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAIAABAAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>View Controllers\RSTouchDisclaimerViewController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.iOS.RSUserAgreementViewController" Collapsed="true">
+    <Position X="13.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAIAAAAAAAAAAAAAAAAAAIAIAAAAAAAACAAA=</HashCode>
+      <FileName>View Controllers\RSUserAgreementViewController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextShield.iOS.WebViewController" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAIAAAAAAAAAAAgQAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>View Controllers\WebViewController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RefitInternalGenerated.PreserveAttribute" Collapsed="true">
+    <Position X="26" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>RefitStubs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="com.massmutual.mobile.xamarin.shared.OAuth.IOAuthContentEndpointConfig" Collapsed="true">
+    <Position X="20.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\OAuth\Interfaces\IOAuthContentEndpointConfig.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="com.massmutual.mobile.xamarin.shared.OAuth.IOAuthParams" Collapsed="true">
+    <Position X="22.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAACAAAAAAAAAAAAAACAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\OAuth\Interfaces\IOAuthParams.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="com.massmutual.mobile.xamarin.shared.OAuth.IOAuthTokenEndpointConfig" Collapsed="true">
+    <Position X="24.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgEAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\OAuth\Interfaces\IOAuthTokenEndpointConfig.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TextShield.Shared.IAuthenticationManager" Collapsed="true">
+    <Position X="10.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAgAAAAIAAAAAAAAAAAAAAAAAAQAAAQAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Authentication\IAuthenticationManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TextShield.Shared.IOwinTokenApi" Collapsed="true">
+    <Position X="26" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Authentication\IOwinTokenApi.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TextShield.Shared.IChartable" Collapsed="true">
+    <Position X="12" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAASAAAgAAAgAAAABAAAACAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Chart\IChartable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TextShield.Shared.IChartInput" Collapsed="true">
+    <Position X="13.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAASAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Chart\IChartInput.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TextShield.Shared.IChartLine" Collapsed="true">
+    <Position X="15.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Chart\IChartLine.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TextShield.Shared.IDataCache" Collapsed="true">
+    <Position X="17.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAQAAAAAAAAABAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\DAL\IDataCache.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TextShield.Shared.IRSContentApi" Collapsed="true">
+    <Position X="10.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAIAAAAAAAAAAAQIAAAAAAAAAABA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\DAL\IRSContentApi.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TextShield.Shared.IRSContentRepository" Collapsed="true">
+    <Position X="12" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAIAAAAAAAAAAAQIAAEAAAAAAABA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\DAL\IRSContentRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TextShield.Shared.INetworkUtil" Collapsed="true">
+    <Position X="19" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\Util\INetworkUtil.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="TextShield.Shared.DataCacheEnum" Collapsed="true">
+    <Position X="10.25" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAAEAAAAAAQAAABAAgAAAAAA=</HashCode>
+      <FileName>C:\Users\alexchan\Source\Repos\MM_BOSTON_RETIRE_XAMARIN_GIT\TextShieldXam\TextShield.Shared\DAL\DataCacheEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectGuid>{53AE25CD-45E2-4BB0-A7DB-F07E943B4B45}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>TextShield.iOS</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>RetireSmartiOS</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>i386, x86_64</MtouchArch>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <CrashReportingApiKey>
+    </CrashReportingApiKey>
+    <CodesignKey>iPhone Developer: Kiran Kumar Alugonda (6ABWT54EC7)</CodesignKey>
+    <MtouchI18n>
+    </MtouchI18n>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>i386, x86_64</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchI18n>
+    </MtouchI18n>
+    <CrashReportingApiKey>fe7bb3031d913f3c0e497acb5f4c3c1c11c3b9b04b737dafb7d663dd3003e406762c66e94bb28d73060674eeffdf4eabec913e0b</CrashReportingApiKey>
+    <CodesignKey>iPhone Developer</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>ARMv7, ARMv7s, ARM64</MtouchArch>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <IpaPackageName>
+    </IpaPackageName>
+    <CrashReportingApiKey>API Key Goes Here</CrashReportingApiKey>
+    <MtouchI18n>
+    </MtouchI18n>
+    <BuildIpa>true</BuildIpa>
+    <MtouchProfiling>true</MtouchProfiling>
+    <MtouchUseSGen>true</MtouchUseSGen>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <MtouchUseThumb>true</MtouchUseThumb>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchArch>ARMv7, ARMv7s</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Distribution: Massachusetts Mutual Life Insurance Company</CodesignKey>
+    <MtouchUseLlvm>true</MtouchUseLlvm>
+    <IpaPackageName>
+    </IpaPackageName>
+    <MtouchI18n>
+    </MtouchI18n>
+    <CrashReportingApiKey>API Key Goes Here</CrashReportingApiKey>
+    <BuildIpa>true</BuildIpa>
+    <MtouchUseSGen>true</MtouchUseSGen>
+    <MtouchUseThumb>true</MtouchUseThumb>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\iPhone\Ad-Hoc</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <MtouchArch>ARMv7, ARMv7s, ARM64</MtouchArch>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <BuildIpa>True</BuildIpa>
+    <CodesignKey>iPhone Distribution: Massachusetts Mutual Life Insurance Company</CodesignKey>
+    <CrashReportingApiKey>
+    </CrashReportingApiKey>
+    <IpaPackageName>
+    </IpaPackageName>
+    <MtouchUseThumb>true</MtouchUseThumb>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <MtouchI18n>
+    </MtouchI18n>
+    <CodesignProvision>37591d06-c5a6-47fd-b62e-99e9dc323d48</CodesignProvision>
+    <MtouchUseLlvm>true</MtouchUseLlvm>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\iPhone\AppStore</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <MtouchArch>ARMv7, ARMv7s, ARM64</MtouchArch>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <CodesignProvision>2a62aad4-0e6b-433e-b8cc-6fd52ffdb4b8</CodesignProvision>
+    <CodesignKey>iPhone Distribution: Massachusetts Mutual Life Insurance Company (Z55TXTWJB3)</CodesignKey>
+    <MtouchUseLlvm>true</MtouchUseLlvm>
+    <MtouchUseThumb>true</MtouchUseThumb>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <IpaPackageName>
+    </IpaPackageName>
+    <MtouchI18n>
+    </MtouchI18n>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <None Include="iOSClassDiagram.cd" />
+    <None Include="Info.plist" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Entitlements.plist" />
+    <Compile Include="Extension Methods\UIColorExtension.cs" />
+    <Compile Include="FundTable\ChartTableViewSource.cs" />
+    <Compile Include="FundTable\ChartTableViewCell.cs" />
+    <Compile Include="FundTable\CircleGraphView.cs" />
+    <Compile Include="FundTable\DotView.cs" />
+    <Compile Include="View Controllers\RetireBaseViewController.designer.cs">
+      <DependentUpon>RSBaseViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View Controllers\RetireDashboardViewController.designer.cs">
+      <DependentUpon>RSDashboardViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View Controllers\RetirePortfolioViewController.designer.cs">
+      <DependentUpon>RSPortfolioViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FundTable\CircleChartControl.cs" />
+    <Compile Include="View Controllers\RetireTabViewController.designer.cs">
+      <DependentUpon>RSTabViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View Controllers\RSBaseViewController.cs" />
+    <Compile Include="View Controllers\RSTabViewController.cs" />
+    <Compile Include="View Controllers\RSPortfolioViewController.cs" />
+    <Compile Include="View Controllers\RSDashboardViewController.cs" />
+    <Compile Include="View Controllers\RSLoginViewController.cs" />
+    <Compile Include="View Controllers\RSLoginViewController.designer.cs">
+      <DependentUpon>RSLoginViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View Controllers\RSFundDetailViewController.cs" />
+    <Compile Include="View Controllers\RSFundDetailViewController.designer.cs">
+      <DependentUpon>RSFundDetailViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View Controllers\RSProfileViewController.cs" />
+    <Compile Include="View Controllers\RSProfileViewController.designer.cs">
+      <DependentUpon>RSProfileViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View Controllers\RSAccountViewController.cs" />
+    <Compile Include="View Controllers\RSAccountViewController.designer.cs">
+      <DependentUpon>RSAccountViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TouchIDUtil.cs" />
+    <Compile Include="View Controllers\RSSettingsViewController.cs" />
+    <Compile Include="View Controllers\RSSettingsViewController.designer.cs">
+      <DependentUpon>RSSettingsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableSources\BySourceTableViewSource.cs" />
+    <Compile Include="TableSources\ProfileTableViewSource.cs" />
+    <None Include="Images.xcassets\Info.plist" />
+    <Compile Include="View Controllers\RSAccountBaseController.cs" />
+    <Compile Include="View Controllers\RSBalancesViewController.cs" />
+    <Compile Include="View Controllers\RSBalancesViewController.designer.cs">
+      <DependentUpon>RSBalancesViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View Controllers\RSContactUsViewController.cs" />
+    <Compile Include="View Controllers\RSContactUsViewController.designer.cs">
+      <DependentUpon>RSContactUsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableSources\ContactUsTableViewSource.cs" />
+    <Compile Include="TableSources\ContactUsCell.cs" />
+    <Compile Include="TableSources\SettingTableViewCell.cs" />
+    <Compile Include="TableSources\AccountTableViewCell.cs" />
+    <Compile Include="TableSources\BySourceTableViewCell.cs" />
+    <Compile Include="TableSources\ProfileTableViewCell.cs" />
+    <None Include="packages.config" />
+    <Compile Include="TableSources\ByInvestmentTableViewCell.cs" />
+    <Compile Include="TableSources\ByInvestmentTableViewSource.cs" />
+    <Compile Include="View Controllers\RSLoginHelpViewController.cs" />
+    <Compile Include="View Controllers\RSLoginHelpViewController.designer.cs">
+      <DependentUpon>RSLoginHelpViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View Controllers\RSPrivacyPolicyViewController.cs" />
+    <Compile Include="View Controllers\RSPrivacyPolicyViewController.designer.cs">
+      <DependentUpon>RSPrivacyPolicyViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View Controllers\RSTermsConditionsViewController.cs" />
+    <Compile Include="View Controllers\RSTermsConditionsViewController.designer.cs">
+      <DependentUpon>RSTermsConditionsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View Controllers\RSDisclaimersViewController.cs" />
+    <Compile Include="View Controllers\RSDisclaimersViewController.designer.cs">
+      <DependentUpon>RSDisclaimersViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableSources\SettingsTableViewSource.cs" />
+    <Compile Include="View Controllers\RSUserAgreementViewController.cs" />
+    <Compile Include="View Controllers\RSUserAgreementViewController.designer.cs">
+      <DependentUpon>RSUserAgreementViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View Controllers\RSLegalViewController.cs" />
+    <Compile Include="View Controllers\RSLegalViewController.designer.cs">
+      <DependentUpon>RSLegalViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableSources\AccountTableViewSource.cs" />
+    <Compile Include="View Controllers\RSNonQualViewController.cs" />
+    <Compile Include="View Controllers\RSNonQualViewController.designer.cs">
+      <DependentUpon>RSNonQualViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RefitStubs.cs" />
+    <None Include="PluginsHelp\ConnectivityReadme.txt" />
+    <Compile Include="View Controllers\WebViewController.cs" />
+    <Compile Include="View Controllers\AboutViewController.cs" />
+    <Compile Include="View Controllers\AboutViewController.designer.cs">
+      <DependentUpon>AboutViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App.cs" />
+    <Compile Include="View Controllers\RSTouchDisclaimerViewController.cs" />
+    <Compile Include="View Controllers\RSTouchDisclaimerViewController.designer.cs">
+      <DependentUpon>RSTouchDisclaimerViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TouchIDResponse.cs" />
+    <Compile Include="TableSources\ChangeLoginTableViewSource.cs" />
+    <Compile Include="TableSources\ChangeLoginTableViewCell.cs" />
+    <Compile Include="View Controllers\RSChangeLoginViewController.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="View Controllers\RSChangeLoginViewController.designer.cs">
+      <DependentUpon>RSChangeLoginViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View Controllers\RSChangePinViewController.cs" />
+    <Compile Include="View Controllers\RSChangePinViewController.designer.cs">
+      <DependentUpon>RSChangePinViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View Controllers\RSChangePasswordViewController.cs" />
+    <Compile Include="View Controllers\RSChangePasswordViewController.designer.cs">
+      <DependentUpon>RSChangePasswordViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View Controllers\RSChangeUserIdViewController.cs" />
+    <Compile Include="View Controllers\RSChangeUserIdViewController.designer.cs">
+      <DependentUpon>RSChangeUserIdViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Util\RetireSmartUtil.cs" />
+    <Compile Include="Util\LoadingOverlay.cs" />
+    <Compile Include="Util\DrawBorder.cs" />
+    <Compile Include="View Controllers\RSForgotLoginViewController.cs" />
+    <Compile Include="View Controllers\RSForgotLoginViewController.designer.cs">
+      <DependentUpon>RSForgotLoginViewController.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\FillTexture.png" />
+    <InterfaceDefinition Include="Storyboards\MainStoryboard_iPad.storyboard" />
+    <BundleResource Include="Resources\Images.xcassets\CategoryIcon.imageset\%402x-category-icon.png" />
+    <BundleResource Include="Resources\Images.xcassets\more-menu-icon-white.imageset\Contents.json" />
+    <BundleResource Include="Resources\Images.xcassets\more-menu-icon-white.imageset\more-menu-icon-white%401x.png" />
+    <BundleResource Include="Resources\Images.xcassets\more-menu-icon-white.imageset\more-menu-icon-white%402x.png" />
+    <BundleResource Include="Resources\Images.xcassets\more-menu-icon-white.imageset\more-menu-icon-white%403x.png" />
+    <BundleResource Include="Resources\Icon-60%402x.png" />
+    <BundleResource Include="Resources\Icon%402x.png" />
+    <BundleResource Include="Resources\Icon.png" />
+    <BundleResource Include="Resources\Default-568h%402x.jpg" />
+    <BundleResource Include="Resources\Default-667h%402x.jpg" />
+    <BundleResource Include="Resources\Default-736h%403x.jpg" />
+    <BundleResource Include="Resources\Default-568h%402x.png" />
+    <InterfaceDefinition Include="Storyboards\MainStoryboard_iPhone.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="CorePlotiOS">
+      <HintPath>..\Components\coreplot-1.5.1.1\lib\ios-unified\CorePlotiOS.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Json" />
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.5.2\lib\portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Calabash">
+      <HintPath>..\packages\Xamarin.TestCloud.Agent.0.13.0\lib\Xamarin.iOS10\Calabash.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Insights">
+      <HintPath>..\packages\Xamarin.Insights.1.9.1.107\lib\Xamarin.iOS10\Xamarin.Insights.dll</HintPath>
+    </Reference>
+    <Reference Include="PLCrashReporterUnifiedBinding">
+      <HintPath>..\packages\Xamarin.Insights.1.9.1.107\lib\Xamarin.iOS10\PLCrashReporterUnifiedBinding.dll</HintPath>
+    </Reference>
+    <Reference Include="Refit">
+      <HintPath>..\packages\refit.2.2.1\lib\Xamarin.iOS10\Refit.dll</HintPath>
+    </Reference>
+    <Reference Include="Connectivity.Plugin">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.1.0.1\lib\Xamarin.iOS10\Connectivity.Plugin.dll</HintPath>
+    </Reference>
+    <Reference Include="Connectivity.Plugin.Abstractions">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.1.0.1\lib\Xamarin.iOS10\Connectivity.Plugin.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="ModernHttpClient">
+      <HintPath>..\packages\modernhttpclient.2.2.0\lib\Xamarin.iOS10\ModernHttpClient.dll</HintPath>
+    </Reference>
+    <Reference Include="HockeyApp.iOS">
+      <HintPath>..\Components\hockeyappios-3.5.5.1\lib\ios-unified\HockeyApp.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="GoogleAnalytics.iOS">
+      <HintPath>..\Components\googleanalytics-3.0.10.3\lib\ios-unified\GoogleAnalytics.iOS.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="..\RetireSmart.Shared\RetireSmart.Shared.projitems" Label="Shared" Condition="Exists('..\RetireSmart.Shared\RetireSmart.Shared.projitems')" />
+  <Import Project="..\OAuth\OAuth.projitems" Label="Shared" Condition="Exists('..\OAuth\OAuth.projitems')" />
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\packages\refit.2.2.1\build\refit.targets" Condition="Exists('..\packages\refit.2.2.1\build\refit.targets')" />
+  <ItemGroup>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Image.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\RetireSmart-Login.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\RetireSmart-Login.imageset\%402x-retiresmart-logo-landing.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\RetireSmart-Nav.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\RetireSmart-Nav.imageset\%402x-retiresmart-logo-navbar.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Nav-Contrib.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Nav-Dashboard.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Nav-Perform.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Nav-Calc.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Nav-Calc.imageset\%402x-nav-calc.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Nav-Contrib.imageset\%402x-nav-contrib.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Nav-Perform.imageset\%402x-nav-perform.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LoginButton.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LogonBackground.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LogonPerson.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LogonPerson.imageset\%402x-logon-person-icon.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LogonPassword.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LogonPassword.imageset\%402x-logon-password-icon.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\CategoryIcon.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Settings.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Settings.imageset\settings%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Settings.imageset\settings%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Settings.imageset\settings%401x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Profile.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Profile.imageset\profile%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Profile.imageset\profile%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Profile.imageset\profile%401x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\MoneyBag.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\MoneyBag.imageset\money-bag%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\MoneyBag.imageset\money-bag%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\MoneyBag.imageset\money-bag%401x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\ProfileImage.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\ProfileImage.imageset\profile-head%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\ProfileImage.imageset\profile-head%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\ProfileImage.imageset\profile-head%401x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LogOut.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\GreenGradient.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\GreenGradient.imageset\green-gradient%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\GreenGradient.imageset\green-gradient%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\GreenGradient.imageset\green-gradient%401x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\SwitchAccount.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\SwitchAccount.imageset\switch-account-icon%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\SwitchAccount.imageset\switch-account-icon%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\SwitchAccount.imageset\switch-account-icon%401x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\CloseButton.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\CloseButton.imageset\close-x%401x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\CloseButton.imageset\close-x%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\CloseButton.imageset\close-x%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\QuestionMark.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\QuestionMark.imageset\question-mark%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Nav-Balances.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Nav-Balances.imageset\balances-menu-icon-white%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Nav-Balances.imageset\balances-menu-icon-white%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Nav-Balances.imageset\balances-menu-icon-white%401x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Nav-Dashboard.imageset\dashboard-menu-icon-white%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Nav-Dashboard.imageset\dashboard-menu-icon-white%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Nav-Dashboard.imageset\dashboard-menu-icon-white%401x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LogonBackground.imageset\logon-background%401x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LogonBackground.imageset\logon-background%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LogonBackground.imageset\logon-background%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LoginButton.imageset\login-button%401x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LoginButton.imageset\login-button%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LoginButton.imageset\login-button%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LogOut.imageset\logout-button%401x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LogOut.imageset\logout-button%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LogOut.imageset\logout-button%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\MMLogo.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\MMLogo.imageset\mm-logo%401x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\MMLogo.imageset\mm-logo%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\MMLogo.imageset\mm-logo%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Splash.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Splash.imageset\splash-screen-5.5.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Splash.imageset\splash-screen%402x.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\RSHeader.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\DisclaimerButton.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\DisclaimerButton.imageset\question-mark%401x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\DisclaimerButton.imageset\question-mark%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\DisclaimerButton.imageset\question-mark%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\RSHeader.imageset\retireSmart%401x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\RSHeader.imageset\retireSmart%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\RSHeader.imageset\retireSmart%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Util\" />
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="hockeyappios">
+      <Version>3.5.5.1</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="calabash">
+      <Version>13.0</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="ConnectivityPlugin">
+      <Version>1.0.1</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="googleanalytics">
+      <Version>3.0.10.3</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+  </ItemGroup>
+  <Target Name="_CompileITunesMetadata" DependsOnTargets="_DetectSdkLocations;_DetectAppManifest;_GenerateBundleName;_CompileAppManifest">
+    <Message Text="Skipping CompileITunesMetadata task to prevent inclusion of iTunesMetadata.plist in the IPA" />
+  </Target>
+</Project>

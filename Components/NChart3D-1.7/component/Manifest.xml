@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<component format="1" id="NChart3D">
+  <name>NChart3D</name>
+  <publisher>Nulana LTD.</publisher>
+  <publisher-url>http://nchart3D.com</publisher-url>
+  <version>1.7</version>
+  <summary>Versatile chart and graph library that enables stunning 2D and 3D data visualization.</summary>
+  <samples>
+    <sample id="iOS.Samples">
+      <name>iOS Sample.</name>
+      <summary>The samples cover the most common cases of NChart3D usage and help you to get the quick start.</summary>
+    </sample>
+    <sample id="Android.Samples">
+      <name>Android Sample.</name>
+      <summary>The samples cover the most common cases of NChart3D usage and help you to get the quick start.</summary>
+    </sample>
+  </samples>
+</component>

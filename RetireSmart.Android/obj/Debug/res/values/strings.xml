@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TextShield</string>
+   	<string name="app_version">0.1</string>
+    
+    <string name="terms_agree_hdr">User Agreement</string>
+    <string name="terms_agree_btn">Agree</string>
+
+    <!-- Login Screen -->
+    <string name="username_hint">Username</string>
+    <string name="password_hint">Password or PIN</string>
+    <string name="forgot_login">Forgot Log in?</string>
+    <string name="login_help">Log In Help</string>
+
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_balances">Balances</string>
+    <string name="nav_accounts">Accounts</string>
+    <string name="nav_settings">Settings</string>
+
+    <string name="menu_chg_acct">Change Plan</string>
+    <string name="menu_profile">Personal Information</string>
+    <string name="menu_support">Support</string>
+    <string name="menu_privacy">Privacy Policy</string>
+    <string name="menu_legal">Legal</string>
+    <string name="menu_terms">Terms of Use</string>
+    <string name="menu_logout">Log Out</string>
+    <string name="menu_change_login">Change Log In</string>
+
+    <!-- Account Selection Strings -->
+    <string name="acct_btn_logout">Logout</string>
+    <string name="acct_select_header">Select a Plan</string>
+    <string name="acct_select_loading">Loading Account Information</string>
+
+
+    <!-- Dashboard Strings -->
+    <string name="dash_button">View Chart</string>
+    <string name="dash_total_bal">Total Balance</string>
+    <string name="dash_portfolio_sum">My Investment Portfolio</string>
+    <string name="dash_last_contrib">Last Contrib/Payroll Amt</string>
+    <string name="chart_cat_header">Investment Category &amp; Allocation</string>
+    <string name="chart_balance">Balance</string>
+
+    <!--- Category Strings -->
+    <string name="category_chart_heading">My Investment by Category</string>
+    <string name="cat_view_chart">View Chart</string>
+    <string name="cat_chart_list_header">Fund &amp; Allocation</string>
+
+    <!-- Balance Strings -->
+    <string name="bal_balance">Balance</string>
+    <string-array name="bal_filter_options">
+    	<item name="source">View Balances By Source</item>
+    	<item name="investment">View Balances By Investment</item>
+    </string-array>
+	<string name="bal_vested_status">Vested Status</string>
+	<string name="bal_vested_balance">Vested Balance</string>
+	<string name="bal_total_balance">Total Balance</string>
+	<string name="bal_first_footnote">* Net of outstanding loans.</string>
+	<string name="bal_second_footnote">** Includes outstanding loans</string>
+
+    <!--- Fund Detail Strings -->
+    <string name="fund_detail_annual_chart">Performance - Annual Returns</string>
+    <string name="fund_detail_not_available">Performance Information Not Available</string>
+    <string name="fund_prospectus_link">Prospectus(es) and Other Regulatory Publications</string>
+    <string name="prospectus_title">Prospectus</string>
+    <string-array name="support_menu_options">
+    	<item name="contact">Contact Us</item>
+    	<item name="retire_web">Visit www.TextShield.com</item>
+    	<item name="about">About</item>
+    </string-array>
+
+
+    <!--- About Strings -->
+    <string name="about_title">About App</string>
+    <string name="about_message">Version 1.2 © 2015 Massachusetts Mutual Life Insurance Company, Springfield, MA 01111-0001. All rights reserved.</string>
+
+    <!--- Change Log In -->
+    <string name="about_header">About</string>
+    <string name="about_text1">Your PIN is used to access MassMutual\'s interactive voice response system.</string>
+    <string name="about_text2">Your user ID and password is used to access the TextShield website and app.</string>
+    <string name="select_header">Select</string>
+    <string name="change_pin">PIN		</string>
+    <string name="change_password">Password		</string>
+    <string name="change_user">Username (User ID)		</string>
+    <string name="enter_header">Enter</string>
+    <string name="current_pin">Current PIN</string>
+    <string name="new_pin">New PIN</string>
+    <string name="retype_new_pin">Retype New PIN</string>
+    <string name="change_pin_about_text1">Your PIN must be:</string>
+    <string name="change_pin_about_text2">\u2022 6-8 Digits \n\u2022 Letters or symbols are not allowed.</string>
+
+    <string name="current_password">Current Password</string>
+    <string name="new_password">New Password</string>
+    <string name="retype_new_password">Retype New Password</string>
+    <string name="change_password_about_text1">Your Password must be:</string>
+    <string name="change_password_about_text2">\u2022 Must be 8-30 characters
+    \n\u2022 Must contain atleast one upper case letter
+    \n\u2022 Mustcontain at least one lower case letter
+    \n\u2022 Must contain one number
+    \n\u2022 Must contain one special character\n\u0020\u0020(Example: ! @ # $) 
+    \n\u2022 Cannot match the user id
+    \n\u2022 Cannot use repeating characters\n\u0020\u0020(Example: 333, AAA, !!)
+    \n\u2022 Cannot match your current or any of your\n\u0020\u0020past four(4) passwords.
+    \n\u2022 These passwords will expire periodically</string>
+
+    <string name="new_userid">New Username (User ID)</string>
+    <string name="retype_new_userid">Retype New Username (User ID)</string>
+    <string name="change_userid_about_text1">Your can create a User ID (other than your Social Security Number) to access your account.</string>
+    <string name="change_userid_about_text2">This UserID or your SSN can be used when you log into the TextShield website or app.\nYour ID must contain...
+    \n\u2022 Six or more characters
+    \n\u2022 Must contain atleast one letter
+    \n\u2022 May not contain any special characters other than @ or period (.)</string>
+
+</resources>

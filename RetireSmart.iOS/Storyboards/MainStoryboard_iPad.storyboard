@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4451" systemVersion="13A461" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733.0"/>
+    </dependencies>
+    <scenes>
+        <!--class Prefix:identifier View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="RootViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3"/>
+                        <viewControllerLayoutGuide type="bottom" id="4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackOpaque"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+    <resources>
+        <image name="Default-568h.png" width="640" height="1136"/>
+        <image name="FillTexture.png" width="10" height="10"/>
+        <image name="TextShield-Login" width="593" height="97"/>
+        <image name="TextShield-Nav" width="269" height="44"/>
+        <image name="Nav-Calc" width="46" height="35"/>
+        <image name="Nav-Contrib" width="46" height="35"/>
+        <image name="Nav-Dashboard" width="46" height="35"/>
+        <image name="Nav-Perform" width="46" height="35"/>
+        <image name="LoginButton" width="573" height="97"/>
+        <image name="LogonBackground" width="640" height="1097"/>
+        <image name="LogonPerson" width="49" height="49"/>
+        <image name="LogonPassword" width="49" height="49"/>
+        <image name="@2x-margin-icon-sandals.png" width="96" height="64"/>
+        <image name="@2x-margin-icon-golf.png" width="96" height="64"/>
+        <image name="@2x-margin-icon-beach.png" width="96" height="64"/>
+        <image name="@2x-tab-dashboard-icon-blue.png" width="96" height="64"/>
+        <image name="@2x-tab-dashboard-icon-grey.png" width="96" height="64"/>
+        <image name="@2x-tab-calculators-icon-blue.png" width="96" height="64"/>
+        <image name="@2x-tab-calculators-icon-grey.png" width="96" height="64"/>
+        <image name="@2x-tab-performance-icon-blue.png" width="96" height="64"/>
+        <image name="@2x-tab-performance-icon-grey.png" width="96" height="64"/>
+        <image name="@2x-tab-balances-icon-blue.png" width="96" height="64"/>
+        <image name="@2x-tab-balances-icon-grey.png" width="96" height="64"/>
+        <image name="@2x-profile-image.png" width="96" height="64"/>
+        <image name="@2x-logon-button.png" width="573" height="97"/>
+        <image name="@2x-logon-background-image.png" width="640" height="1097"/>
+        <image name="@2x-logon-password-icon.png" width="49" height="49"/>
+        <image name="@2x-logon-person-icon.png" width="49" height="49"/>
+    </resources>
+</document>

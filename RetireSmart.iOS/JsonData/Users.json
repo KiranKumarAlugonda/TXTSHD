@@ -1,0 +1,21 @@
+﻿
+     [
+        {
+            "ID": "001",
+			"AccountID": 100,
+            "Password": "secret",
+            "Name": "George Costanza",
+			"Address": "1125 W 34th St.",
+			"City": "New York",
+			"State": "NY",
+			"Zip" : "01011",
+			"PrimaryPhone": "212-555-3212",
+			"DOB": "04/05/1964",
+			"MaritalStatus" : "Not Married",
+			"ParticipationStatus" : "Active",
+			"ParticipationDate" : "10/15/2003",
+			"EligibilityDate" : "10/15/2003",
+			"Beneficiaries" : [],
+			"Email" : "gcostanza@yankees.com"
+        }
+    ]

@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetireSmart.iOS", "RetireSmart.iOS.csproj", "{53AE25CD-45E2-4BB0-A7DB-F07E943B4B45}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+		Ad-Hoc|iPhone = Ad-Hoc|iPhone
+		AppStore|iPhone = AppStore|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{53AE25CD-45E2-4BB0-A7DB-F07E943B4B45}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
+		{53AE25CD-45E2-4BB0-A7DB-F07E943B4B45}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
+		{53AE25CD-45E2-4BB0-A7DB-F07E943B4B45}.AppStore|iPhone.ActiveCfg = AppStore|iPhone
+		{53AE25CD-45E2-4BB0-A7DB-F07E943B4B45}.AppStore|iPhone.Build.0 = AppStore|iPhone
+		{53AE25CD-45E2-4BB0-A7DB-F07E943B4B45}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{53AE25CD-45E2-4BB0-A7DB-F07E943B4B45}.Debug|iPhone.Build.0 = Debug|iPhone
+		{53AE25CD-45E2-4BB0-A7DB-F07E943B4B45}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{53AE25CD-45E2-4BB0-A7DB-F07E943B4B45}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{53AE25CD-45E2-4BB0-A7DB-F07E943B4B45}.Release|iPhone.ActiveCfg = Release|iPhone
+		{53AE25CD-45E2-4BB0-A7DB-F07E943B4B45}.Release|iPhone.Build.0 = Release|iPhone
+		{53AE25CD-45E2-4BB0-A7DB-F07E943B4B45}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{53AE25CD-45E2-4BB0-A7DB-F07E943B4B45}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+	EndGlobalSection
+EndGlobal

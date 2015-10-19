@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@color/white"
+    android:weightSum="4">
+    <TextView
+        android:text="Name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_field_lbl"
+        android:gravity="left|top"
+        android:textSize="@dimen/profile_list_item_hdr"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_weight="2"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp" />
+    <TextView
+        android:text="Value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:id="@+id/txt_field_val"
+        android:layout_marginRight="10dp"
+        android:maxLines="3"
+        android:textSize="@dimen/profile_list_item_std"
+        android:textStyle="normal"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="right|top" />
+</LinearLayout>

@@ -1,0 +1,12 @@
+﻿ [
+        {
+            "UserID": "001",
+			"ContributionAmount": 230.56,
+			"ContributionDate" : "11-13-14"
+        },
+        {
+            "UserID": "001",
+			"ContributionAmount": 275.25,
+			"ContributionDate" : "10-30-14"
+        }
+    ]
